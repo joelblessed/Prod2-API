@@ -1,0 +1,30 @@
+{
+    "sourceFile": "server.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1738107983156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738108408398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n const middlewares = jsonServer.defaults();\n \n server.use(middlewares);\n server.use(router);\n-server.listen(process.env.PORT || 3000, () => {\n+server.listen(process.env.PORT || 000, () => {\n   console.log(\"JSON Server is running\");\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738108413941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n const middlewares = jsonServer.defaults();\n \n server.use(middlewares);\n server.use(router);\n-server.listen(process.env.PORT || 000, () => {\n+server.listen(process.env.PORT || 8080, () => {\n   console.log(\"JSON Server is running\");\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738110182345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +0,0 @@\n-const jsonServer = require(\"json-server\");\n-const server = jsonServer.create();\n-const router = jsonServer.router(\"db.json\");\n-const middlewares = jsonServer.defaults();\n-\n-server.use(middlewares);\n-server.use(router);\n-server.listen(process.env.PORT || 8080, () => {\n-  console.log(\"JSON Server is running\");\n-})\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1738107983156,
+            "name": "Commit-0",
+            "content": "const jsonServer = require(\"json-server\");\nconst server = jsonServer.create();\nconst router = jsonServer.router(\"db.json\");\nconst middlewares = jsonServer.defaults();\n\nserver.use(middlewares);\nserver.use(router);\nserver.listen(process.env.PORT || 3000, () => {\n  console.log(\"JSON Server is running\");\n})"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+  "cart": [
+    {
+      "numberInStock": 6,
+      "name": "xr",
+      "desc": "64 Gb",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 242,
+      "image": "oh.png",
+      "liked": 0,
+      "id": "c627",
+      "category": "phone",
+      "quantity":1
+    },
+  ]
+}

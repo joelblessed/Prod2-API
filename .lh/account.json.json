@@ -1,0 +1,66 @@
+{
+    "sourceFile": "account.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1738169558124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738170774095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,18 +21,9 @@\n       \"address\": \"address1\\naddrees2\",\n       \"role\": \"user\",\n       \"gender\": \"male\"\n     },\n-    {\n-      \"id\": \"joel\",\n-      \"name\": \"joelblessed\",\n-      \"password\": \"1234\",\n-      \"email\": \"joelblessedgod@gmail.com\",\n-      \"phone\": \"677331862\",\n-      \"country\": \"india\",\n-      \"address\": \"goleao\",\n-      \"gender\": \"female\"\n-    }\n+\n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738171441452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       \"address\": \"address1\\naddrees2\",\n       \"role\": \"user\",\n       \"gender\": \"male\"\n     },\n-\n+  \n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738171971939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       \"address\": \"address1\\naddrees2\",\n       \"role\": \"user\",\n       \"gender\": \"male\"\n     },\n-  \n+ \n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738173853627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       \"address\": \"address1\\naddrees2\",\n       \"role\": \"user\",\n       \"gender\": \"male\"\n     },\n- \n+  \n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738178241534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,25 @@\n       \"address\": \"address1\\naddrees2\",\n       \"role\": \"user\",\n       \"gender\": \"male\"\n     },\n-  \n+    {\n+      \"id\": 3,\n+      \"email\": \"i@gmail.com\",\n+      \"password\": \"$2a$10$3wV7shVE4bqaEtH3CICmf.Um61XO8UlipP7zuCG.qwKTeBqiWZNWC\",\n+      \"userName\": \"joel\",\n+      \"fullName\": \"joelblessed\",\n+      \"phone\": \"987654\",\n+      \"country\": \"india\",\n+      \"address\": \"uiyuy\",\n+      \"gender\": \"female\"\n+    },\n+   \n+    {\n+      \"id\": 5,\n+      \"email\": \"r@gmail.com\",\n+      \"password\": \"$2a$10$EHzxb45bUY9YAU70OeczgOnALIraupF1U/8qnopT7hRK9d8trNAVK\"\n+    }\n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738178247761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,9 @@\n    \n     {\n       \"id\": 5,\n       \"email\": \"r@gmail.com\",\n+      use\n       \"password\": \"$2a$10$EHzxb45bUY9YAU70OeczgOnALIraupF1U/8qnopT7hRK9d8trNAVK\"\n     }\n   ],\n   \"roleaccess\": [\n"
+                },
+                {
+                    "date": 1738178253486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n    \n     {\n       \"id\": 5,\n       \"email\": \"r@gmail.com\",\n-      use\n+      \"userName\":\"joel\",\n       \"password\": \"$2a$10$EHzxb45bUY9YAU70OeczgOnALIraupF1U/8qnopT7hRK9d8trNAVK\"\n     }\n   ],\n   \"roleaccess\": [\n"
+                },
+                {
+                    "date": 1738180908713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,46 +1,7 @@\n {\n   \"users\": [\n-    {\n-      \"id\": \"adminuser\",\n-      \"name\": \"Nihira\",\n-      \"password\": \"admin\",\n-      \"email\": \"nihiratechiees@gmail.com\",\n-      \"phone\": \"8989898989\",\n-      \"country\": \"usa\",\n-      \"address\": \"\",\n-      \"role\": \"admin\",\n-      \"gender\": \"female\"\n-    },\n-    {\n-      \"id\": \"ntuser\",\n-      \"name\": \"Fullname\",\n-      \"password\": \"ntuser\",\n-      \"email\": \"email@email.com\",\n-      \"phone\": \"56778889989\",\n-      \"country\": \"singapore\",\n-      \"address\": \"address1\\naddrees2\",\n-      \"role\": \"user\",\n-      \"gender\": \"male\"\n-    },\n-    {\n-      \"id\": 3,\n-      \"email\": \"i@gmail.com\",\n-      \"password\": \"$2a$10$3wV7shVE4bqaEtH3CICmf.Um61XO8UlipP7zuCG.qwKTeBqiWZNWC\",\n-      \"userName\": \"joel\",\n-      \"fullName\": \"joelblessed\",\n-      \"phone\": \"987654\",\n-      \"country\": \"india\",\n-      \"address\": \"uiyuy\",\n-      \"gender\": \"female\"\n-    },\n    \n-    {\n-      \"id\": 5,\n-      \"email\": \"r@gmail.com\",\n-      \"userName\":\"joel\",\n-      \"password\": \"$2a$10$EHzxb45bUY9YAU70OeczgOnALIraupF1U/8qnopT7hRK9d8trNAVK\"\n-    }\n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738180923532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,50 @@\n {\n   \"users\": [\n-   \n+    {\n+      \"id\": \"adminuser\",\n+      \"name\": \"Nihira\",\n+      \"password\": \"admin\",\n+      \"email\": \"nihiratechiees@gmail.com\",\n+      \"phone\": \"8989898989\",\n+      \"country\": \"usa\",\n+      \"address\": \"\",\n+      \"role\": \"admin\",\n+      \"gender\": \"female\"\n+    },\n+    {\n+      \"id\": \"ntuser\",\n+      \"name\": \"Fullname\",\n+      \"password\": \"ntuser\",\n+      \"email\": \"email@email.com\",\n+      \"phone\": \"56778889989\",\n+      \"country\": \"singapore\",\n+      \"address\": \"address1\\naddrees2\",\n+      \"role\": \"user\",\n+      \"gender\": \"male\"\n+    },\n+    {\n+      \"id\": 3,\n+      \"email\": \"i@gmail.com\",\n+      \"password\": \"$2a$10$3wV7shVE4bqaEtH3CICmf.Um61XO8UlipP7zuCG.qwKTeBqiWZNWC\",\n+      \"userName\": \"joel\",\n+      \"fullName\": \"joelblessed\",\n+      \"phone\": \"987654\",\n+      \"country\": \"india\",\n+      \"address\": \"uiyuy\",\n+      \"gender\": \"female\"\n+    },\n+    {\n+      \"id\": 5,\n+      \"email\": \"r@gmail.com\",\n+      \"userName\": \"joel\",\n+      \"password\": \"$2a$10$EHzxb45bUY9YAU70OeczgOnALIraupF1U/8qnopT7hRK9d8trNAVK\"\n+    },\n+    {\n+      \"id\": 5,\n+      \"password\": \"$2a$10$5chGmzCJz2SHArCnlmkRZeqrvAohkfoD9tu4zBhMGIM9dpdhsVoAq\",\n+      \"userName\": \"joel\"\n+    }\n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738180968614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,30 +21,9 @@\n       \"address\": \"address1\\naddrees2\",\n       \"role\": \"user\",\n       \"gender\": \"male\"\n     },\n-    {\n-      \"id\": 3,\n-      \"email\": \"i@gmail.com\",\n-      \"password\": \"$2a$10$3wV7shVE4bqaEtH3CICmf.Um61XO8UlipP7zuCG.qwKTeBqiWZNWC\",\n-      \"userName\": \"joel\",\n-      \"fullName\": \"joelblessed\",\n-      \"phone\": \"987654\",\n-      \"country\": \"india\",\n-      \"address\": \"uiyuy\",\n-      \"gender\": \"female\"\n-    },\n-    {\n-      \"id\": 5,\n-      \"email\": \"r@gmail.com\",\n-      \"userName\": \"joel\",\n-      \"password\": \"$2a$10$EHzxb45bUY9YAU70OeczgOnALIraupF1U/8qnopT7hRK9d8trNAVK\"\n-    },\n-    {\n-      \"id\": 5,\n-      \"password\": \"$2a$10$5chGmzCJz2SHArCnlmkRZeqrvAohkfoD9tu4zBhMGIM9dpdhsVoAq\",\n-      \"userName\": \"joel\"\n-    }\n+   \n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738181413654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,20 @@\n       \"address\": \"address1\\naddrees2\",\n       \"role\": \"user\",\n       \"gender\": \"male\"\n     },\n-   \n+    {\n+      \"id\": 3,\n+      \"email\": \"joelblessedgod@gmail.com\",\n+      \"password\": \"$2a$10$Yrx9afhwfoDVXUKVZnPJquipU1Z0ECcduc6GNhwjGtNgU0JAzadfu\",\n+      \"userName\": \"joelblessed\",\n+      \"fullName\": \"joel blessed\",\n+      \"phone\": \"677331862\",\n+      \"country\": \"usa\",\n+      \"address\": \"kombe\",\n+      \"gender\": \"male\",\n+      \"role\": \"\"\n+    }\n   ],\n   \"roleaccess\": [\n     {\n       \"role\": \"admin\",\n"
+                },
+                {
+                    "date": 1738181430039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,29 +1,8 @@\n {\n   \"users\": [\n+   \n     {\n-      \"id\": \"adminuser\",\n-      \"name\": \"Nihira\",\n-      \"password\": \"admin\",\n-      \"email\": \"nihiratechiees@gmail.com\",\n-      \"phone\": \"8989898989\",\n-      \"country\": \"usa\",\n-      \"address\": \"\",\n-      \"role\": \"admin\",\n-      \"gender\": \"female\"\n-    },\n-    {\n-      \"id\": \"ntuser\",\n-      \"name\": \"Fullname\",\n-      \"password\": \"ntuser\",\n-      \"email\": \"email@email.com\",\n-      \"phone\": \"56778889989\",\n-      \"country\": \"singapore\",\n-      \"address\": \"address1\\naddrees2\",\n-      \"role\": \"user\",\n-      \"gender\": \"male\"\n-    },\n-    {\n       \"id\": 3,\n       \"email\": \"joelblessedgod@gmail.com\",\n       \"password\": \"$2a$10$Yrx9afhwfoDVXUKVZnPJquipU1Z0ECcduc6GNhwjGtNgU0JAzadfu\",\n       \"userName\": \"joelblessed\",\n@@ -31,9 +10,9 @@\n       \"phone\": \"677331862\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n-      \"role\": \"\"\n+      \"role\": \"admin\"\n     }\n   ],\n   \"roleaccess\": [\n     {\n"
+                }
+            ],
+            "date": 1738169558124,
+            "name": "Commit-0",
+            "content": "{\n  \"users\": [\n    {\n      \"id\": \"adminuser\",\n      \"name\": \"Nihira\",\n      \"password\": \"admin\",\n      \"email\": \"nihiratechiees@gmail.com\",\n      \"phone\": \"8989898989\",\n      \"country\": \"usa\",\n      \"address\": \"\",\n      \"role\": \"admin\",\n      \"gender\": \"female\"\n    },\n    {\n      \"id\": \"ntuser\",\n      \"name\": \"Fullname\",\n      \"password\": \"ntuser\",\n      \"email\": \"email@email.com\",\n      \"phone\": \"56778889989\",\n      \"country\": \"singapore\",\n      \"address\": \"address1\\naddrees2\",\n      \"role\": \"user\",\n      \"gender\": \"male\"\n    },\n    {\n      \"id\": \"joel\",\n      \"name\": \"joelblessed\",\n      \"password\": \"1234\",\n      \"email\": \"joelblessedgod@gmail.com\",\n      \"phone\": \"677331862\",\n      \"country\": \"india\",\n      \"address\": \"goleao\",\n      \"gender\": \"female\"\n    }\n  ],\n  \"roleaccess\": [\n    {\n      \"role\": \"admin\",\n      \"menu\": \"customer\",\n      \"haveadd\": true,\n      \"haveedit\": true,\n      \"havedelete\": true,\n      \"id\": \"33ae\"\n    },\n    {\n      \"role\": \"admin\",\n      \"menu\": \"supplier\",\n      \"haveadd\": true,\n      \"haveedit\": true,\n      \"havedelete\": true,\n      \"id\": \"7c4b\"\n    },\n    {\n      \"role\": \"user\",\n      \"menu\": \"customer\",\n      \"haveadd\": false,\n      \"haveedit\": false,\n      \"havedelete\": false,\n      \"id\": \"6d0b\"\n    },\n    {\n      \"role\": \"user1\",\n      \"menu\": \"customer\",\n      \"haveadd\": false,\n      \"haveedit\": false,\n      \"havedelete\": false,\n      \"id\": \"2c13\"\n    }\n  ],\n  \"customer\": [\n    {\n      \"code\": 1,\n      \"name\": \"Chris\",\n      \"email\": \"chris@in.com\",\n      \"id\": \"6bd0\"\n    },\n    {\n      \"code\": 2,\n      \"name\": \"Lynn\",\n      \"email\": \"lynn@in.com\",\n      \"id\": \"c8da\"\n    },\n    {\n      \"code\": 3,\n      \"name\": \"Tim\",\n      \"email\": \"tim@in.com\",\n      \"id\": \"ddb8\"\n    },\n    {\n      \"code\": 4,\n      \"name\": \"Southee\",\n      \"email\": \"southee@in.com\",\n      \"id\": \"8dd4\"\n    },\n    {\n      \"code\": 5,\n      \"name\": \"boult\",\n      \"email\": \"bould@in.com\",\n      \"id\": \"8a0c\"\n    }\n  ]\n}"
+        }
+    ]
+}

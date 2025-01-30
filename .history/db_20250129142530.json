@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "numberInStock": 6,
+      "name": "xr",
+      "desc": "64 Gb",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 242,
+      "image": "oh.png",
+      "liked": 0,
+      "id": "c627",
+      "category": "phone",
+      "quantity":1
+    },
+    {
+      "numberInStock": 6,
+      "name": "Jumper",
+      "desc": "12 gb Ram",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 532,
+      "image": "to.jpg",
+      "liked": 0,
+      "id": 353,
+      "category": "computer",
+      "quantity":1
+    },
+    {
+      "numberInStock": 6,
+      "name": "force UP",
+      "desc": "grass killer",
+      "forCount": 1,
+      "status": "new",
+      "discount": "",
+      "price": 2343,
+      "image": "3.png",
+      "liked": 0,
+      "id": "oiu",
+      "category": "farm",
+      "quantity":1
+    },
+    {
+      "numberInStock": 6,
+      "name": "fan",
+      "desc": "220v",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 9999,
+      "image": "4.png",
+      "liked": 0,
+      "id": "-098",
+      "category": "accesseries",
+      "quantity":1
+
+    }
+    
+  ]
+}

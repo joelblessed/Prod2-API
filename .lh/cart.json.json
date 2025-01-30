@@ -1,0 +1,26 @@
+{
+    "sourceFile": "cart.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1738152335529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738152392018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,19 @@\n {\n   \"cart\": [\n-    \n+    {\n+      \"numberInStock\": 6,\n+      \"name\": \"xr\",\n+      \"desc\": \"64 Gb\",\n+      \"forCount\": 1,\n+      \"qty\": 0,\n+      \"status\": \"Used\",\n+      \"discount\": \"\",\n+      \"price\": 242,\n+      \"image\": \"oh.png\",\n+      \"liked\": 0,\n+      \"id\": \"c627\",\n+      \"category\": \"phone\",\n+      \"quantity\":1\n+    }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738156606970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       \"discount\": \"\",\n       \"price\": 242,\n       \"image\": \"oh.png\",\n       \"liked\": 0,\n-      \"id\": \"c\",\n+      \"id\": \"\",\n       \"category\": \"phone\",\n       \"quantity\": 1\n     },\n     {\n"
+                }
+            ],
+            "date": 1738152335529,
+            "name": "Commit-0",
+            "content": "{\n  \"cart\": [\n    \n  ]\n}"
+        }
+    ]
+}

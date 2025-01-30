@@ -1,0 +1,34 @@
+{
+  "cart": [
+    {
+      "numberInStock": 6,
+      "name": "xr",
+      "desc": "64 Gb",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 242,
+      "image": "oh.png",
+      "liked": 0,
+      "id": ,
+      "category": "phone",
+      "quantity": 1
+    },
+    {
+      "id": "-098",
+      "numberInStock": 6,
+      "name": "fan",
+      "desc": "220v",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 9999,
+      "image": "4.png",
+      "liked": 0,
+      "category": "accesseries",
+      "quantity": 1
+    }
+  ]
+}

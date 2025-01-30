@@ -1,0 +1,20 @@
+{
+  "cart": [
+    {
+      "id": 353,
+      "numberInStock": 6,
+      "name": "Jumper",
+      "desc": "12 gb Ram",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 532,
+      "image": "to.jpg",
+      "liked": 0,
+      "category": "computer",
+      "quantity": 11,
+      
+    }
+  ]
+}

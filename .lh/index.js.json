@@ -1,0 +1,726 @@
+{
+    "sourceFile": "index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 177,
+            "patches": [
+                {
+                    "date": 1738106852904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738106860428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const\n\\ No newline at end of file\n+const app = \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106867399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const app = \n\\ No newline at end of file\n+const app = require()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106875281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const app = require()\n\\ No newline at end of file\n+const app = require(\"express\")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106888660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const app = require(\"express\")\n\\ No newline at end of file\n+const app = require(\"express\")()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106902028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const app = require(\"express\")()\n\\ No newline at end of file\n+const app = require(\"express\")()\n"
+                },
+                {
+                    "date": 1738106909417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n const app = require(\"express\")()\n+const port\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106918848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n const app = require(\"express\")()\n-const port\n\\ No newline at end of file\n+const PORT = 8000\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106926574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n const app = require(\"express\")()\n-const PORT = 8000\n\\ No newline at end of file\n+const PORT = 8000;\n+app.\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106931910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const app = require(\"express\")()\n const PORT = 8000;\n-app.\n\\ No newline at end of file\n+app.listen()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106946874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const app = require(\"express\")()\n-const PORT = 8000;\n+const PORT = 800;\n app.listen()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106965219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n const app = require(\"express\")()\n-const PORT = 800;\n-app.listen()\n\\ No newline at end of file\n+const PORT = 8080;\n+app.listen(\n+    \n+)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106977349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n-    \n+    PORT,\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106984375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n+    ()\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738106995184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    ()\n+    () => console\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107002401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console\n+    () => console.log()\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107007685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log()\n+    () => console.log(`it i`)\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107014271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log(`it i`)\n+    () => console.log(`it's`)\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107023067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log(`it's`)\n+    () => console.log(`it's live on `)\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107029243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log(`it's live on `)\n+    () => console.log(`it's live on http:`)\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107035210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log(`it's live on http:`)\n+    () => console.log(`it's live on http:??`)\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107042365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log(`it's live on http:??`)\n+    () => console.log(`it's live on http://local`)\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107050771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log(`it's live on http://local`)\n+    () => console.log(`it's live on http://localhost:4`)\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107057107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log(`it's live on http://localhost:4`)\n+    () => console.log(`it's live on http://localhost:${}`)\n )\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738107066062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const app = require(\"express\")()\n const PORT = 8080;\n app.listen(\n     PORT,\n-    () => console.log(`it's live on http://localhost:${}`)\n-)\n\\ No newline at end of file\n+    () => console.log(`it's live on http://localhost:${PORT}`)\n+)B\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738110671148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n const app = require(\"express\")()\n+\n const PORT = 8080;\n app.listen(\n     PORT,\n     () => console.log(`it's live on http://localhost:${PORT}`)\n\\ No newline at end of file\n-)B\n+)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738110680467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n const app = require(\"express\")()\n \n const PORT = 8080;\n app.listen(\n"
+                },
+                {
+                    "date": 1738110685814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\n+expre\n const app = require(\"express\")()\n \n const PORT = 8080;\n app.listen(\n"
+                },
+                {
+                    "date": 1738110694858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-expre\n+express = require\n const app = require(\"express\")()\n \n const PORT = 8080;\n app.listen(\n"
+                },
+                {
+                    "date": 1738110699930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-express = require\n+express = require(\"\")\n const app = require(\"express\")()\n \n const PORT = 8080;\n app.listen(\n"
+                },
+                {
+                    "date": 1738110723188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-express = require(\"\")\n+ constexpress = require(\"epress\")\n const app = require(\"express\")()\n \n const PORT = 8080;\n app.listen(\n"
+                },
+                {
+                    "date": 1738110737948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n- constexpress = require(\"epress\")\n-const app = require(\"express\")()\n+ const express = require(\"epress\")\n+const app = require(\"express\")(\n \n const PORT = 8080;\n app.listen(\n     PORT,\n"
+                },
+                {
+                    "date": 1738110751859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n  const express = require(\"epress\")\n-const app = require(\"express\")(\n+const app = \n \n const PORT = 8080;\n app.listen(\n     PORT,\n"
+                },
+                {
+                    "date": 1738110757450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n  const express = require(\"epress\")\n-const app = \n+const app = exp\n \n const PORT = 8080;\n app.listen(\n     PORT,\n"
+                },
+                {
+                    "date": 1738110767015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n  const express = require(\"epress\")\n-const app = exp\n+const app = express{}\n \n const PORT = 8080;\n app.listen(\n     PORT,\n"
+                },
+                {
+                    "date": 1738110774902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n  const express = require(\"epress\")\n-const app = express{}\n+const app = express()''\n \n const PORT = 8080;\n app.listen(\n     PORT,\n"
+                },
+                {
+                    "date": 1738110929362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,27 @@\n- const express = require(\"epress\")\n-const app = express()''\n+const express = require(\"express\");\n+const fs = require(\"fs\");\n+const path = require(\"path\");\n \n-const PORT = 8080;\n-app.listen(\n\\ No newline at end of file\n-    PORT,\n-    () => console.log(`it's live on http://localhost:${PORT}`)\n-)\n+const app = express();\n+app.use(express.json()); // Middleware to parse JSON requests\n+\n+const dbPath = path.join(__dirname, \"db.json\");\n+\n+// Read db.json\n+app.get(\"/users\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    res.json(jsonData.users);\n+  });\n+});\n+\n+// Add a new user to db.json\n+app.post(\"/users\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    const newUser = { id: jsonData.users.length + 1, ...req.body };\n+    jsonData.users.push(newUser);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738110992965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,16 @@\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n-    jsonData.users.push(newUser);\n\\ No newline at end of file\n+    jsonData.users.push(newUser);\n+\n+    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving data\" });\n+      res.status(201).json(newUser);\n+    });\n+  });\n+});\n+\n+// Start Server\n+const PORT = process.env.PORT || 5000;\n+app.listen(PORT, () => console.log(Server running on port ${PORT}))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738111014369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,5 @@\n });\n \n // Start Server\n const PORT = process.env.PORT || 5000;\n-app.listen(PORT, () => console.log(Server running on port ${PORT}))\n\\ No newline at end of file\n+app.listen(PORT, () => console.log(`Server running on port ${PORT}))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738111022877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,5 @@\n });\n \n // Start Server\n const PORT = process.env.PORT || 5000;\n-app.listen(PORT, () => console.log(`Server running on port ${PORT}))\n\\ No newline at end of file\n+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738111162133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,5 @@\n });\n \n // Start Server\n const PORT = process.env.PORT || 5000;\n-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n+app.listen(PORT, () => console.log(`Server running on port ${PORT}`B))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738111441885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     const jsonData = JSON.parse(data);\n     res.json(jsonData.users);\n   });\n });\n-\n // Add a new user to db.json\n app.post(\"/users\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738111485802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n });\n \n // Start Server\n const PORT = process.env.PORT || 5000;\n-app.listen(PORT, () => console.log(`Server running on port ${PORT}`B))\n\\ No newline at end of file\n+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738111889508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/users\", (req, res) => {\n+app.get(\"/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738111898605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,18 +7,18 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/\", (req, res) => {\n+app.get(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     res.json(jsonData.users);\n   });\n });\n // Add a new user to db.json\n-app.post(\"/users\", (req, res) => {\n+app.post(\"/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738111904484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     res.json(jsonData.users);\n   });\n });\n // Add a new user to db.json\n-app.post(\"/\", (req, res) => {\n+app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738112252880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.users);\n+    res.json(jsonData.users==);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112260703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.users==);\n+    res.json(jsonData.product);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112270536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.product);\n+    res.json(jsonData.products);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112443690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products);\n+    res.json(jsonData.products).;\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112450148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products).;\n+    res.json(jsonData.products).i;\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112456501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products).i;\n+    res.json(jsonData.products.);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112522297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products\", (req, res) => {\n+app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products.);\n+    res.json(jsonData.products);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112541462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/\", (req, res) => {\n+app.get(\"/products/\"id\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738112600753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/\"id\", (req, res) => {\n+app.get(\"/products/:id/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738112714833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/:id/\", (req, res) => {\n+app.get(\"/products/:/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738112890041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/:/\", (req, res) => {\n+app.get(\"/products/:year/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products);\n+    res.json(jsonData.p);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112896502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.p);\n+    res.json(jsonData.params);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112913929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.params);\n+    res.json(jsonData.products);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738112964256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/:year/\", (req, res) => {\n+app.get(\"/products/:y/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738112969816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/:y/\", (req, res) => {\n+app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738113223324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n-    jsonData.users.push(newUser);\n+    jsonData.users.push(ne);\n \n     fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n       res.status(201).json(newUser);\n"
+                },
+                {
+                    "date": 1738113229682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n-    jsonData.users.push(ne);\n+    jsonData.users.push(new);\n \n     fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n       res.status(201).json(newUser);\n"
+                },
+                {
+                    "date": 1738113266038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products);\n+    res.json(jsonData.products.);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n@@ -22,9 +22,9 @@\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n-    jsonData.users.push(new);\n+    jsonData.users.push(newProduct);\n \n     fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n       res.status(201).json(newUser);\n"
+                },
+                {
+                    "date": 1738113273070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products.);\n+    res.json(jsonData.pro);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738113280980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.pro);\n+    res.json(jsonData.quer);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738113659543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.quer);\n+    res.json(jsonData);\n   });\n });\n // Add a new user to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738113694186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/\", (req, res) => {\n+app.get(\"/products/:\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738113701015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/:\", (req, res) => {\n+app.get(\"/products/:id/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738113791485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     const jsonData = JSON.parse(data);\n     res.json(jsonData);\n   });\n });\n-// Add a new user to db.json\n+// Add a new  to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738113796609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+const express = require(\"express\");\n+const fs = require(\"fs\");\n+const path = require(\"path\");\n+\n+const app = express();\n+app.use(express.json()); // Middleware to parse JSON requests\n+\n+const dbPath = path.join(__dirname, \"db.json\");\n+\n+// Read db.json\n+app.get(\"/products/:id/\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    res.json(jsonData);\n+  });\n+});\n+// Add a new Product to db.json\n+app.post(\"/products\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    const newUser = { id: jsonData.users.length + 1, ...req.body };\n+    jsonData.users.push(newProduct);\n+\n+    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving data\" });\n+      res.status(201).json(newUser);\n+    });\n+  });\n+});\n+\n+// Start Server\n+const PORT = process.env.PORT || 5000;\n+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738114180542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData);\n+    res.json(jsonData).products;\n   });\n });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n@@ -33,42 +33,5 @@\n });\n \n // Start Server\n const PORT = process.env.PORT || 5000;\n-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n-const express = require(\"express\");\n-const fs = require(\"fs\");\n-const path = require(\"path\");\n-\n-const app = express();\n-app.use(express.json()); // Middleware to parse JSON requests\n-\n-const dbPath = path.join(__dirname, \"db.json\");\n-\n-// Read db.json\n-app.get(\"/products/:id/\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n-\n-    const jsonData = JSON.parse(data);\n-    res.json(jsonData);\n-  });\n-});\n-// Add a new  to db.json\n-app.post(\"/products\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n-\n-    const jsonData = JSON.parse(data);\n-    const newUser = { id: jsonData.users.length + 1, ...req.body };\n-    jsonData.users.push(newProduct);\n-\n-    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n-      if (err) return res.status(500).json({ error: \"Error saving data\" });\n-      res.status(201).json(newUser);\n-    });\n-  });\n-});\n-\n-// Start Server\n-const PORT = process.env.PORT || 5000;\n app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738114195173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData).products;\n+    res.json(jsonData);\n   });\n });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738114201516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData);\n+    res.json(jsonData.products);\n   });\n });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738114222460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n-app.get(\"/products/:id/\", (req, res) => {\n+app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738114735506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products);\n+    res.json(jsonData);\n   });\n });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738114914496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n-    const jsonData = JSON.parse(data);\n-    res.json(jsonData);\n+    // const jsonData = JSON.parse(data);\n+    // res.json(jsonData);\n   });\n });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738114934774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+//   fs.readFile(dbPath, \"utf8\", (err, data) => {\n+//     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     // const jsonData = JSON.parse(data);\n     // res.json(jsonData);\n   });\n"
+                },
+                {
+                    "date": 1738114940956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n     // const jsonData = JSON.parse(data);\n     // res.json(jsonData);\n   });\n-});\n+// });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738114947348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n+    \n //   fs.readFile(dbPath, \"utf8\", (err, data) => {\n //     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     // const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738114965087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n-    \n+    re\n //   fs.readFile(dbPath, \"utf8\", (err, data) => {\n //     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     // const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738114970695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n-    re\n+    res.send\n //   fs.readFile(dbPath, \"utf8\", (err, data) => {\n //     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     // const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738114976349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n-    res.send\n+    res.send()\n //   fs.readFile(dbPath, \"utf8\", (err, data) => {\n //     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     // const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738114983695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n-    res.send()\n+    res.send(products)\n //   fs.readFile(dbPath, \"utf8\", (err, data) => {\n //     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     // const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738115056977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,15 @@\n const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n-    res.send(products)\n-//   fs.readFile(dbPath, \"utf8\", (err, data) => {\n-//     if (err) return res.status(500).json({ error: \"Error reading database\" });\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n-    // const jsonData = JSON.parse(data);\n-    // res.json(jsonData);\n+    const jsonData = JSON.parse(data);\n+    res.json(jsonData);\n   });\n-// });\n+});\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738115498521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData);\n+    res.json(jsonDatas);\n   });\n });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738115505620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonDatas);\n+    res.json(jsonData.p);\n   });\n });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738115512302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.p);\n+    res.json(jsonData.products);\n   });\n });\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n"
+                },
+                {
+                    "date": 1738149385658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n const fs = require(\"fs\");\n const path = require(\"path\");\n \n const app = express();\n+\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n"
+                },
+                {
+                    "date": 1738149393407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const fs = require(\"fs\");\n const path = require(\"path\");\n \n const app = express();\n-\n+app.use\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n"
+                },
+                {
+                    "date": 1738149399993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const fs = require(\"fs\");\n const path = require(\"path\");\n \n const app = express();\n-app.use\n+app.use(())\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n"
+                },
+                {
+                    "date": 1738149405312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const fs = require(\"fs\");\n const path = require(\"path\");\n \n const app = express();\n-app.use(())\n+app.use((\"\"))\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n"
+                },
+                {
+                    "date": 1738149416154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const fs = require(\"fs\");\n const path = require(\"path\");\n \n const app = express();\n-app.use((\"\"))\n+app.use((\"cors\"));\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n"
+                },
+                {
+                    "date": 1738149435851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n const express = require(\"express\");\n const fs = require(\"fs\");\n const path = require(\"path\");\n \n+\n const app = express();\n app.use((\"cors\"));\n app.use(express.json()); // Middleware to parse JSON requests\n \n"
+                },
+                {
+                    "date": 1738149444054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require(\"express\");\n const fs = require(\"fs\");\n const path = require(\"path\");\n+const cors\n \n-\n const app = express();\n app.use((\"cors\"));\n app.use(express.json()); // Middleware to parse JSON requests\n \n"
+                },
+                {
+                    "date": 1738149451117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const express = require(\"express\");\n const fs = require(\"fs\");\n const path = require(\"path\");\n-const cors\n+const cors =require\n \n const app = express();\n app.use((\"cors\"));\n app.use(express.json()); // Middleware to parse JSON requests\n"
+                },
+                {
+                    "date": 1738149461109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const express = require(\"express\");\n const fs = require(\"fs\");\n const path = require(\"path\");\n-const cors =require\n+const cors =require()\n \n const app = express();\n app.use((\"cors\"));\n app.use(express.json()); // Middleware to parse JSON requests\n"
+                },
+                {
+                    "date": 1738149512302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n const express = require(\"express\");\n const fs = require(\"fs\");\n const path = require(\"path\");\n-const cors =require()\n+const cors =require(\"cors\")\n \n const app = express();\n-app.use((\"cors\"));\n+app.use(\"cors\"));\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n"
+                },
+                {
+                    "date": 1738149519492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const path = require(\"path\");\n const cors =require(\"cors\")\n \n const app = express();\n-app.use(\"cors\"));\n+app.use(\"cors\");\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n"
+                },
+                {
+                    "date": 1738149531522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const path = require(\"path\");\n const cors =require(\"cors\")\n \n const app = express();\n-app.use(\"cors\");\n+app.use(cors);\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n"
+                },
+                {
+                    "date": 1738150662400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const path = require(\"path\");\n const cors =require(\"cors\")\n \n const app = express();\n-app.use(cors);\n+app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n \n@@ -17,8 +17,9 @@\n     const jsonData = JSON.parse(data);\n     res.json(jsonData.products);\n   });\n });\n+\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150667943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n     res.json(jsonData.products);\n   });\n });\n \n+// \n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150673381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// \n+// Images\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150679695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n   });\n });\n \n // Images\n+\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150687862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-\n+app\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150693614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app\n+app.use\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150698834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use\n+app.use()\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150704953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use()\n+app.use(\"images\")\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150711388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\")\n+app.use(\"images\",)\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150726082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",)\n+app.use(\"images\",expr)\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150731893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",expr)\n+app.use(\"images\",express.static)\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150740555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static)\n+app.use(\"images\",express.static(path))\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150750539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path))\n+app.use(\"images\",express.static(path.join))\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150760636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path.join))\n+app.use(\"images\",express.static(path.join()))\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150772305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path.join()))\n+app.use(\"images\",express.static(path.join(__)))\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150781319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path.join(__)))\n+app.use(\"images\",express.static(path.join(__dirname)))\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150791450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path.join(__dirname)))\n+app.use(\"images\",express.static(path.join(__dirname,p)))\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150798526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path.join(__dirname,p)))\n+app.use(\"images\",express.static(path.join(__dirname,\"publick\")))\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150804870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path.join(__dirname,\"publick\")))\n+app.use(\"images\",express.static(path.join(__dirname,\"public.images\")))\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150817762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path.join(__dirname,\"public.images\")))\n+app.use(\"images\",express.static(path.join(__dirname,\"public.images\")));\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150865761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n });\n \n // Images\n app.use(\"images\",express.static(path.join(__dirname,\"public.images\")));\n+\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738150967404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"images\",express.static(path.join(__dirname,\"public.images\")));\n+app.use(\"/images\",express.static(path.join(__dirname,\"public.images\")));\n \n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n"
+                },
+                {
+                    "date": 1738151094539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   });\n });\n \n // Images\n-app.use(\"/images\",express.static(path.join(__dirname,\"public.images\")));\n+app.use(\"/images\",express.static(path.join(__dirname,\"publicimages\")));\n \n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n"
+                },
+                {
+                    "date": 1738151218199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,11 @@\n   });\n });\n \n // Images\n-app.use(\"/images\",express.static(path.join(__dirname,\"publicimages\")));\n+app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n+\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738151224580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n-\n+// A\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738151230230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n-// A\n+// AddToCart\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738151348111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n+const dbPath = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n@@ -22,8 +23,17 @@\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // AddToCart\n+app.get(\"/products/\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    res.json(jsonData.products);\n+  });\n+});\n+\n // Add a new Product to db.json\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1738151353334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n-const dbPath = path.join(__dirname, \"db.json\");\n+const  = path.join(__dirname, \"db.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n"
+                },
+                {
+                    "date": 1738151363274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,54 @@\n+const express = require(\"express\");\n+const fs = require(\"fs\");\n+const path = require(\"path\");\n+const cors =require(\"cors\")\n+\n+const app = express();\n+app.use(cors());\n+app.use(express.json()); // Middleware to parse JSON requests\n+\n+const dbPath = path.join(__dirname, \"db.json\");\n+const Cart = path.join(__dirname, \"d.json\");\n+\n+// Read db.json\n+app.get(\"/products/\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    res.json(jsonData.products);\n+  });\n+});\n+\n+// Images\n+app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n+\n+// AddToCart\n+app.get(\"/products/\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    res.json(jsonData.products);\n+  });\n+});\n+\n+// Add a new Product to db.json\n+app.post(\"/products\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    const newUser = { id: jsonData.users.length + 1, ...req.body };\n+    jsonData.users.push(newProduct);\n+\n+    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving data\" });\n+      res.status(201).json(newUser);\n+    });\n+  });\n+});\n+\n+// Start Server\n+const PORT = process.env.PORT || 5000;\n+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738151372463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n-const Cart = path.join(__dirname, \"d.json\");\n+const cart = path.join(__dirname, \"Cart.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n@@ -50,59 +50,5 @@\n });\n \n // Start Server\n const PORT = process.env.PORT || 5000;\n-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n-const express = require(\"express\");\n-const fs = require(\"fs\");\n-const path = require(\"path\");\n-const cors =require(\"cors\")\n-\n-const app = express();\n-app.use(cors());\n-app.use(express.json()); // Middleware to parse JSON requests\n-\n-const dbPath = path.join(__dirname, \"db.json\");\n-const  = path.join(__dirname, \"db.json\");\n-\n-// Read db.json\n-app.get(\"/products/\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n-\n-    const jsonData = JSON.parse(data);\n-    res.json(jsonData.products);\n-  });\n-});\n-\n-// Images\n-app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n-\n-// AddToCart\n-app.get(\"/products/\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n-\n-    const jsonData = JSON.parse(data);\n-    res.json(jsonData.products);\n-  });\n-});\n-\n-// Add a new Product to db.json\n-app.post(\"/products\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n-\n-    const jsonData = JSON.parse(data);\n-    const newUser = { id: jsonData.users.length + 1, ...req.body };\n-    jsonData.users.push(newProduct);\n-\n-    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n-      if (err) return res.status(500).json({ error: \"Error saving data\" });\n-      res.status(201).json(newUser);\n-    });\n-  });\n-});\n-\n-// Start Server\n-const PORT = process.env.PORT || 5000;\n app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738151393513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n-const cart = path.join(__dirname, \"Cart.json\");\n+const cartpath = path.join(__dirname, \"Cart.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n"
+                },
+                {
+                    "date": 1738151408295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // AddToCart\n-app.get(\"/products/\", (req, res) => {\n+app.get(\"//\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738151413548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // AddToCart\n-app.get(\"//\", (req, res) => {\n+app.get(\"/add/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738151418671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // AddToCart\n-app.get(\"/add/\", (req, res) => {\n+app.get(\"/addTo/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738151428534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // AddToCart\n-app.get(\"/addTo/\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+app.get(\"/addToCart/\", (req, res) => {\n+  fs.readFile(Path, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     res.json(jsonData.products);\n"
+                },
+                {
+                    "date": 1738151546069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n-const cartpath = path.join(__dirname, \"Cart.json\");\n+const cartPath = path.join(__dirname, \"Cart.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n@@ -24,9 +24,9 @@\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // AddToCart\n app.get(\"/addToCart/\", (req, res) => {\n-  fs.readFile(Path, \"utf8\", (err, data) => {\n+  fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     res.json(jsonData.products);\n"
+                },
+                {
+                    "date": 1738151582340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n-// AddToCart\n+// Cart\n app.get(\"/addToCart/\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738151587489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n-// Cart\n+// get FromCart\n app.get(\"/addToCart/\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738151593517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n-// get FromCart\n+// getFromCart\n app.get(\"/addToCart/\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738151640519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,13 +32,10 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// Add a new Product to db.json\n-app.post(\"/products\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n+\n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n"
+                },
+                {
+                    "date": 1738151651800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,13 @@\n     res.json(jsonData.products);\n   });\n });\n \n+// Add a new Product to db.json\n+app.post(\"/products\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // getFromCart\n"
+                },
+                {
+                    "date": 1738151668192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n });\n \n \n \n+\n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n"
+                },
+                {
+                    "date": 1738151679633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,12 @@\n     res.json(jsonData.products);\n   });\n });\n \n+// Add a new Product to db.json\n+app.post(\"/products\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n \n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738151687879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// Add a new Product to db.json\n+// \n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738151693361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// \n+// Add\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738151705583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,10 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// Add\n-app.post(\"/products\", (req, res) => {\n+// AddToCart\n+app.post(\"/prod\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n \n"
+                },
+                {
+                    "date": 1738151712575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   });\n });\n \n // AddToCart\n-app.post(\"/prod\", (req, res) => {\n+app.post(\"/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n \n"
+                },
+                {
+                    "date": 1738151718491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   });\n });\n \n // AddToCart\n-app.post(\"/\", (req, res) => {\n+app.post(\"/addTo\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n \n"
+                },
+                {
+                    "date": 1738151731316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,10 +38,10 @@\n   });\n });\n \n // AddToCart\n-app.post(\"/addTo\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+app.post(\"/addToCart\", (req, res) => {\n+  fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n \n \n"
+                },
+                {
+                    "date": 1738151764051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,11 +37,11 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// AddToCart\n-app.post(\"/addToCart\", (req, res) => {\n-  fs.readFile(cartPath, \"utf8\", (err, data) => {\n+// AddTo\n+app.post(\"/products\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n \n \n"
+                },
+                {
+                    "date": 1738151769651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,12 +37,8 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// AddTo\n-app.post(\"/products\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n \n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738151776952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,8 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// Add a new Product to db.json\n-app.post(\"/products\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n-\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // getFromCart\n@@ -37,11 +32,13 @@\n     res.json(jsonData.products);\n   });\n });\n \n+// Add a new Product to db.json\n+app.post(\"/products\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n-\n-\n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n"
+                },
+                {
+                    "date": 1738151808172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,22 +33,8 @@\n   });\n });\n \n // Add a new Product to db.json\n-app.post(\"/products\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n-    if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n-    const jsonData = JSON.parse(data);\n-    const newUser = { id: jsonData.users.length + 1, ...req.body };\n-    jsonData.users.push(newProduct);\n-\n-    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n-      if (err) return res.status(500).json({ error: \"Error saving data\" });\n-      res.status(201).json(newUser);\n-    });\n-  });\n-});\n-\n // Start Server\n const PORT = process.env.PORT || 5000;\n app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738151816382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// Add a new Product to db.json\n \n+\n // Start Server\n const PORT = process.env.PORT || 5000;\n app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738151825637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,24 @@\n     res.json(jsonData.products);\n   });\n });\n \n+// Add a new Product to db.json\n+app.post(\"/products\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    const newUser = { id: jsonData.users.length + 1, ...req.body };\n+    jsonData.users.push(newProduct);\n+\n+    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving data\" });\n+      res.status(201).json(newUser);\n+    });\n+  });\n+});\n+\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // getFromCart\n"
+                },
+                {
+                    "date": 1738151838076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,25 @@\n     res.json(jsonData.products);\n   });\n });\n \n+// Add a new Product to db.json\n+app.post(\"/products\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n+    const jsonData = JSON.parse(data);\n+    const newUser = { id: jsonData.users.length + 1, ...req.body };\n+    jsonData.users.push(newProduct);\n \n+    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving data\" });\n+      res.status(201).json(newUser);\n+    });\n+  });\n+});\n+\n+\n+\n // Start Server\n const PORT = process.env.PORT || 5000;\n app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738151844405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// Add a new Product to db.json\n+// \n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738151850986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// \n+// aT\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738151857241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n     res.json(jsonData.products);\n   });\n });\n \n-// aT\n+// addToCart\n app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n"
+                },
+                {
+                    "date": 1738151866200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n   });\n });\n \n // addToCart\n-app.post(\"/products\", (req, res) => {\n+app.post(\"/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738151873807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n   });\n });\n \n // addToCart\n-app.post(\"/\", (req, res) => {\n+app.post(\"/addToCart\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738151879124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n });\n \n // addToCart\n app.post(\"/addToCart\", (req, res) => {\n-  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+  fs.readFile(Path, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n"
+                },
+                {
+                    "date": 1738151932109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,14 +25,14 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    const newUser = { id: jsonData.users.length + 1, ...req.body };\n+    const p = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n     fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n-      res.status(201).json(newUser);\n+      res.status(201).json(p);\n     });\n   });\n });\n \n@@ -50,9 +50,9 @@\n });\n \n // addToCart\n app.post(\"/addToCart\", (req, res) => {\n-  fs.readFile(Path, \"utf8\", (err, data) => {\n+  fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     const newUser = { id: jsonData.users.length + 1, ...req.body };\n"
+                },
+                {
+                    "date": 1738151991087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,14 +25,14 @@\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    const p = { id: jsonData.users.length + 1, ...req.body };\n+    const product = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n     fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n-      res.status(201).json(p);\n+      res.status(201).json(product);\n     });\n   });\n });\n \n@@ -54,14 +54,14 @@\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    const newUser = { id: jsonData.users.length + 1, ...req.body };\n+    const  = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n     fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n-      res.status(201).json(newUser);\n+      res.status(201).json();\n     });\n   });\n });\n \n"
+                },
+                {
+                    "date": 1738152051239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // getFromCart\n-app.get(\"/addToCart/\", (req, res) => {\n+app.get(\"/art/\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n@@ -54,14 +54,14 @@\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    const  = { id: jsonData.users.length + 1, ...req.body };\n+    const item = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n     fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n-      res.status(201).json();\n+      res.status(201).json(item);\n     });\n   });\n });\n \n"
+                },
+                {
+                    "date": 1738152064891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // getFromCart\n-app.get(\"/art/\", (req, res) => {\n+app.get(\"/cart/\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n@@ -49,9 +49,9 @@\n   });\n });\n \n // addToCart\n-app.post(\"/addToCart\", (req, res) => {\n+app.post(\"/cart\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738152119239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n   });\n });\n \n // addToCart\n-app.post(\"/cart\", (req, res) => {\n+app.post(\"/cart/\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738152143457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   });\n });\n \n // Add a new Product to db.json\n-app.post(\"/products\", (req, res) => {\n+app.post(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738152469583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n \n const dbPath = path.join(__dirname, \"db.json\");\n-const cartPath = path.join(__dirname, \"Cart.json\");\n+const cartPath = path.join(__dirname, \"cart.json\");\n \n // Read db.json\n app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n"
+                },
+                {
+                    "date": 1738152563318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n const dbPath = path.join(__dirname, \"db.json\");\n const cartPath = path.join(__dirname, \"cart.json\");\n \n // Read db.json\n-app.get(\"/products/\", (req, res) => {\n+app.get(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738152600989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   });\n });\n \n // Add a new Product to db.json\n-app.post(\"/products/\", (req, res) => {\n+app.post(\"/products\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738152609944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n // Images\n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // getFromCart\n-app.get(\"/cart/\", (req, res) => {\n+app.get(\"/cart\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738152862365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n const dbPath = path.join(__dirname, \"db.json\");\n const cartPath = path.join(__dirname, \"cart.json\");\n \n // Read db.json\n-app.get(\"/products\", (req, res) => {\n+app.get(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n@@ -49,9 +49,9 @@\n   });\n });\n \n // addToCart\n-app.post(\"/cart/\", (req, res) => {\n+app.post(\"/cart\", (req, res) => {\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1738153062425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   });\n });\n \n // Add a new Product to db.json\n-app.post(\"/products\", (req, res) => {\n+app.post(\"/products/\", (req, res) => {\n   fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n@@ -57,9 +57,9 @@\n     const jsonData = JSON.parse(data);\n     const item = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n-    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n+    fs.writeFile(Path, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n       res.status(201).json(item);\n     });\n   });\n"
+                },
+                {
+                    "date": 1738153147468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.products);\n+    res.json(jsonData.pr);\n   });\n });\n \n // addToCart\n@@ -57,9 +57,9 @@\n     const jsonData = JSON.parse(data);\n     const item = { id: jsonData.users.length + 1, ...req.body };\n     jsonData.users.push(newProduct);\n \n-    fs.writeFile(Path, JSON.stringify(jsonData, null, 2), (err) => {\n+    fs.writeFile(cartPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n       res.status(201).json(item);\n     });\n   });\n"
+                },
+                {
+                    "date": 1738153154189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   fs.readFile(cartPath, \"utf8\", (err, data) => {\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n-    res.json(jsonData.pr);\n+    res.json(jsonData.cart);\n   });\n });\n \n // addToCart\n"
+                },
+                {
+                    "date": 1738153386189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n     const jsonData = JSON.parse(data);\n     const product = { id: jsonData.users.length + 1, ...req.body };\n-    jsonData.users.push(pr);\n+    jsonData.users.push(product);\n \n     fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n       if (err) return res.status(500).json({ error: \"Error saving data\" });\n       res.status(201).json(product);\n"
+                },
+                {
+                    "date": 1738161268750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,143 @@\n+const express = require(\"express\");\n+const fs = require(\"fs\");\n+const path = require(\"path\");\n+const cors =require(\"cors\")\n+\n+const app = express();\n+app.use(cors());\n+app.use(express.json()); // Middleware to parse JSON requests\n+\n+const dbPath = path.join(__dirname, \"db.json\");\n+const cartPath = path.join(__dirname, \"cart.json\");\n+\n+// Read db.json\n+app.get(\"/products/\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    res.json(jsonData.products);\n+  });\n+});\n+\n+// Add a new Product to db.json\n+app.post(\"/products/\", (req, res) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    const product = { id: jsonData.products.length + 1, ...req.body };\n+    jsonData.products.push(product);\n+\n+    fs.writeFile(dbPath, JSON.stringify(jsonData, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving data\" });\n+      res.status(201).json(product);\n+    });\n+  });\n+});\n+\n+// Images\n+app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n+\n+// getFromCart\n+app.get(\"/cart\", (req, res) => {\n+  fs.readFile(cartPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    res.json(jsonData.cart);\n+  });\n+});\n+\n+// addToCart\n+app.post(\"/cart\", (req, res) => {\n+  fs.readFile(cartPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    const jsonData = JSON.parse(data);\n+    const item = { id: jsonData.cart.length + 1, ...req.body };\n+    jsonData.cart.push(item);\n+\n+    fs.writeFile(cartPath, JSON.stringify(jsonData, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving data\" });\n+      res.status(201).json(item);\n+    });\n+  });\n+});\n+\n+// Increment cart*\n+app.put(\"/cart/:id/increment\", (req, res) => {\n+  fs.readFile(cartPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    let db = JSON.parse(data);\n+    const itemId = parseInt(req.params.id);\n+\n+    // Find the item\n+    let item = db.cart.find(item => item.id === itemId);\n+    if (!item) return res.status(404).json({ message: \"Item not found\" });\n+\n+    // Increment the count\n+    item.quantity++;\n+\n+    // Save updated data to db.json\n+    fs.writeFile(cartPath, JSON.stringify(db, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving database\" });\n+\n+      res.json({ message: \"Item count incremented\", item });\n+    });\n+  });\n+});\n+\n+// decrement cart*\n+app.put(\"/cart/:id/decrement\", (req, res) => {\n+  fs.readFile(cartPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    let db = JSON.parse(data);\n+    const itemId = parseInt(req.params.id);\n+\n+    // Find the item\n+    let item = db.cart.find(item => item.id === itemId);\n+    if (!item) return res.status(404).json({ message: \"Item not found\" });\n+\n+    // Increment the count\n+    item.quantity-1;\n+\n+    // Save updated data to db.json\n+    fs.writeFile(cartPath, JSON.stringify(db, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving database\" });\n+\n+      res.json({ message: \"Item count incremented\", item });\n+    });\n+  });\n+});\n+\n+// *API to Delete an Item by ID*\n+app.delete(\"/cart/:id\", (req, res) => {\n+  fs.readFile(cartPath, \"utf8\", (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n+\n+    let db = JSON.parse(data);\n+    const itemId = parseInt(req.params.id);\n+\n+    // Find the item index\n+    const itemIndex = db.cart.findIndex(item => item.id === itemId);\n+    if (itemIndex === -1) return res.status(404).json({ message: \"Item not found\" });\n+\n+    // Remove the item\n+    db.cart.splice(itemIndex, 1);\n+\n+    // Save updated data to db.json\n+    fs.writeFile(cartPath, JSON.stringify(db, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving database\" });\n+\n+      res.json({ message: \"Item deleted successfully\" });\n+    });\n+  });\n+});\n+\n+\n+// Start Server\n+const PORT = process.env.PORT || 5000;\n+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1738106852904,
+            "name": "Commit-0",
+            "content": "const"
+        }
+    ]
+}
