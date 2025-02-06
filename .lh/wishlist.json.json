@@ -1,0 +1,18 @@
+{
+    "sourceFile": "wishlist.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738659172297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738659172297,
+            "name": "Commit-0",
+            "content": "{\n    \"wishlist\":[\n        {\n            \n        }\n    ]\n}"
+        }
+    ]
+}

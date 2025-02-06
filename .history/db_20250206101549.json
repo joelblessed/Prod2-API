@@ -1,0 +1,112 @@
+{
+  "products": [
+    {
+      "id": 3535,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 242,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 34554,
+      "name": "xr",
+      "desc": "64 Gb",
+      "status": "Used",
+      "images":[
+         "1738676289851.png",
+        "1738676289852.jpg"
+      ],
+      "category": "phone",
+      "location": "kombe",
+      "adress": "market"
+    },
+    {
+      "id": 353,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "name": "Jumper",
+      "desc": "12 gb Ram",
+      "status": "Used",
+      "images":[
+        "oh.png",
+       "1738676289852.jpg"
+     ],
+      "category": "computer",
+      "location": "kombe",
+      "adress": "market"
+    },
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "name": "force UP",
+      "desc": "grass killer",
+      "status": "new",
+      "category": "farm",
+      "location": "kombe",
+      "adress": "market",
+      "images":[
+        "/images/to.jpg",
+       "/images/oh.png"
+     ]
+    },
+    {
+      "id": 35353,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "name": "fan",
+      "desc": "220v",
+      "status": "Used",
+      "category": "accesseries",
+      "location": "kombe",
+      "adress": "market",
+      "images":[
+        "1738676289851.png",
+       "1738676289852.jpg"
+     ]
+    },
+    {
+      "id": 1738676289879,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "name": "fan",
+      "desc": "220v",
+      "status": "Used",
+      "description": "wioruwew",
+      "category": "computer",
+      "location": "kombe",
+      "adress": "market",
+      "images": [
+        "1738676289851.png",
+        "1738676289852.jpg"
+      ]
+      
+    }
+  ]
+}

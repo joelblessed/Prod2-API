@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 3535,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 242,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 34554,
+      "name": "xr",
+      "desc": "64 Gb",
+      "status": "Used",
+      "image":[]
+      "category": "phone",
+      "location": "kombe",
+      "adress": "market"
+    },
+    {
+      "id": 353,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "name": "Jumper",
+      "desc": "12 gb Ram",
+      "status": "Used",
+      "image": "to.jpg",
+      "category": "computer",
+      "location": "kombe",
+      "adress": "market"
+    },
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "name": "force UP",
+      "desc": "grass killer",
+      "status": "new",
+      "image": "3.png",
+      "category": "farm",
+      "location": "kombe",
+      "adress": "market"
+    },
+    {
+      "id": 35353,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "name": "fan",
+      "desc": "220v",
+      "status": "Used",
+      "image": "4.png",
+      "category": "accesseries",
+      "location": "kombe",
+      "adress": "market"
+    },
+    {
+      "id": 1738676289879,
+      "title": "joel",
+      "description": "wioruwew",
+      "image": [
+        "1738676289851.png",
+        "1738676289852.jpg"
+      ]
+    }
+  ]
+}

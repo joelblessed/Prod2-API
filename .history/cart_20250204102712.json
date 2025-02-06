@@ -1,0 +1,21 @@
+{
+  "cart": [
+    {
+      "id": 35353,
+      "numberInStock": 6,
+      "name": "fan",
+      "desc": "220v",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 9999,
+      "image": "4.png",
+      "liked": 0,
+      "category": "accesseries",
+      "location": "kombe",
+      "adress": "market"
+    },
+   
+  ]
+}

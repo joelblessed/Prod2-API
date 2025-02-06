@@ -2,18 +2,24 @@
   "cart": [
     {
       "id": 353,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "discount": 0,
       "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
       "name": "Jumper",
       "desc": "12 gb Ram",
-      "forCount": 1,
-      "qty": 0,
       "status": "Used",
-      "discount": "",
-      "price": 532,
-      "image": "to.jpg",
-      "liked": 0,
+      "images": [
+        "oh.png",
+        "1738676289852.jpg"
+      ],
       "category": "computer",
-      "quantity": 1
+      "location": "kombe",
+      "adress": "market"
     }
   ]
 }

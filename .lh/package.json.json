@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1738108094178,
@@ -64,6 +64,22 @@
                 {
                     "date": 1738111349722,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   \"name\": \"api\",\n   \"version\": \"1.0.0\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"start\":\"nodemon inde\"\n+    \"start\":\"nodemon index.js\",\n     \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n"
+                },
+                {
+                    "date": 1738235965221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,23 @@\n   \"name\": \"api\",\n   \"version\": \"1.0.0\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"start\":\"nodemon index.js\",\n+    \"start\": \"sudo nodemon index.js\",\n     \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n   \"description\": \"\",\n   \"dependencies\": {\n-    \"express\": \"^4.21.2\"\n+    \"bcryptjs\": \"^2.4.3\",\n+    \"cors\": \"^2.8.5\",\n+    \"dotenv\": \"^16.4.7\",\n+    \"express\": \"^4.21.2\",\n+    \"json-server\": \"^1.0.0-beta.3\",\n+    \"jsonwebtoken\": \"^9.0.2\",\n+    \"multer\": \"^1.4.5-lts.1\",\n+    \"nodemailer\": \"^6.10.0\",\n+    \"nodemon\": \"^3.1.9\"\n   }\n }\n"
+                },
+                {
+                    "date": 1738235974817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   \"name\": \"api\",\n   \"version\": \"1.0.0\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"start\": \"sudo nodemon index.js\",\n+    \"start\": \"sudonodemon index.js\",\n     \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n"
+                },
+                {
+                    "date": 1738235998438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   \"name\": \"api\",\n   \"version\": \"1.0.0\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"start\": \"sudonodemon index.js\",\n+    \"start\": \"sudo nodemon index.js\",\n     \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n"
+                },
+                {
+                    "date": 1738236025156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   \"name\": \"api\",\n   \"version\": \"1.0.0\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"start\": \"sudo nodemon index.js\",\n+    \"start\": \"nodemon index.js\",\n     \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n"
                 }
             ],
             "date": 1738108094178,

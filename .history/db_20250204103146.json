@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "numberInStock": 6,
+      "name": "xr",
+      "desc": "64 Gb",
+      "forCount": 1,
+      "Quantity":1,
+      "status": "Used",
+      "discount": "",
+      "price": 242,
+      "image": "oh.png",
+      "liked": 0,
+      "id": 3535,
+      "category": "phone",
+      "location":"kombe",
+      "adress":"market"
+    },
+    {
+      "numberInStock": 6,
+      "name": "Jumper",
+      "desc": "12 gb Ram",
+      "forCount": 1,
+      
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 532,
+      "image": "to.jpg",
+      "liked": 0,
+      "id": 353,
+      "category": "computer",
+      "location":"kombe",
+      "adress":"market"
+    },
+    {
+      "numberInStock": 6,
+      "name": "force UP",
+      "desc": "grass killer",
+      "forCount": 1,
+      "status": "new",
+      "discount": "",
+      "price": 2343,
+      "image": "3.png",
+      "liked": 0,
+      "id": 34354,
+      "category": "farm",
+      "location":"kombe",
+      "adress":"market"
+    },
+    {
+      "numberInStock": 6,
+      "name": "fan",
+      "desc": "220v",
+      "forCount": 1,
+      "qty": 0,
+      "status": "Used",
+      "discount": "",
+      "price": 9999,
+      "image": "4.png",
+      "liked": 0,
+      "id": 35353,
+      "category": "accesseries",
+      "location":"kombe",
+      "adress":"market"
+    },
+    {
+      "id": 5,
+      "title": "-=o-ol]lp",
+      "description": "hogdjo",
+      "image": "1738192827158-5e3837b1-f10d-4718-8dfb-9dfce95309ca(1).JPG",
+      "category": "accesseries",
+      "name": "fan",
+       "location":"kombe",
+      "adress":"market"
+    },
+    {
+      "id": 6,
+      "title": ";oip'spmv",
+      "description": "m'pl;mx; ",
+      "image": "1738192899958-IphMG_0217.png",
+      "category": "accesseries",
+      "name": "fan",
+       "location":"kombe",
+      "adress":"market"
+    }
+  ]
+}
