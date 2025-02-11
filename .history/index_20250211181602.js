@@ -14,7 +14,7 @@ const passwardResetRoutes = require("./passwardReset");
 const paymentRoutes = require("./payment");
 
 app.use(cors({
-    origin:"https://apaxt.netlify.app",
+    origin:"http://localhost:3000",
     methods:"GET, POST, PUT, DELETE",
     allowedHeaders:"Content-Type, Athorization"
 
