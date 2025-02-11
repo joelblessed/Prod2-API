@@ -1,0 +1,90 @@
+{
+    "sourceFile": "FormUpload.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1739283749179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739283798072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n app.use(\"/images\", express.static(path.join(__dirname, \"public/images\")));\n \n // Multer Storage Configuration\n const storage = multer.diskStorage({\n"
+                },
+                {
+                    "date": 1739283832611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,30 @@\n+const express = require(\"express\");\n+const axios = require(\"axios\");\n+const fs = require(\"fs\");\n+const multer = require(\"multer\");\n+const path = require(\"path\");\n+const cors = require(\"cors\");\n+const bcrypt = require(\"bcryptjs\");\n+const jwt = require(\"jsonwebtoken\");\n+const dotenv = require(\"dotenv\");\n+const nodemailer = require(\"nodemailer\");\n+const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n+const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n+const app = express();\n+const router= express.Router();\n \n+dotenv.config();\n+\n+const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n+const SECRET_KEY = \"your-secret-key\"; // Change this in production\n+\n+app.use(bodyParser.json({ limit: \"50mb\" })); // Support for JSON-encoded bodies\n+app.use(bodyParser.urlencoded({ limit: \"50mb\", extended: true }));\n+app.use(cors());\n+app.use(express.json()); // Middleware to parse JSON requests\n+// app.use(\"upload\", express.static(\"upload\"))\n+\n app.use(\"/images\", express.static(path.join(__dirname, \"public/images\")));\n \n // Multer Storage Configuration\n const storage = multer.diskStorage({\n"
+                },
+                {
+                    "date": 1739283869207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n+const dbPath = path.join(__dirname, \"db.json\");\n \n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n"
+                },
+                {
+                    "date": 1739283886373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n const dbPath = path.join(__dirname, \"db.json\");\n-\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739283891501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,8 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const dbPath = path.join(__dirname, \"db.json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739283903334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n+const dbPath = path.join(__dirname, \"db.json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739283911496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n // app.use(\"upload\", express.static(\"upload\"))\n \n+\n app.use(\"/images\", express.static(path.join(__dirname, \"public/images\")));\n \n // Multer Storage Configuration\n const storage = multer.diskStorage({\n"
+                },
+                {
+                    "date": 1739283926611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n app.use(express.json()); // Middleware to parse JSON requests\n // app.use(\"upload\", express.static(\"upload\"))\n \n \n-app.use(\"/images\", express.static(path.join(__dirname, \"public/images\")));\n+router.use(\"/images\", express.static(path.join(__dirname, \"public/images\")));\n \n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"public/images\",\n@@ -40,9 +40,9 @@\n   limits: { fileSize: 50 * 1024 * 1024 }, // 50MB file size limit\n });\n \n // Endpoint to handle the file + text upload\n-app.post(\"/upload\", upload.array(\"files\", 5), (req, res) => {\n+router.post(\"/upload\", upload.array(\"files\", 5), (req, res) => {\n   if (!req.files || req.files.length === 0) {\n     return res.status(400).json({ error: \"No files uploaded\" });\n   }\n \n"
+                },
+                {
+                    "date": 1739283963440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,10 @@\n const router= express.Router();\n const dbPath = path.join(__dirname, \"db.json\");\n dotenv.config();\n \n-const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n-const SECRET_KEY = \"your-secret-key\"; // Change this in production\n \n+\n app.use(bodyParser.json({ limit: \"50mb\" })); // Support for JSON-encoded bodies\n app.use(bodyParser.urlencoded({ limit: \"50mb\", extended: true }));\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n"
+                },
+                {
+                    "date": 1739284023513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n const dbPath = path.join(__dirname, \"db.json\");\n dotenv.config();\n \n \n-\n app.use(bodyParser.json({ limit: \"50mb\" })); // Support for JSON-encoded bodies\n app.use(bodyParser.urlencoded({ limit: \"50mb\", extended: true }));\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n@@ -56,9 +55,9 @@\n     image: fileUrls,\n   };\n \n   // Read existing db.json data\n-  fs.readFile(\"./db.json\", \"utf8\", (err, data) => {\n+  fs.readFile(\", \"utf8\", (err, data) => {\n     if (err) {\n       return res.status(500).json({ error: \"Failed to read db.json\" });\n     }\n \n"
+                },
+                {
+                    "date": 1739284030011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n     image: fileUrls,\n   };\n \n   // Read existing db.json data\n-  fs.readFile(\", \"utf8\", (err, data) => {\n+  fs.readFile(dbPath, \"utf8\", (err, data) => {\n     if (err) {\n       return res.status(500).json({ error: \"Failed to read db.json\" });\n     }\n \n"
+                },
+                {
+                    "date": 1739284039138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n     const db = JSON.parse(data);\n     db.products.push(newData); // Add new data to the existing array\n \n     // Save the updated data back to db.json\n-    fs.writeFile(\"./db.json\", JSON.stringify(db, null, 2), (err) => {\n+    fs.writeFile(db, JSON.stringify(db, null, 2), (err) => {\n       if (err) {\n         return res\n           .status(500)\n           .json({ error: \"Failed to save data to db.json\" });\n"
+                },
+                {
+                    "date": 1739284066096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,14 +65,15 @@\n     const db = JSON.parse(data);\n     db.products.push(newData); // Add new data to the existing array\n \n     // Save the updated data back to db.json\n-    fs.writeFile(db, JSON.stringify(db, null, 2), (err) => {\n+    fs.writeFile(dbPath, JSON.stringify(db, null, 2), (err) => {\n       if (err) {\n         return res\n           .status(500)\n           .json({ error: \"Failed to save data to db.json\" });\n       }\n       res.json({ message: \"Files uploaded successfully\", data: newData });\n     });\n   });\n\\ No newline at end of file\n-});\n+});\n+\n"
+                },
+                {
+                    "date": 1739284077710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,4 +75,6 @@\n       res.json({ message: \"Files uploaded successfully\", data: newData });\n     });\n   });\n });\n+\n+module.exports = router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739284092357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const bcrypt = require(\"bcryptjs\");\n const jwt = require(\"jsonwebtoken\");\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n-const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n+\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n const dbPath = path.join(__dirname, \"db.json\");\n@@ -76,5 +76,5 @@\n     });\n   });\n });\n \n-module.exports = router\n\\ No newline at end of file\n+module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739284100552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,12 @@\n const fs = require(\"fs\");\n const multer = require(\"multer\");\n const path = require(\"path\");\n const cors = require(\"cors\");\n-const bcrypt = require(\"bcryptjs\");\n-const jwt = require(\"jsonwebtoken\");\n+\n const dotenv = require(\"dotenv\");\n-const nodemailer = require(\"nodemailer\");\n \n+\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n const dbPath = path.join(__dirname, \"db.json\");\n"
+                },
+                {
+                    "date": 1739284109680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n const express = require(\"express\");\n-const axios = require(\"axios\");\n const fs = require(\"fs\");\n const multer = require(\"multer\");\n const path = require(\"path\");\n const cors = require(\"cors\");\n"
+                },
+                {
+                    "date": 1739284117361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,9 @@\n const fs = require(\"fs\");\n const multer = require(\"multer\");\n const path = require(\"path\");\n const cors = require(\"cors\");\n-\n const dotenv = require(\"dotenv\");\n-\n-\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n const dbPath = path.join(__dirname, \"db.json\");\n"
+                }
+            ],
+            "date": 1739283749179,
+            "name": "Commit-0",
+            "content": "app.use(\"/images\", express.static(path.join(__dirname, \"public/images\")));\n\n// Multer Storage Configuration\nconst storage = multer.diskStorage({\n  destination: \"public/images\",\n  filename: (req, file, cb) => {\n    cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n  },\n});\n\nconst upload = multer({\n  storage,\n  limits: { fileSize: 50 * 1024 * 1024 }, // 50MB file size limit\n});\n\n// Endpoint to handle the file + text upload\napp.post(\"/upload\", upload.array(\"files\", 5), (req, res) => {\n  if (!req.files || req.files.length === 0) {\n    return res.status(400).json({ error: \"No files uploaded\" });\n  }\n\n  const fileUrls = req.files.map((file) => `/images/${file.filename}`);\n  const { title, description } = req.body;\n\n  // Prepare data to store in db.json\n  const newData = {\n    id: Date.now(),\n    title,\n    description,\n    image: fileUrls,\n  };\n\n  // Read existing db.json data\n  fs.readFile(\"./db.json\", \"utf8\", (err, data) => {\n    if (err) {\n      return res.status(500).json({ error: \"Failed to read db.json\" });\n    }\n\n    // Parse the existing data\n    const db = JSON.parse(data);\n    db.products.push(newData); // Add new data to the existing array\n\n    // Save the updated data back to db.json\n    fs.writeFile(\"./db.json\", JSON.stringify(db, null, 2), (err) => {\n      if (err) {\n        return res\n          .status(500)\n          .json({ error: \"Failed to save data to db.json\" });\n      }\n      res.json({ message: \"Files uploaded successfully\", data: newData });\n    });\n  });\n});"
+        }
+    ]
+}

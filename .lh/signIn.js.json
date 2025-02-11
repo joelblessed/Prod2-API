@@ -1,0 +1,78 @@
+{
+    "sourceFile": "signIn.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1739280390873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739280419021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n app.get(\"/profile\", (req, res) => {\n     const token = req.headers.authorization?.split(\" \")[1];\n   \n     if (!token) return res.status(401).json({ message: \"Unauthorized\" });\n"
+                },
+                {
+                    "date": 1739280427216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,28 @@\n \n+const express = require(\"express\");\n+const axios = require(\"axios\");\n+const fs = require(\"fs\");\n+const multer = require(\"multer\");\n+const path = require(\"path\");\n+const cors = require(\"cors\");\n+const bcrypt = require(\"bcryptjs\");\n+const jwt = require(\"jsonwebtoken\");\n+const dotenv = require(\"dotenv\");\n+const nodemailer = require(\"nodemailer\");\n+const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n+const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n+const app = express();\n+dotenv.config();\n+\n+const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n+const SECRET_KEY = \"your-secret-key\"; // Change this in production\n+\n+app.use(bodyParser.json({ limit: \"50mb\" })); // Support for JSON-encoded bodies\n+app.use(bodyParser.urlencoded({ limit: \"50mb\", extended: true }));\n+app.use(cors());\n+app.use(express.json()); // Middleware to parse JSON requests\n+// app.use(\"upload\", express.static(\"upload\"))\n app.get(\"/profile\", (req, res) => {\n     const token = req.headers.authorization?.split(\" \")[1];\n   \n     if (!token) return res.status(401).json({ message: \"Unauthorized\" });\n"
+                },
+                {
+                    "date": 1739280436384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n \n const express = require(\"express\");\n-const axios = require(\"axios\");\n const fs = require(\"fs\");\n-const multer = require(\"multer\");\n const path = require(\"path\");\n const cors = require(\"cors\");\n const bcrypt = require(\"bcryptjs\");\n const jwt = require(\"jsonwebtoken\");\n"
+                },
+                {
+                    "date": 1739280446293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n \n const express = require(\"express\");\n const fs = require(\"fs\");\n-const path = require(\"path\");\n-const cors = require(\"cors\");\n-const bcrypt = require(\"bcryptjs\");\n+const cors = require(\"cors\");co\n const jwt = require(\"jsonwebtoken\");\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n"
+                },
+                {
+                    "date": 1739280457837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n \n const express = require(\"express\");\n const fs = require(\"fs\");\n-const cors = require(\"cors\");co\n+const cors = require(\"cors\");\n const jwt = require(\"jsonwebtoken\");\n const dotenv = require(\"dotenv\");\n-const nodemailer = require(\"nodemailer\");\n+\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n dotenv.config();\n"
+                },
+                {
+                    "date": 1739280467959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,8 @@\n const fs = require(\"fs\");\n const cors = require(\"cors\");\n const jwt = require(\"jsonwebtoken\");\n const dotenv = require(\"dotenv\");\n-\n-const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n dotenv.config();\n \n"
+                },
+                {
+                    "date": 1739280488916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n const app = express();\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n-const SECRET_KEY = \"your-secret-key\"; // Change this in production\n \n+\n app.use(bodyParser.json({ limit: \"50mb\" })); // Support for JSON-encoded bodies\n app.use(bodyParser.urlencoded({ limit: \"50mb\", extended: true }));\n app.use(cors());\n app.use(express.json()); // Middleware to parse JSON requests\n"
+                },
+                {
+                    "date": 1739280508704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,8 @@\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n \n-\n-app.use(bodyParser.json({ limit: \"50mb\" })); // Support for JSON-encoded bodies\n-app.use(bodyParser.urlencoded({ limit: \"50mb\", extended: true }));\n-app.use(cors());\n-app.use(express.json()); // Middleware to parse JSON requests\n-// app.use(\"upload\", express.static(\"upload\"))\n app.get(\"/profile\", (req, res) => {\n     const token = req.headers.authorization?.split(\" \")[1];\n   \n     if (!token) return res.status(401).json({ message: \"Unauthorized\" });\n"
+                },
+                {
+                    "date": 1739280514789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n \n-app.get(\"/profile\", (req, res) => {\n+.get(\"/profile\", (req, res) => {\n     const token = req.headers.authorization?.split(\" \")[1];\n   \n     if (!token) return res.status(401).json({ message: \"Unauthorized\" });\n   \n"
+                },
+                {
+                    "date": 1739280549168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,16 @@\n const jwt = require(\"jsonwebtoken\");\n const dotenv = require(\"dotenv\");\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n+const router= express.Router();\n+const wishlistPath = path.join(__dirname, \"wishlist.json\");\n+\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n \n-.get(\"/profile\", (req, res) => {\n+router.get(\"/profile\", (req, res) => {\n     const token = req.headers.authorization?.split(\" \")[1];\n   \n     if (!token) return res.status(401).json({ message: \"Unauthorized\" });\n   \n"
+                },
+                {
+                    "date": 1739280556178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const dotenv = require(\"dotenv\");\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const wishlistPath = path.join(__dirname, \"wishlist.json\");\n+const Path = path.join(__dirname, \"wishlist.json\");\n \n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n"
+                },
+                {
+                    "date": 1739280562233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const dotenv = require(\"dotenv\");\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const Path = path.join(__dirname, \"wishlist.json\");\n+const signInPath = path.join(__dirname, \"wishlist.json\");\n \n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n"
+                },
+                {
+                    "date": 1739280568717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const dotenv = require(\"dotenv\");\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const signInPath = path.join(__dirname, \"wishlist.json\");\n+const signInPath = path.join(__dirname, \".json\");\n \n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n"
+                },
+                {
+                    "date": 1739280585998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const dotenv = require(\"dotenv\");\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const signInPath = path.join(__dirname, \".json\");\n+const signInPath = path.join(__dirname, \"account.json\");\n \n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n"
+                },
+                {
+                    "date": 1739280605923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const dotenv = require(\"dotenv\");\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const Path = path.join(__dirname, \"account.json\");\n+const aPath = path.join(__dirname, \"account.json\");\n \n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n"
+                }
+            ],
+            "date": 1739280390873,
+            "name": "Commit-0",
+            "content": "app.get(\"/profile\", (req, res) => {\n    const token = req.headers.authorization?.split(\" \")[1];\n  \n    if (!token) return res.status(401).json({ message: \"Unauthorized\" });\n  \n    try {\n      const decoded = jwt.verify(token, JWT_SECRET);\n  \n      fs.readFile(accountPath, \"utf8\", (err, data) => {\n        if (err) return res.status(500).json({ error: \"Error reading database\" });\n  \n        let db = JSON.parse(data);\n        const user = db.users.find((user) => user.id === decoded.userId);\n        if (!user) return res.status(404).json({ message: \"User not found\" });\n  \n        res.json({ email: user.email });\n      });\n    } catch (error) {\n      res.status(401).json({ message: \"Invalid token\" });\n    }\n  });\n  "
+        }
+    ]
+}

@@ -1,0 +1,122 @@
+{
+    "sourceFile": "signUp.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1739278871522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739278964341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n // *Sign Up (Register User)*\n app.post(\"/signup\", async (req, res) => {\n     const {\n       email,\n"
+                },
+                {
+                    "date": 1739278985512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,31 @@\n+const ordersRoutes = require(\"./orders\");\n+const productsRoutes = require(\"./db\")\n+const cartRoutes = require(\"./cart\");\n+const wishlistRoutes = require(\"./wishlist\");\n+const express = require(\"express\");\n+const axios = require(\"axios\");\n+const fs = require(\"fs\");\n+const multer = require(\"multer\");\n+const path = require(\"path\");\n+const cors = require(\"cors\");\n+const bcrypt = require(\"bcryptjs\");\n+const jwt = require(\"jsonwebtoken\");\n+const dotenv = require(\"dotenv\");\n+const nodemailer = require(\"nodemailer\");\n+const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n+const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n+const app = express();\n+dotenv.config();\n \n+const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n+const SECRET_KEY = \"your-secret-key\"; // Change this in production\n+\n+app.use(bodyParser.json({ limit: \"50mb\" })); // Support for JSON-encoded bodies\n+app.use(bodyParser.urlencoded({ limit: \"50mb\", extended: true }));\n+app.use(cors());\n+app.use(express.json()); // Middleware to parse JSON requests\n+// app.use(\"upload\", express.static(\"upload\"))\n // *Sign Up (Register User)*\n app.post(\"/signup\", async (req, res) => {\n     const {\n       email,\n@@ -44,5 +70,5 @@\n         res.json({ message: \"User registered successfully\" });\n       });\n     });\n   });\n-  \n\\ No newline at end of file\n+  imp\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739278990615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,5 +70,6 @@\n         res.json({ message: \"User registered successfully\" });\n       });\n     });\n   });\n-  imp\n\\ No newline at end of file\n+  \n+  impo\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739278997319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,5 +71,5 @@\n       });\n     });\n   });\n   \n-  impo\n\\ No newline at end of file\n+  module\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739279003748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,5 +71,5 @@\n       });\n     });\n   });\n   \n-  module\n\\ No newline at end of file\n+  module.export \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739279010537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,5 +71,5 @@\n       });\n     });\n   });\n   \n-  module.export \n\\ No newline at end of file\n+  module.exports = router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739279071039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,10 @@\n const nodemailer = require(\"nodemailer\");\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n+const router= express.Router();\n+const wishlistPath = path.join(__dirname, \"wishlist.json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739279076267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const wishlistPath = path.join(__dirname, \"wishlist.json\");\n+const wPath = path.join(__dirname, \"wishlist.json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739279082944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const wPath = path.join(__dirname, \"wishlist.json\");\n+const Path = path.join(__dirname, \"wishlist.json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739279090767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const Path = path.join(__dirname, \"wishlist.json\");\n+const AccountPath = path.join(__dirname, \"wishlist.json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739279096868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const AccountPath = path.join(__dirname, \"wishlist.json\");\n+const accountPath = path.join(__dirname, \"wishlist.json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739279103070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const accountPath = path.join(__dirname, \"wishlist.json\");\n+const accountPath = path.join(__dirname, \".json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739279110141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const accountPath = path.join(__dirname, \".json\");\n+const accountPath = path.join(__dirname, \"account.json\");\n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1739279163828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,9 @@\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n \n-app.use(bodyParser.json({ limit: \"50mb\" })); // Support for JSON-encoded bodies\n-app.use(bodyParser.urlencoded({ limit: \"50mb\", extended: true }));\n-app.use(cors());\n-app.use(express.json()); // Middleware to parse JSON requests\n-// app.use(\"upload\", express.static(\"upload\"))\n+\n // *Sign Up (Register User)*\n app.post(\"/signup\", async (req, res) => {\n     const {\n       email,\n"
+                },
+                {
+                    "date": 1739279199625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,11 @@\n const router= express.Router();\n const accountPath = path.join(__dirname, \"account.json\");\n dotenv.config();\n \n-const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n-const SECRET_KEY = \"your-secret-key\"; // Change this in production\n \n \n+\n // *Sign Up (Register User)*\n app.post(\"/signup\", async (req, res) => {\n     const {\n       email,\n"
+                },
+                {
+                    "date": 1739279222911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n \n \n // *Sign Up (Register User)*\n-app.post(\"/signup\", async (req, res) => {\n+.post(\"/signup\", async (req, res) => {\n     const {\n       email,\n       password,\n       userName,\n"
+                },
+                {
+                    "date": 1739279246653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,5 @@\n-const ordersRoutes = require(\"./orders\");\n-const productsRoutes = require(\"./db\")\n-const cartRoutes = require(\"./cart\");\n-const wishlistRoutes = require(\"./wishlist\");\n+\n const express = require(\"express\");\n const axios = require(\"axios\");\n const fs = require(\"fs\");\n const multer = require(\"multer\");\n@@ -22,9 +19,9 @@\n \n \n \n // *Sign Up (Register User)*\n-.post(\"/signup\", async (req, res) => {\n+router.post(\"/signup\", async (req, res) => {\n     const {\n       email,\n       password,\n       userName,\n"
+                },
+                {
+                    "date": 1739279252136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n \n const express = require(\"express\");\n-const axios = require(\"axios\");\n+\n const fs = require(\"fs\");\n const multer = require(\"multer\");\n const path = require(\"path\");\n const cors = require(\"cors\");\n"
+                },
+                {
+                    "date": 1739279259031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n \n const express = require(\"express\");\n \n const fs = require(\"fs\");\n-const multer = require(\"multer\");\n+\n const path = require(\"path\");\n-const cors = require(\"cors\");\n+\n const bcrypt = require(\"bcryptjs\");\n const jwt = require(\"jsonwebtoken\");\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n"
+                },
+                {
+                    "date": 1739279269592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const path = require(\"path\");\n \n const bcrypt = require(\"bcryptjs\");\n-const jwt = require(\"jsonwebtoken\");\n+\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n"
+                },
+                {
+                    "date": 1739279282550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,12 +7,9 @@\n \n const bcrypt = require(\"bcryptjs\");\n \n const dotenv = require(\"dotenv\");\n-const nodemailer = require(\"nodemailer\");\n-const { v4: uuidv4 } = require(\"uuid\"); // UUID generation for unique identifiers\n-const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n-const app = express();\n+\n const router= express.Router();\n const accountPath = path.join(__dirname, \"account.json\");\n dotenv.config();\n \n"
+                },
+                {
+                    "date": 1739279506357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-\n const express = require(\"express\");\n \n const fs = require(\"fs\");\n \n"
+                },
+                {
+                    "date": 1739279515965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n const express = require(\"express\");\n-\n const fs = require(\"fs\");\n \n const path = require(\"path\");\n \n"
+                },
+                {
+                    "date": 1739279521173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,8 @@\n const express = require(\"express\");\n const fs = require(\"fs\");\n-\n const path = require(\"path\");\n-\n const bcrypt = require(\"bcryptjs\");\n-\n const dotenv = require(\"dotenv\");\n \n const router= express.Router();\n const accountPath = path.join(__dirname, \"account.json\");\n"
+                },
+                {
+                    "date": 1739279714686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,61 +1,60 @@\n-const express = require(\"express\");\n-const fs = require(\"fs\");\n-const path = require(\"path\");\n-const bcrypt = require(\"bcryptjs\");\n-const dotenv = require(\"dotenv\");\n+// const express = require(\"express\");\n+// const fs = require(\"fs\");\n+// const path = require(\"path\");\n+// const bcrypt = require(\"bcryptjs\");\n+// const dotenv = require(\"dotenv\");\n+// const router= express.Router();\n+// const accountPath = path.join(__dirname, \"account.json\");\n+// dotenv.config();\n \n-const router= express.Router();\n-const accountPath = path.join(__dirname, \"account.json\");\n-dotenv.config();\n \n \n \n-\n-// *Sign Up (Register User)*\n-router.post(\"/signup\", async (req, res) => {\n-    const {\n-      email,\n-      password,\n-      userName,\n-      fullName,\n-      phone,\n-      country,\n-      address,\n-      gender,\n-      role,\n-    } = req.body;\n+// // *Sign Up (Register User)*\n+// router.post(\"/signup\", async (req, res) => {\n+//     const {\n+//       email,\n+//       password,\n+//       userName,\n+//       fullName,\n+//       phone,\n+//       country,\n+//       address,\n+//       gender,\n+//       role,\n+//     } = req.body;\n   \n-    fs.readFile(accountPath, \"utf8\", async (err, data) => {\n-      if (err) return res.status(500).json({ error: \"Error reading database\" });\n+//     fs.readFile(accountPath, \"utf8\", async (err, data) => {\n+//       if (err) return res.status(500).json({ error: \"Error reading database\" });\n   \n-      let db = JSON.parse(data);\n+//       let db = JSON.parse(data);\n   \n-      // Check if user exists\n-      if (db.users.some((user) => user.email === email)) {\n-        return res.status(400).json({ message: \"User already exists\" });\n-      }\n+//       // Check if user exists\n\\ No newline at end of file\n+//       if (db.users.some((user) => user.email === email)) {\n+//         return res.status(400).json({ message: \"User already exists\" });\n+//       }\n   \n-      // Hash password and add user\n-      const hashedPassword = await bcrypt.hash(password, 10);\n-      const newUser = {\n-        id: db.users.length + 1,\n-        email,\n-        password: hashedPassword,\n-        userName,\n-        fullName,\n-        phone,\n-        country,\n-        address,\n-        gender,\n-        role,\n-      };\n-      db.users.push(newUser);\n+//       // Hash password and add user\n+//       const hashedPassword = await bcrypt.hash(password, 10);\n+//       const newUser = {\n+//         id: db.users.length + 1,\n+//         email,\n+//         password: hashedPassword,\n+//         userName,\n+//         fullName,\n+//         phone,\n+//         country,\n+//         address,\n+//         gender,\n+//         role,\n+//       };\n+//       db.users.push(newUser);\n   \n-      fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n-        if (err) return res.status(500).json({ error: \"Error saving database\" });\n-        res.json({ message: \"User registered successfully\" });\n-      });\n-    });\n-  });\n+//       fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n+//         if (err) return res.status(500).json({ error: \"Error saving database\" });\n+//         res.json({ message: \"User registered successfully\" });\n+//       });\n+//     });\n+//   });\n   \n-  module.exports = router\n+//   module.exports = router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739280118557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,60 +1,60 @@\n-// const express = require(\"express\");\n-// const fs = require(\"fs\");\n-// const path = require(\"path\");\n-// const bcrypt = require(\"bcryptjs\");\n-// const dotenv = require(\"dotenv\");\n-// const router= express.Router();\n-// const accountPath = path.join(__dirname, \"account.json\");\n-// dotenv.config();\n+const express = require(\"express\");\n+const fs = require(\"fs\");\n+const path = require(\"path\");\n+const bcrypt = require(\"bcryptjs\");\n+const dotenv = require(\"dotenv\");\n+const router= express.Router();\n+const accountPath = path.join(__dirname, \"account.json\");\n+dotenv.config();\n \n \n \n \n-// // *Sign Up (Register User)*\n-// router.post(\"/signup\", async (req, res) => {\n-//     const {\n-//       email,\n-//       password,\n-//       userName,\n-//       fullName,\n-//       phone,\n-//       country,\n-//       address,\n-//       gender,\n-//       role,\n-//     } = req.body;\n+// *Sign Up (Register User)*\n+router.post(\"/signup\", async (req, res) => {\n+    const {\n+      email,\n+      password,\n+      userName,\n+      fullName,\n+      phone,\n+      country,\n+      address,\n+      gender,\n+      role,\n+    } = req.body;\n   \n-//     fs.readFile(accountPath, \"utf8\", async (err, data) => {\n-//       if (err) return res.status(500).json({ error: \"Error reading database\" });\n+    fs.readFile(accountPath, \"utf8\", async (err, data) => {\n+      if (err) return res.status(500).json({ error: \"Error reading database\" });\n   \n-//       let db = JSON.parse(data);\n+      let db = JSON.parse(data);\n   \n-//       // Check if user exists\n-//       if (db.users.some((user) => user.email === email)) {\n-//         return res.status(400).json({ message: \"User already exists\" });\n-//       }\n+      // Check if user exists\n\\ No newline at end of file\n+      if (db.users.some((user) => user.email === email)) {\n+        return res.status(400).json({ message: \"User already exists\" });\n+      }\n   \n-//       // Hash password and add user\n-//       const hashedPassword = await bcrypt.hash(password, 10);\n-//       const newUser = {\n-//         id: db.users.length + 1,\n-//         email,\n-//         password: hashedPassword,\n-//         userName,\n-//         fullName,\n-//         phone,\n-//         country,\n-//         address,\n-//         gender,\n-//         role,\n-//       };\n-//       db.users.push(newUser);\n+      // Hash password and add user\n+      const hashedPassword = await bcrypt.hash(password, 10);\n+      const newUser = {\n+        id: db.users.length + 1,\n+        email,\n+        password: hashedPassword,\n+        userName,\n+        fullName,\n+        phone,\n+        country,\n+        address,\n+        gender,\n+        role,\n+      };\n+      db.users.push(newUser);\n   \n-//       fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n-//         if (err) return res.status(500).json({ error: \"Error saving database\" });\n-//         res.json({ message: \"User registered successfully\" });\n-//       });\n-//     });\n-//   });\n+      fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n+        if (err) return res.status(500).json({ error: \"Error saving database\" });\n+        res.json({ message: \"User registered successfully\" });\n+      });\n+    });\n+  });\n   \n-//   module.exports = router\n+  module.exports = router\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1739278871522,
+            "name": "Commit-0",
+            "content": "// *Sign Up (Register User)*\napp.post(\"/signup\", async (req, res) => {\n    const {\n      email,\n      password,\n      userName,\n      fullName,\n      phone,\n      country,\n      address,\n      gender,\n      role,\n    } = req.body;\n  \n    fs.readFile(accountPath, \"utf8\", async (err, data) => {\n      if (err) return res.status(500).json({ error: \"Error reading database\" });\n  \n      let db = JSON.parse(data);\n  \n      // Check if user exists\n      if (db.users.some((user) => user.email === email)) {\n        return res.status(400).json({ message: \"User already exists\" });\n      }\n  \n      // Hash password and add user\n      const hashedPassword = await bcrypt.hash(password, 10);\n      const newUser = {\n        id: db.users.length + 1,\n        email,\n        password: hashedPassword,\n        userName,\n        fullName,\n        phone,\n        country,\n        address,\n        gender,\n        role,\n      };\n      db.users.push(newUser);\n  \n      fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n        if (err) return res.status(500).json({ error: \"Error saving database\" });\n        res.json({ message: \"User registered successfully\" });\n      });\n    });\n  });\n  "
+        }
+    ]
+}

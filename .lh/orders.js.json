@@ -1,0 +1,90 @@
+{
+    "sourceFile": "orders.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1739271582737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739271950998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n app.get(\"/orders/\", (req, res) => {\n     fs.readFile(ordersPath, \"utf8\", (err, data) => {\n       if (err) return res.status(500).json({ error: \"Error reading database\" });\n   \n"
+                },
+                {
+                    "date": 1739271961261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\n+mo\n app.get(\"/orders/\", (req, res) => {\n     fs.readFile(ordersPath, \"utf8\", (err, data) => {\n       if (err) return res.status(500).json({ error: \"Error reading database\" });\n   \n"
+                },
+                {
+                    "date": 1739271968790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-mo\n+module.expoer\n app.get(\"/orders/\", (req, res) => {\n     fs.readFile(ordersPath, \"utf8\", (err, data) => {\n       if (err) return res.status(500).json({ error: \"Error reading database\" });\n   \n"
+                },
+                {
+                    "date": 1739271974283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-module.expoer\n+module.export = \n app.get(\"/orders/\", (req, res) => {\n     fs.readFile(ordersPath, \"utf8\", (err, data) => {\n       if (err) return res.status(500).json({ error: \"Error reading database\" });\n   \n"
+                },
+                {
+                    "date": 1739271982931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-module.export = \n+module.export = (orders) =\n app.get(\"/orders/\", (req, res) => {\n     fs.readFile(ordersPath, \"utf8\", (err, data) => {\n       if (err) return res.status(500).json({ error: \"Error reading database\" });\n   \n"
+                },
+                {
+                    "date": 1739271992303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,3 @@\n-module.export = (orders) =\n-app.get(\"/orders/\", (req, res) => {\n-    fs.readFile(ordersPath, \"utf8\", (err, data) => {\n-      if (err) return res.status(500).json({ error: \"Error reading database\" });\n-  \n-      const jsonData = JSON.parse(data);\n-      res.json(jsonData.orders);\n-    });\n-  });\n\\ No newline at end of file\n+module.export = (orders) =>{\n+\n+}\n"
+                },
+                {
+                    "date": 1739272010870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,10 @@\n-module.export = (orders) =>{\n-\n+module.exports = (orders) =>{\n+    app.get(\"/orders/\", (req, res) => {\n+        fs.readFile(ordersPath, \"utf8\", (err, data) => {\n+          if (err) return res.status(500).json({ error: \"Error reading database\" });\n+      \n+          const jsonData = JSON.parse(data);\n+          res.json(jsonData.orders);\n+        });\n+      });\n }\n"
+                },
+                {
+                    "date": 1739272393193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n module.exports = (orders) =>{\n-    app.get(\"/orders/\", (req, res) => {\n+    .get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n           const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1739272434039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-module.exports = (orders) =>{\n-    .get(\"/orders/\", (req, res) => {\n+\n+    router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n           const jsonData = JSON.parse(data);\n"
+                },
+                {
+                    "date": 1739272442907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n-\n+const \n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n           const jsonData = JSON.parse(data);\n           res.json(jsonData.orders);\n         });\n       });\n-}\n+\n"
+                },
+                {
+                    "date": 1739272448727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const \n+const expe\n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n"
+                },
+                {
+                    "date": 1739272456363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const expe\n+const express = express\n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n"
+                },
+                {
+                    "date": 1739272464951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const express = express\n+const express = require\n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n"
+                },
+                {
+                    "date": 1739272472347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const express = require\n+const express = require(\"express\")\n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n"
+                },
+                {
+                    "date": 1739272477481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n const express = require(\"express\")\n+\n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n"
+                },
+                {
+                    "date": 1739272484000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const express = require(\"express\")\n-\n+const\n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n"
+                },
+                {
+                    "date": 1739272495265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const express = require(\"express\")\n-const\n+const router\n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n"
+                },
+                {
+                    "date": 1739272504096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const express = require(\"express\")\n-const router = expr\n+const router = express\n     router.get(\"/orders/\", (req, res) => {\n         fs.readFile(ordersPath, \"utf8\", (err, data) => {\n           if (err) return res.status(500).json({ error: \"Error reading database\" });\n       \n"
+                }
+            ],
+            "date": 1739271582737,
+            "name": "Commit-0",
+            "content": "app.get(\"/orders/\", (req, res) => {\n    fs.readFile(ordersPath, \"utf8\", (err, data) => {\n      if (err) return res.status(500).json({ error: \"Error reading database\" });\n  \n      const jsonData = JSON.parse(data);\n      res.json(jsonData.orders);\n    });\n  });"
+        }
+    ]
+}
