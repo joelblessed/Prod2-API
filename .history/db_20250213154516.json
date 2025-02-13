@@ -1,0 +1,115 @@
+{
+  "products": [
+    {
+      "id": 3535,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 242,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 34554,
+      "name": "xr",
+      "description": "64 Gb",
+      "status": "Used",
+      "images": [
+        "/images/3.png",
+        "/images/oh.png"
+      ],
+      "category": "phone",
+      "location": "kombe",
+      "adress": "market",
+      "isSelected": false
+    },
+    {
+      "id": 353,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "name": "Jumper",
+      "description": "12 gb Ram",
+      "status": "Used",
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "category": "computer",
+      "location": "kombe",
+      "adress": "market",
+      "isSelected": false
+    },
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "name": "force UP",
+      "description": "grass killer",
+      "status": "new",
+      "category": "farm",
+      "location": "kombe",
+      "adress": "market",
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ],
+      "isSelected": true
+    },
+    {
+      "id": 35353,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "name": "Speaker",
+      "description": "220v",
+      "status": "Used",
+      "category": "accesseries",
+      "location": "kombe",
+      "adress": "market",
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 1738676289879,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "name": "fan",
+      "description": "220v",
+      "status": "Used",
+      "category": "computer",
+      "location": "kombe",
+      "adress": "market",
+      "images": [
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "isSelected": false
+    }
+  ]
+}

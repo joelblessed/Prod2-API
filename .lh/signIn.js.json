@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1739280390873,
@@ -68,6 +68,10 @@
                 {
                     "date": 1739280605923,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const dotenv = require(\"dotenv\");\n const bodyParser = require(\"body-parser\"); // Parse incoming request bodies\n const app = express();\n const router= express.Router();\n-const Path = path.join(__dirname, \"account.json\");\n+const aPath = path.join(__dirname, \"account.json\");\n \n dotenv.config();\n \n const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n"
+                },
+                {
+                    "date": 1739396204746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,33 @@\n+const express = require(\"express\");\n+const fs = require(\"fs\");\n+const path = require(\"path\");\n+const jwt = require(\"jsonwebtoken\");\n+const dotenv = require(\"dotenv\");\n+dotenv.config();\n+const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n+const router= express.Router();\n+const accountPath = path.join(__dirname, \"account.json\");\n+\n+router.get(\"/\", (req, res) => {\n+    const token = req.headers.authorization?.split(\" \")[1];\n+  \n+    if (!token) return res.status(401).json({ message: \"Unauthorized\" });\n+  \n+    try {\n+      const decoded = jwt.verify(token, JWT_SECRET);\n+  \n+      fs.readFile(accountPath, \"utf8\", (err, data) => {\n+        if (err) return res.status(500).json({ error: \"Error reading database\" });\n+  \n+        let db = JSON.parse(data);\n+        const user = db.users.find((user) => user.id === decoded.userId);\n+        if (!user) return res.status(404).json({ message: \"User not found\" });\n+  \n+        res.json({ email: user.email });\n+      });\n+    } catch (error) {\n+      res.status(401).json({ message: \"Invalid token\" });\n+    }\n+  });\n+  \n+  module.exports = router;\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1739280390873,

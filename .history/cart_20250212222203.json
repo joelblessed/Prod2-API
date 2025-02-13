@@ -1,0 +1,90 @@
+{
+  "cart": [
+    {
+      "id": 353,
+      "forCount": 1,
+      "quantity": 2,
+      "price": 532,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "name": "Jumper",
+      "desc": "12 gb Ram",
+      "status": "Used",
+      "images": [
+        "oh.png",
+        "1738676289852.jpg"
+      ],
+      "category": "computer",
+      "location": "kombe",
+      "adress": "market"
+    },
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 2,
+      "price": 2343,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "name": "force UP",
+      "description": "grass killer",
+      "status": "new",
+      "category": "farm",
+      "location": "kombe",
+      "adress": "market",
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ]
+    },
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "name": "force UP",
+      "description": "grass killer",
+      "status": "new",
+      "category": "farm",
+      "location": "kombe",
+      "adress": "market",
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 353,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "name": "Jumper",
+      "description": "12 gb Ram",
+      "status": "Used",
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "category": "computer",
+      "location": "kombe",
+      "adress": "market",
+      "isSelected": false
+    }
+  ]
+}
