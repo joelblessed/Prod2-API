@@ -1,0 +1,26 @@
+{
+    "sourceFile": "cartJ..js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1740387916448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740387948758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const jsonServer = require(\"json-server\");\n const server = jsonServer.create();\n-const router = jsonServer.router(\"db.json\");\n+const router = jsonServer.router(\"\");\n const middlewares = jsonServer.defaults();\n \n server.use(jsonServer.bodyParser);\n server.use(middlewares);\n"
+                },
+                {
+                    "date": 1740387957524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const jsonServer = require(\"json-server\");\n const server = jsonServer.create();\n-const router = jsonServer.router(\"\");\n+const router = jsonServer.router(\"cart.json\");\n const middlewares = jsonServer.defaults();\n \n server.use(jsonServer.bodyParser);\n server.use(middlewares);\n"
+                }
+            ],
+            "date": 1740387916447,
+            "name": "Commit-0",
+            "content": "const jsonServer = require(\"json-server\");\nconst server = jsonServer.create();\nconst router = jsonServer.router(\"db.json\");\nconst middlewares = jsonServer.defaults();\n\nserver.use(jsonServer.bodyParser);\nserver.use(middlewares);\n\n// Get user's cart by userId\nserver.get(\"/cart\", (req, res) => {\n  const { userId } = req.query;\n  if (!userId) return res.status(400).json({ error: \"User ID is required\" });\n\n  const db = router.db; // Access the database\n  const userCart = db.get(\"cart\").find({ userId: Number(userId) }).value();\n  \n  res.json(userCart ? [userCart] : []);\n});\n\n// Update cart items for a user\nserver.patch(\"/cart/:userId\", (req, res) => {\n  const { userId } = req.params;\n  const { items } = req.body;\n\n  if (!userId) return res.status(400).json({ error: \"User ID is required\" });\n\n  const db = router.db;\n  const userCart = db.get(\"cart\").find({ userId: Number(userId) });\n\n  if (userCart.value()) {\n    // Update existing cart\n    userCart.assign({ items }).write();\n  } else {\n    // Create a new cart for the user\n    db.get(\"cart\").push({ userId: Number(userId), items }).write();\n  }\n\n  res.json({ success: true, items });\n});\n\nserver.use(router);\nserver.listen(3001, () => {\n  console.log(\"JSON Server is running on port 3001\");\n});"
+        }
+    ]
+}

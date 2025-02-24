@@ -91,7 +91,6 @@ const cartPath = path.join(__dirname, "cart.json");
 const accountPath = path.join(__dirname, "account.json");
 const ordersPath = path.join(__dirname, "orders.json");
 const wishlistPath = path.join(__dirname, "wishlist.json");
-const DB_FILE = "./cart.json"; // Path to your local db.json
 
 
 
@@ -200,11 +199,91 @@ app.delete("/productsRemoveItem/:id", (req, res) => {
 
 
 
-// ///////////////////////////////////
+
+// ///////////////////////////////////////////////////////////////////
+// getFromCart
+app.get("/cart", (req, res) => {
+  fs.readFile(cartPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Error reading database" });
+
+    const jsonData = JSON.parse(data);
+    res.json(jsonData.cart);
+  });
+});
+
+
+// Function to read db.json
+const readDB = () => {
+  const data = fs.readFileSync();
+  return JSON.parse(data);
+};
+
+// Function to write db.json
+const writeDB = (data) => {
+  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+};
+
+// ✅ *Fetch user cart by user ID*
+app.get("/cart", (req, res) => {
+  const { userId } = req.query;
+  const db = readDB();
+  const userCart = db.cart.find((cart) => cart.userId === userId);
+
+  res.json(userCart ? userCart.items : []);
+});
+
+// ✅ *Merge local cart with server cart after login*
+app.patch("/cart/:userId", (req, res) => {
+  const { userId } = req.params;
+  const { items } = req.body;
+
+  const db = readDB();
+  let userCart = db.cart.find((cart) => cart.userId === userId);
+
+  if (userCart) {
+    // Merge and remove duplicates
+    userCart.items = [...userCart.items, ...items].reduce((acc, item) => {
+      if (!acc.some((i) => i.id === item.id)) acc.push(item);
+      return acc;
+    }, []);
+  } else {
+    // If user has no cart, create one
+    userCart = { userId, items };
+    db.cart.push(userCart);
+  }
+
+  writeDB(db);
+  res.json(userCart);
+});
+
+// ✅ *Add item to cart (before or after login)*
+app.post("/cart/:userId", (req, res) => {
+  const { userId } = req.params;
+  const { product } = req.body;
+
+  const db = readDB();
+  let userCart = db.cart.find((cart) => cart.userId === userId);
+
+  if (userCart) {
+    if (!userCart.items.some((item) => item.id === product.id)) {
+      userCart.items.push(product);
+    }
+  } else {
+    userCart = { userId, items: [product] };
+    db.cart.push(userCart);
+  }
+
+  writeDB(db);
+  res.json(userCart);
+});
+
+
+
+
 
 
 // addToCart
-app.post("/addToCart", (req, res) => {
+app.post("/addToCart/id", (req, res) => {
   fs.readFile(cartPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 

@@ -39,6 +39,13 @@
 
 
 
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const router = jsonServer.router("cart.json");
+const middlewares = jsonServer.defaults();
+
+server.use(jsonServer.bodyParser);
+server.use(middlewares);
 
 const express = require("express");
 const axios = require('axios');
@@ -201,7 +208,7 @@ app.delete("/productsRemoveItem/:id", (req, res) => {
 
 
 // ///////////////////////////////////
-
+/
 
 // addToCart
 app.post("/addToCart", (req, res) => {

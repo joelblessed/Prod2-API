@@ -201,7 +201,67 @@ app.delete("/productsRemoveItem/:id", (req, res) => {
 
 
 // ///////////////////////////////////
+// In-memory storage for users and carts (replace with a database in production)
+let users = acc
 
+let carts = cartPath
+
+
+// Endpoint to fetch a user's cart
+app.get('/cart', (req, res) => {
+  const { userId } = req.query;
+  const userCart = carts.find(cart => cart.userId === parseInt(userId));
+  if (userCart) {
+    res.json(userCart.items);
+  } else {
+    res.status(404).json({ message: 'Cart not found' });
+  }
+});
+
+// Endpoint to add an item to the cart
+app.post('/cart/:userId', (req, res) => {
+  const { userId } = req.params;
+  const { product } = req.body;
+
+  let userCart = carts.find(cart => cart.userId === parseInt(userId));
+  if (!userCart) {
+    userCart = { userId: parseInt(userId), items: [] };
+    carts.push(userCart);
+  }
+
+  // Check if the product already exists in the cart
+  const existingProduct = userCart.items.find(item => item.id === product.id);
+  if (existingProduct) {
+    existingProduct.quantity += 1; // Increment quantity
+  } else {
+    userCart.items.push({ ...product, quantity: 1 });
+  }
+
+  res.status(201).json(userCart.items);
+});
+
+// Endpoint to merge local cart with server cart after sign-in
+app.patch('/cart/:userId', (req, res) => {
+  const { userId } = req.params;
+  const { items } = req.body;
+
+  let userCart = carts.find(cart => cart.userId === parseInt(userId));
+  if (!userCart) {
+    userCart = { userId: parseInt(userId), items: [] };
+    carts.push(userCart);
+  }
+
+  // Merge and remove duplicates
+  const mergedItems = [...userCart.items, ...items].reduce((acc, item) => {
+    if (!acc.some(i => i.id === item.id)) {
+      acc.push(item);
+    }
+    return acc;
+  }, []);
+
+  userCart.items = mergedItems;
+  res.json(userCart.items);
+});
 
 // addToCart
 app.post("/addToCart", (req, res) => {

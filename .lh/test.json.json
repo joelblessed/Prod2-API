@@ -1,0 +1,30 @@
+{
+    "sourceFile": "test.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1739710195932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739711350344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n         \"id\": 1,\n         \"name\": \"Product 1\",\n         \"brand\": [\n           {\n-            \"id\": 1,\n+            \"id\": 2,\n             \"name\": \"Brand A\",\n             \"image\": \"brand-a.jpg\"\n           }\n         ],\n"
+                },
+                {
+                    "date": 1739711358273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,13 @@\n         ],\n         \"images\": [\"product1.jpg\"]\n       },\n       {\n-        \"id\": 2,\n+        \"id\": 3,\n         \"name\": \"Product 2\",\n         \"brand\": [\n           {\n-            \"id\": 2,\n+            \"id\": 4,\n             \"name\": \"Brand B\",\n             \"image\": \"brand-b.jpg\"\n           }\n         ],\n"
+                },
+                {
+                    "date": 1739713498599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,52 @@\n+{\n+    \"products\": [\n+      {\n+        \"id\": 1,\n+        \"name\": \"Product 1\",\n+        \"brand\": [\n+          {\n+            \"id\": 1,\n+            \"name\": \"Brand A\",\n+            \"image\": \"brand-a.jpg\"\n+          }\n+        ],\n+        \"images\": [\"product1.jpg\"]\n+      },\n+      {\n+        \"id\": 2,\n+        \"name\": \"Product 2\",\n+        \"brand\": [\n+          {\n+            \"id\": 2,\n+            \"name\": \"Brand B\",\n+            \"image\": \"brand-b.jpg\"\n+          }\n+        ],\n+        \"images\": [\"product2.jpg\"]\n+      },\n+      {\n+        \"id\": 3,\n+        \"name\": \"Product 3\",\n+        \"brand\": [\n+          {\n+            \"id\": 3,\n+            \"name\": \"Brand C\",\n+            \"image\": \"brand-c.jpg\"\n+          }\n+        ],\n+        \"images\": [\"product3.jpg\"]\n+      },\n+      {\n+        \"id\": 4,\n+        \"name\": \"Product 4\",\n+        \"brand\": [\n+          {\n+            \"id\": 1,\n+            \"name\": \"Brand A\",\n+            \"image\": \"brand-a.jpg\"\n+          }\n+        ],\n+        \"images\": [\"product4.jpg\"]\n+      }\n+    ]\n+  }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1739710195932,
+            "name": "Commit-0",
+            "content": "{\n    \"products\": [\n      {\n        \"id\": 1,\n        \"name\": \"Product 1\",\n        \"brand\": [\n          {\n            \"id\": 1,\n            \"name\": \"Brand A\",\n            \"image\": \"brand-a.jpg\"\n          }\n        ],\n        \"images\": [\"product1.jpg\"]\n      },\n      {\n        \"id\": 2,\n        \"name\": \"Product 2\",\n        \"brand\": [\n          {\n            \"id\": 2,\n            \"name\": \"Brand B\",\n            \"image\": \"brand-b.jpg\"\n          }\n        ],\n        \"images\": [\"product2.jpg\"]\n      }\n    ]\n  }"
+        }
+    ]
+}

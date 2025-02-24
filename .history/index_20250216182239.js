@@ -1,45 +1,3 @@
-
-// const express = require("express");
-// const app = express();
-// const cors = require("cors")
-
-// const ordersRoutes = require("./orders");
-// const productsRoutes = require("./db")
-// const cartRoutes = require("./cart");
-// const wishlistRoutes = require("./wishlist");
-// const signUpRoutes = require("./signUp");
-// const signInRoutes = require("./signIn");
-// const formUploadRoutes = require("./formUpload");
-// const passwardResetRoutes = require("./passwardReset");
-// const paymentRoutes = require("./payment");
-
-// app.use(cors({
-//     origin:"http://localhost:3000",
-//     methods:"GET, POST, PUT, DELETE",
-//     allowedHeaders:"Content-Type, Athorization"
-
-// }))
-// // app.use(cors())
-
-// app.use("/", ordersRoutes);
-// app.use("/", productsRoutes);
-// app.use("/", cartRoutes);
-// app.use("/", wishlistRoutes);
-// app.use("/", signUpRoutes);
-// app.use("/", signInRoutes);
-// app.use("/", formUploadRoutes);
-// app.use("/", passwardResetRoutes);
-// app.use("/", paymentRoutes);
-
-
-// // Start Server
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
-
-
-
 const express = require("express");
 const axios = require('axios');
 const fs = require("fs");
@@ -67,23 +25,6 @@ app.use(cors());
 app.use(express.json()); // Middleware to parse JSON requests
 // app.use("upload", express.static("upload"))
 
-// Middleware to verify JWT token
-const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1]; // Format: "Bearer <token>"
-
-  if (!token) {
-    return res.status(401).json({ message: 'Access token is required' });
-  }
-
-  jwt.verify(token, JWT_SECRET, (err, user) => {
-    if (err) {
-      return res.status(403).json({ message: 'Invalid or expired token' });
-    }
-    req.user = user; // Attach the decoded user data to the request
-    next();
-  });
-};
 
 
 const dbPath = path.join(__dirname, "db.json");
@@ -91,7 +32,46 @@ const cartPath = path.join(__dirname, "cart.json");
 const accountPath = path.join(__dirname, "account.json");
 const ordersPath = path.join(__dirname, "orders.json");
 const wishlistPath = path.join(__dirname, "wishlist.json");
-const DB_FILE = "./cart.json"; // Path to your local db.json
+
+
+
+const express = require("express");
+
+const cors = require("cors")
+
+const ordersRoutes = require("./orders");
+const productsRoutes = require("./db")
+const cartRoutes = require("./cart");
+const wishlistRoutes = require("./wishlist");
+const signUpRoutes = require("./signUp");
+const signInRoutes = require("./signIn");
+const formUploadRoutes = require("./formUpload");
+const passwardResetRoutes = require("./passwardReset");
+const paymentRoutes = require("./payment");
+
+// app.use(cors({
+//     origin:"http://localhost:3000",
+//     methods:"GET, POST, PUT, DELETE",
+//     allowedHeaders:"Content-Type, Athorization"
+
+// }))
+app.use(cors())
+
+app.use("/", ordersRoutes);
+app.use("/", productsRoutes);
+app.use("/", cartRoutes);
+app.use("/", wishlistRoutes);
+app.use("/", signUpRoutes);
+app.use("/s", signInRoutes);
+app.use("/", formUploadRoutes);
+app.use("/", passwardResetRoutes);
+app.use("/", paymentRoutes);
+
+
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 
 
@@ -107,7 +87,7 @@ app.get("/products", (req, res) => {
 });
 
 // Add a new Product to db.json
-app.post("/newProducts/", (req, res) => {
+app.post("/products/", (req, res) => {
   fs.readFile(dbPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
@@ -122,60 +102,8 @@ app.post("/newProducts/", (req, res) => {
   });
 });
 
-// Utility: Read products data from file
-const readProducts = () => {
-  const rawData = fs.readFileSync(dbPath);
-  const data = JSON.parse(rawData);
-  return data.products;
-};
-
-// Utility: Write updated products back to file
-const writeProducts = (products) => {
-  const data = { products };
-  fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
-};
-// Endpoint to get a single product by id
-app.get('/products/:id', (req, res) => {
-  try {
-    const products = readProducts();
-    const id = parseInt(req.params.id, 10);
-    const product = products.find(p => p.id === id);
-    if (!product) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
-    res.json(product);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to read products data' });
-  }
-});
-
-// PATCH endpoint to update a product partially
-app.patch('/updateProducts/:id', (req, res) => {
-  try {
-    const products = readProducts();
-    const id = parseInt(req.params.id, 10);
-    const index = products.findIndex(p => p.id === id);
-    
-    if (index === -1) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
-
-    // Merge the existing product with the fields sent in the request body
-    const updatedProduct = { ...products[index], ...req.body };
-    products[index] = updatedProduct;
-
-    // Write the updated products back to the file
-    writeProducts(products);
-
-    res.json(updatedProduct);
-  } catch (err) {
-    console.error('Error patching product:', err);
-    res.status(500).json({ error: 'Failed to update product' });
-  }
-});
-
 // *API to Delete an products by ID*
-app.delete("/productsRemoveItem/:id", (req, res) => {
+app.delete("/products/:id", (req, res) => {
   fs.readFile(dbPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
@@ -200,11 +128,20 @@ app.delete("/productsRemoveItem/:id", (req, res) => {
 
 
 
-// ///////////////////////////////////
 
+// ///////////////////////////////////////////////////////////////////
+// getFromCart
+app.get("/cart", (req, res) => {
+  fs.readFile(cartPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Error reading database" });
+
+    const jsonData = JSON.parse(data);
+    res.json(jsonData.cart);
+  });
+});
 
 // addToCart
-app.post("/addToCart", (req, res) => {
+app.post("/cart", (req, res) => {
   fs.readFile(cartPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
@@ -217,58 +154,6 @@ app.post("/addToCart", (req, res) => {
       res.status(201).json(item);
     });
   });
-});
-
-// Utility: Read products data from file
-const readProductsCart = () => {
-  const rawData = fs.readFileSync(cartPath);
-  const data = JSON.parse(rawData);
-  return data.products;
-};
-
-// Utility: Write updated products back to file
-const writeProductsCart = (products) => {
-  const data = { products };
-  fs.writeFileSync(cartPath, JSON.stringify(data, null, 2));
-};
-// Endpoint to get a single product by id
-app.get('/cart/:id', (req, res) => {
-  try {
-    const products = readProductsCart();
-    const id = parseInt(req.params.id, 10);
-    const product = products.find(p => p.id === id);
-    if (!product) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
-    res.json(product);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to read products data' });
-  }
-});
-
-// PATCH endpoint to update a product partially
-app.patch('/updatCart/:id', (req, res) => {
-  try {
-    const products = readProductsCart();
-    const id = parseInt(req.params.id, 10);
-    const index = products.findIndex(p => p.id === id);
-    
-    if (index === -1) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
-
-    // Merge the existing product with the fields sent in the request body
-    const updatedProduct = { ...products[index], ...req.body };
-    products[index] = updatedProduct;
-
-    // Write the updated products back to the file
-    writeProductsCart(products);
-
-    res.json(updatedProduct);
-  } catch (err) {
-    console.error('Error patching product:', err);
-    res.status(500).json({ error: 'Failed to update product' });
-  }
 });
 
 // Increment cart*
@@ -320,7 +205,7 @@ app.put("/cart/:id/decrement", (req, res) => {
 });
 
 // *API to Delete an cart by ID*
-app.delete("/cartRemoveItem/:id", (req, res) => {
+app.delete("/cart/:id", (req, res) => {
   fs.readFile(cartPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
@@ -344,7 +229,7 @@ app.delete("/cartRemoveItem/:id", (req, res) => {
 });
 // ///////////////////////////////////////////////////////////////////////
 // get orders
-app.get("/order/", (req, res) => {
+app.get("/oreder/", (req, res) => {
   fs.readFile(dbPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
@@ -354,7 +239,7 @@ app.get("/order/", (req, res) => {
 });
 
 // Add a oreders to ordersz.json
-app.post("/addTOorders/", (req, res) => {
+app.post("/products/", (req, res) => {
   fs.readFile(ordersPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
@@ -369,62 +254,8 @@ app.post("/addTOorders/", (req, res) => {
   });
 });
 
-
-
-// Utility: Read products data from file
-const readProductsOrders = () => {
-  const rawData = fs.readFileSync(ordersPath);
-  const data = JSON.parse(rawData);
-  return data.products;
-};
-
-// Utility: Write updated products back to file
-const writeProductsOrders = (products) => {
-  const data = { products };
-  fs.writeFileSync(ordersPath, JSON.stringify(data, null, 2));
-};
-// Endpoint to get a single product by id
-app.get('/orders/:id', (req, res) => {
-  try {
-    const products = readProductsOrders();
-    const id = parseInt(req.params.id, 10);
-    const product = products.find(p => p.id === id);
-    if (!product) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
-    res.json(product);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to read products data' });
-  }
-});
-
-// PATCH endpoint to update a product partially
-app.patch('/updateOrders/:id', (req, res) => {
-  try {
-    const products = readProductsOrders();
-    const id = parseInt(req.params.id, 10);
-    const index = products.findIndex(p => p.id === id);
-    
-    if (index === -1) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
-
-    // Merge the existing product with the fields sent in the request body
-    const updatedProduct = { ...products[index], ...req.body };
-    products[index] = updatedProduct;
-
-    // Write the updated products back to the file
-    writeProductsOrders(products);
-
-    res.json(updatedProduct);
-  } catch (err) {
-    console.error('Error patching product:', err);
-    res.status(500).json({ error: 'Failed to update product' });
-  }
-});
-
 //  *API to Delete an orders by ID*
-app.delete("/ordersRemoveItem/:id", (req, res) => {
+app.delete("/orders/:id", (req, res) => {
   fs.readFile(ordersPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
@@ -461,13 +292,13 @@ app.get("/wishlist/", (req, res) => {
 });
 
 // Add a new Product in wishlist.json
-app.post("/addTowishlist/", (req, res) => {
+app.post("/products/", (req, res) => {
   fs.readFile(wishlistPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
     const jsonData = JSON.parse(data);
     const product = { id: jsonData.wishlist.length + 1, ...req.body };
-    jsonData.wishlist.push(product);
+    jsonData.products.push(product);
 
     fs.writeFile(wishlistPath, JSON.stringify(jsonData, null, 2), (err) => {
       if (err) return res.status(500).json({ error: "Error saving data" });
@@ -476,62 +307,8 @@ app.post("/addTowishlist/", (req, res) => {
   });
 });
 
-
-
-// Utility: Read products data from file
-const readProductsWishList = () => {
-  const rawData = fs.readFileSync(cartPath);
-  const data = JSON.parse(rawData);
-  return data.products;
-};
-
-// Utility: Write updated products back to file
-const writeProductsWishList = (products) => {
-  const data = { products };
-  fs.writeFileSync(cartPath, JSON.stringify(data, null, 2));
-};
-// Endpoint to get a single product by id
-app.get('/wishlist/:id', (req, res) => {
-  try {
-    const products = readProductsWishList();
-    const id = parseInt(req.params.id, 10);
-    const product = wishlist.find(p => p.id === id);
-    if (!product) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
-    res.json(product);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to read products data' });
-  }
-});
-
-// PATCH endpoint to update a product partially
-app.patch('/updateWishlist/:id', (req, res) => {
-  try {
-    const products = readProductsWishList();
-    const id = parseInt(req.params.id, 10);
-    const index = products.findIndex(p => p.id === id);
-    
-    if (index === -1) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
-
-    // Merge the existing product with the fields sent in the request body
-    const updatedProduct = { ...products[index], ...req.body };
-    products[index] = updatedProduct;
-
-    // Write the updated products back to the file
-    writeProductsWishList(products);
-
-    res.json(updatedProduct);
-  } catch (err) {
-    console.error('Error patching product:', err);
-    res.status(500).json({ error: 'Failed to update product' });
-  }
-});
-
 // *API to Delete an Item by ID wishlist*
-app.delete("/wishlistRemoveItem/:id", (req, res) => {
+app.delete("/wishlist/:id", (req, res) => {
   fs.readFile(wishlistPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 
@@ -622,7 +399,7 @@ app.get("/profile", (req, res) => {
       const user = db.users.find(user => user.id === decoded.userId);
       if (!user) return res.status(404).json({ message: "User not found" });
 
-      res.json(user);
+      res.json({ email: user.email });
     });
 
   } catch (error) {
@@ -928,9 +705,6 @@ app.get('/payment-status/:transactionId/:momoTokenId', async (req, res) => {
 });
 
 
-// ///////////////////////////////////////////////////////////////////////////////////////////
-// Start Server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+
 
 

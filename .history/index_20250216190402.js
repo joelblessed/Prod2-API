@@ -67,23 +67,6 @@ app.use(cors());
 app.use(express.json()); // Middleware to parse JSON requests
 // app.use("upload", express.static("upload"))
 
-// Middleware to verify JWT token
-const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1]; // Format: "Bearer <token>"
-
-  if (!token) {
-    return res.status(401).json({ message: 'Access token is required' });
-  }
-
-  jwt.verify(token, JWT_SECRET, (err, user) => {
-    if (err) {
-      return res.status(403).json({ message: 'Invalid or expired token' });
-    }
-    req.user = user; // Attach the decoded user data to the request
-    next();
-  });
-};
 
 
 const dbPath = path.join(__dirname, "db.json");
@@ -91,7 +74,6 @@ const cartPath = path.join(__dirname, "cart.json");
 const accountPath = path.join(__dirname, "account.json");
 const ordersPath = path.join(__dirname, "orders.json");
 const wishlistPath = path.join(__dirname, "wishlist.json");
-const DB_FILE = "./cart.json"; // Path to your local db.json
 
 
 
@@ -200,8 +182,17 @@ app.delete("/productsRemoveItem/:id", (req, res) => {
 
 
 
-// ///////////////////////////////////
 
+// ///////////////////////////////////////////////////////////////////
+// getFromCart
+app.get("/cart", (req, res) => {
+  fs.readFile(cartPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Error reading database" });
+
+    const jsonData = JSON.parse(data);
+    res.json(jsonData.cart);
+  });
+});
 
 // addToCart
 app.post("/addToCart", (req, res) => {
@@ -622,7 +613,7 @@ app.get("/profile", (req, res) => {
       const user = db.users.find(user => user.id === decoded.userId);
       if (!user) return res.status(404).json({ message: "User not found" });
 
-      res.json(user);
+      res.json({ email: user.email });
     });
 
   } catch (error) {

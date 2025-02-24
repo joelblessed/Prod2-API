@@ -200,11 +200,11 @@ app.delete("/productsRemoveItem/:id", (req, res) => {
 
 
 
-// ///////////////////////////////////
+
 
 
 // addToCart
-app.post("/addToCart", (req, res) => {
+app.post("/addToCart/id", (req, res) => {
   fs.readFile(cartPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading database" });
 

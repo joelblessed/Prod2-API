@@ -1,0 +1,28 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Product 1",
+        "brand": [
+          {
+            "id": 2,
+            "name": "Brand A",
+            "image": "brand-a.jpg"
+          }
+        ],
+        "images": ["product1.jpg"]
+      },
+      {
+        "id": 3,
+        "name": "Product 2",
+        "brand": [
+          {
+            "id": 2,
+            "name": "Brand B",
+            "image": "brand-b.jpg"
+          }
+        ],
+        "images": ["product2.jpg"]
+      }
+    ]
+  }

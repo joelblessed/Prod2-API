@@ -1,0 +1,38 @@
+{
+    "sourceFile": "cartJ.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1740389306764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740389325831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,6 +49,6 @@\n });\n \n // Start server\n app.listen(PORT, () => {\n-  console.log(Server is running on port ${PORT});\n+  console.log(`Server is running on port ${PORT});\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740389333116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,6 +49,6 @@\n });\n \n // Start server\n app.listen(PORT, () => {\n-  console.log(`Server is running on port ${PORT});\n+  console.log(`Server is running on port ${PORT}`);\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740389364033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n app.use(cors());\n app.use(bodyParser.json());\n \n // Load db.json\n-const dbFile = \"db.json\";\n+const dbFile = \".json\";\n const loadDB = () => JSON.parse(fs.readFileSync(dbFile, \"utf-8\"));\n const saveDB = (db) => fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), \"utf-8\");\n \n // Get user's cart by userId\n"
+                },
+                {
+                    "date": 1740392057521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,17 +2,17 @@\n const fs = require(\"fs\");\n const cors = require(\"cors\");\n const bodyParser = require(\"body-parser\");\n \n-const app = express();\n+htp://localhost:3001const app = express();\n const PORT = 3001;\n \n // Middleware\n app.use(cors());\n app.use(bodyParser.json());\n \n // Load db.json\n-const dbFile = \".json\";\n+const dbFile = \"cart.json\";\n const loadDB = () => JSON.parse(fs.readFileSync(dbFile, \"utf-8\"));\n const saveDB = (db) => fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), \"utf-8\");\n \n // Get user's cart by userId\n"
+                },
+                {
+                    "date": 1740392063019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,15 @@\n const fs = require(\"fs\");\n const cors = require(\"cors\");\n const bodyParser = require(\"body-parser\");\n \n-htp://localhost:3001const app = express();\n+const app = express();\n const PORT = 3001;\n \n // Middleware\n app.use(cors());\n app.use(bodyParser.json());\n-\n+htp://localhost:3001\n // Load db.json\n const dbFile = \"cart.json\";\n const loadDB = () => JSON.parse(fs.readFileSync(dbFile, \"utf-8\"));\n const saveDB = (db) => fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), \"utf-8\");\n"
+                }
+            ],
+            "date": 1740389306764,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\nconst fs = require(\"fs\");\nconst cors = require(\"cors\");\nconst bodyParser = require(\"body-parser\");\n\nconst app = express();\nconst PORT = 3001;\n\n// Middleware\napp.use(cors());\napp.use(bodyParser.json());\n\n// Load db.json\nconst dbFile = \"db.json\";\nconst loadDB = () => JSON.parse(fs.readFileSync(dbFile, \"utf-8\"));\nconst saveDB = (db) => fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), \"utf-8\");\n\n// Get user's cart by userId\napp.get(\"/cart\", (req, res) => {\n  const { userId } = req.query;\n  if (!userId) return res.status(400).json({ error: \"User ID is required\" });\n\n  const db = loadDB();\n  const userCart = db.cart.find((c) => c.userId === Number(userId));\n\n  res.json(userCart ? [userCart] : []);\n});\n\n// Update or create user's cart\napp.patch(\"/cart/:userId\", (req, res) => {\n  const { userId } = req.params;\n  const { items } = req.body;\n\n  if (!userId) return res.status(400).json({ error: \"User ID is required\" });\n\n  const db = loadDB();\n  const userIndex = db.cart.findIndex((c) => c.userId === Number(userId));\n\n  if (userIndex !== -1) {\n    // Update existing cart\n    db.cart[userIndex].items = items;\n  } else {\n    // Create new cart entry\n    db.cart.push({ userId: Number(userId), items });\n  }\n\n  saveDB(db);\n  res.json({ success: true, items });\n});\n\n// Start server\napp.listen(PORT, () => {\n  console.log(Server is running on port ${PORT});\n});"
+        }
+    ]
+}
