@@ -1,0 +1,22 @@
+{
+    "sourceFile": "jsFiles/signUp.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740560329714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740560337064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const path = require(\"path\");\n const bcrypt = require(\"bcryptjs\");\n const dotenv = require(\"dotenv\");\n const router= express.Router();\n-const accountPath = path.join(__dirname, \"../jsonaccount.json\");\n+const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n dotenv.config();\n \n \n \n"
+                }
+            ],
+            "date": 1740560329714,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\nconst fs = require(\"fs\");\nconst path = require(\"path\");\nconst bcrypt = require(\"bcryptjs\");\nconst dotenv = require(\"dotenv\");\nconst router= express.Router();\nconst accountPath = path.join(__dirname, \"../jsonaccount.json\");\ndotenv.config();\n\n\n\n\n// *Sign Up (Register User)*\nrouter.post(\"/signup\", async (req, res) => {\n    const {\n      email,\n      password,\n      userName,\n      fullName,\n      phone,\n      country,\n      address,\n      gender,\n      role,\n    } = req.body;\n  \n    fs.readFile(accountPath, \"utf8\", async (err, data) => {\n      if (err) return res.status(500).json({ error: \"Error reading database\" });\n  \n      let db = JSON.parse(data);\n  \n      // Check if user exists\n      if (db.users.some((user) => user.email === email)) {\n        return res.status(400).json({ message: \"User already exists\" });\n      }\n  \n      // Hash password and add user\n      const hashedPassword = await bcrypt.hash(password, 10);\n      const newUser = {\n        id: db.users.length + 1,\n        email,\n        password: hashedPassword,\n        userName,\n        fullName,\n        phone,\n        country,\n        address,\n        gender,\n        role,\n      };\n      db.users.push(newUser);\n  \n      fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n        if (err) return res.status(500).json({ error: \"Error saving database\" });\n        res.json({ message: \"User registered successfully\" });\n      });\n    });\n  });\n  \n  module.exports = router"
+        }
+    ]
+}

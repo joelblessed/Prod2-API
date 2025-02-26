@@ -1,0 +1,62 @@
+{
+    "sourceFile": "formUpload.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1740536082092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740536117251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n // Serve static files (e.g., uploaded images)\n-router.use(\"/\", express.static(uploadDir));\n+router.use(\"/images\", express.static(uploadDir));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n@@ -57,9 +57,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     location: productData.location,\n-    images: files.map((file) => `/uploads/${file.filename}`), // Save image paths\n+    images: files.map((file) => `//${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"db.json\");\n"
+                },
+                {
+                    "date": 1740537044021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     location: productData.location,\n-    images: files.map((file) => `//${file.filename}`), // Save image paths\n+    images: files.map((file) => `/uploads/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"db.json\");\n"
+                },
+                {
+                    "date": 1740537068366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     location: productData.location,\n-    images: files.map((file) => `/uploads/${file.filename}`), // Save image paths\n+    images: files.map((file) => `public//${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"db.json\");\n"
+                },
+                {
+                    "date": 1740537129493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n // Serve static files (e.g., uploaded images)\n-router.use(\"/images\", express.static(uploadDir));\n+router.use(\"/uploads\", express.static(uploadDir));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n@@ -57,9 +57,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     location: productData.location,\n-    images: files.map((file) => `public//${file.filename}`), // Save image paths\n+    images: files.map((file) => `/uploads/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"db.json\");\n"
+                },
+                {
+                    "date": 1740557582997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,43 +2,41 @@\n const multer = require(\"multer\");\n const fs = require(\"fs\");\n const path = require(\"path\");\n const cors = require(\"cors\");\n-const router= express.Router();\n+\n const app = express();\n+const PORT = 3002;\n \n-\n // Enable CORS for frontend-backend communication\n app.use(cors());\n \n-// Ensure the 'uploads' directory exists\n-const uploadDir = path.join(__dirname, \"public/images\");\n-if (!fs.existsSync(uploadDir)) {\n-  fs.mkdirSync(uploadDir);\n-}\n \n-// Configure storage for images\n+// Multer Storage Configuration\n const storage = multer.diskStorage({\n-  destination: (req, file, cb) => {\n-    cb(null, uploadDir); // Save files in the 'uploads' directory\n-  },\n+  destination: \"public/images\",\n   filename: (req, file, cb) => {\n-    cb(null, Date.now() + path.extname(file.originalname)); // Unique filename\n-  },\n+      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n+  }\n });\n \n-// Initialize upload\n-const upload = multer({ storage: storage });\n+const upload = multer({\n+  storage,\n+  limits: { fileSize: 50 * 1024 * 1024 } // 50MB file size limit\n+});\n \n+\n+\n // Middleware to parse JSON and form data\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n // Serve static files (e.g., uploaded images)\n-router.use(\"/uploads\", express.static(uploadDir));\n \n+app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n+\n // Route to handle product upload\n-router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n+app.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n   const files = req.files;\n \n   // Construct the product object\n@@ -57,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     location: productData.location,\n-    images: files.map((file) => `/uploads/${file.filename}`), // Save image paths\n+    images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"db.json\");\n@@ -74,5 +72,4 @@\n \n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n-module.exports = router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740557590682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,4 +72,5 @@\n \n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n+module\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740557596040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,5 +72,5 @@\n \n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n-module\n\\ No newline at end of file\n+module.exports \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740557616554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n const multer = require(\"multer\");\n const fs = require(\"fs\");\n const path = require(\"path\");\n const cors = require(\"cors\");\n+const router = express.Router();\n \n const app = express();\n const PORT = 3002;\n \n@@ -72,5 +73,5 @@\n \n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n-module.exports \n\\ No newline at end of file\n+module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740557657400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n const fs = require(\"fs\");\n const path = require(\"path\");\n const cors = require(\"cors\");\n const router = express.Router();\n-\n const app = express();\n const PORT = 3002;\n \n // Enable CORS for frontend-backend communication\n@@ -35,9 +34,9 @@\n \n app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n \n // Route to handle product upload\n-app.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n+router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n   const files = req.files;\n \n   // Construct the product object\n"
+                },
+                {
+                    "date": 1740558180272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,11 @@\n const app = express();\n const PORT = 3002;\n \n // Enable CORS for frontend-backend communication\n-app.use(cors());\n \n \n+\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"public/images\",\n   filename: (req, file, cb) => {\n"
+                },
+                {
+                    "date": 1740558205670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require(\"express\");\n const multer = require(\"multer\");\n const fs = require(\"fs\");\n const path = require(\"path\");\n-const cors = require(\"cors\");\n+\n const router = express.Router();\n const app = express();\n const PORT = 3002;\n \n"
+                }
+            ],
+            "date": 1740536082092,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\nconst multer = require(\"multer\");\nconst fs = require(\"fs\");\nconst path = require(\"path\");\nconst cors = require(\"cors\");\nconst router= express.Router();\nconst app = express();\n\n\n// Enable CORS for frontend-backend communication\napp.use(cors());\n\n// Ensure the 'uploads' directory exists\nconst uploadDir = path.join(__dirname, \"public/images\");\nif (!fs.existsSync(uploadDir)) {\n  fs.mkdirSync(uploadDir);\n}\n\n// Configure storage for images\nconst storage = multer.diskStorage({\n  destination: (req, file, cb) => {\n    cb(null, uploadDir); // Save files in the 'uploads' directory\n  },\n  filename: (req, file, cb) => {\n    cb(null, Date.now() + path.extname(file.originalname)); // Unique filename\n  },\n});\n\n// Initialize upload\nconst upload = multer({ storage: storage });\n\n// Middleware to parse JSON and form data\napp.use(express.json());\napp.use(express.urlencoded({ extended: true }));\n\n// Serve static files (e.g., uploaded images)\nrouter.use(\"/\", express.static(uploadDir));\n\n// Route to handle product upload\nrouter.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n  const productData = req.body;\n  const files = req.files;\n\n  // Construct the product object\n  const newProduct = {\n    id: Date.now(), // Generate a unique ID\n    name: productData.name,\n    brand: JSON.parse(productData.brand), // Parse brand array from string\n    category: productData.category,\n    price: parseFloat(productData.price),\n    quantity: parseInt(productData.quantity),\n    numberInStock: parseInt(productData.numberInStock),\n    discount: parseFloat(productData.discount),\n    owner: productData.owner,\n    phoneNumber: productData.phoneNumber,\n    description: productData.description,\n    status: productData.status,\n    address: productData.address,\n    likes: parseInt(productData.likes),\n    location: productData.location,\n    images: files.map((file) => `/uploads/${file.filename}`), // Save image paths\n  };\n\n  // Save product to db.json\n  const dbPath = path.join(__dirname, \"db.json\");\n  let db = { products: [] };\n\n  if (fs.existsSync(dbPath)) {\n    db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n  }\n\n  db.products.push(newProduct);\n  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n\n  res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n});\n\nmodule.exports = router"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "jsFiles/passwardReset.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740560282494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740560289684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n const app = express();\n const router= express.Router();\n-const accountPath = path.join(__dirname, \"/account.json\");\n+const accountPath = path.join(__dirname, \"../jsonFilesaccount.json\");\n dotenv.config();\n \n \n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                }
+            ],
+            "date": 1740560282494,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\nconst fs = require(\"fs\");\nconst path = require(\"path\");\nconst bcrypt = require(\"bcryptjs\");\nconst jwt = require(\"jsonwebtoken\");\nconst dotenv = require(\"dotenv\");\nconst nodemailer = require(\"nodemailer\");\nconst app = express();\nconst router= express.Router();\nconst accountPath = path.join(__dirname, \"/account.json\");\ndotenv.config();\n\n\nconst SECRET_KEY = \"your-secret-key\"; // Change this in production\n\n\n// Fake Email Sender (Use real SMTP for production)\nconst transporter = nodemailer.createTransport({\n    service: \"gmail\",\n    auth: {\n      user: \"your-email@gmail.com\",\n      pass: \"your-email-password\",\n    },\n  });\n  \n  // *1. Forgot Password: Generate Reset Link*\n  app.post(\"/forgot-password\", (req, res) => {\n    const { email } = req.body;\n  \n    fs.readFile(accountPath, \"utf8\", (err, data) => {\n      if (err) return res.status(500).json({ message: \"Error reading database\" });\n  \n      let db = JSON.parse(data);\n      let user = db.users.find((u) => u.email === email);\n      if (!user) return res.status(400).json({ message: \"User not found\" });\n  \n      // Generate Reset Token (Valid for 15 minutes)\n      const token = jwt.sign({ email }, SECRET_KEY, { expiresIn: \"15m\" });\n      const resetLink = `http://localhost:3000/reset-password/${token}`;\n  \n      // Send Email\n      transporter.sendMail({\n        from: \"your-email@gmail.com\",\n        to: email,\n        subject: \"Password Reset\",\n        text: `Click the link to reset your password: ${resetLink}`,\n      });\n  \n      res.json({ message: \"Password reset link sent to email.\" });\n    });\n  });\n  \n  // *2. Reset Password: Validate Token & Update Password*\n  app.post(\"/reset-password\", async (req, res) => {\n    const { token, newPassword } = req.body;\n  \n    try {\n      const decoded = jwt.verify(token, SECRET_KEY);\n      const email = decoded.email;\n  \n      fs.readFile(accountPath, \"utf8\", async (err, data) => {\n        if (err)\n          return res.status(500).json({ message: \"Error reading database\" });\n  \n        let db = JSON.parse(data);\n        let user = db.users.find((u) => u.email === email);\n        if (!user)\n          return res\n            .status(400)\n            .json({ message: \"Invalid token or user not found\" });\n  \n        // Hash the new password\n        user.password = await bcrypt.hash(newPassword, 10);\n  \n        fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n          if (err)\n            return res.status(500).json({ message: \"Error updating password\" });\n          res.json({ message: \"Password updated successfully\" });\n        });\n      });\n    } catch (err) {\n      res.status(400).json({ message: \"Invalid or expired token\" });\n    }\n  });\n\n  module.exports = router\n  "
+        }
+    ]
+}

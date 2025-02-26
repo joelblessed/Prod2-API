@@ -1,0 +1,68 @@
+{
+  "carts": [
+    {
+      "userId": 2,
+      "cart": [
+        {
+          "id": 353,
+          "forCount": 1,
+          "quantity": 1,
+          "price": 532,
+          "likes": 0,
+          "discount": 0,
+          "numberInStock": 6,
+          "owner": "joelblessed",
+          "phoneNumber": 9679,
+          "name": "Latitude",
+          "description": "12 gb Ram",
+          "status": "Used",
+          "brand": [
+            {
+              "id": 2,
+              "name": "Dell",
+              "image": "/images/oh.png"
+            }
+          ],
+          "images": [
+            "/images/oh.png",
+            "/images/1738676289852.jpg"
+          ],
+          "category": "computer",
+          "location": "kombe",
+          "adress": "market",
+          "isSelected": false
+        },
+        {
+          "id": 34354,
+          "forCount": 1,
+          "quantity": 1,
+          "price": 2343,
+          "discount": 0,
+          "likes": 0,
+          "numberInStock": 6,
+          "owner": "joelblessed",
+          "phoneNumber": 8232,
+          "name": "force UP",
+          "description": "grass killer",
+          "status": "new",
+          "category": "farm",
+          "location": "kombe",
+          "adress": "market",
+          "brand": [
+            {
+              "id": 4,
+              "name": "force UP",
+              "image": "/images/oh.png"
+            }
+          ],
+          "images": [
+            "/images/to.jpg",
+            "/images/oh.png"
+          ],
+          "isSelected": true
+        },
+        
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1740389306764,
@@ -28,6 +28,22 @@
                 {
                     "date": 1740392063019,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,15 @@\n const fs = require(\"fs\");\n const cors = require(\"cors\");\n const bodyParser = require(\"body-parser\");\n \n-htp://localhost:3001const app = express();\n+const app = express();\n const PORT = 3001;\n \n // Middleware\n app.use(cors());\n app.use(bodyParser.json());\n-\n+htp://localhost:3001\n // Load db.json\n const dbFile = \"cart.json\";\n const loadDB = () => JSON.parse(fs.readFileSync(dbFile, \"utf-8\"));\n const saveDB = (db) => fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), \"utf-8\");\n"
+                },
+                {
+                    "date": 1740481719420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n // Middleware\n app.use(cors());\n app.use(bodyParser.json());\n+\n htp://localhost:3001\n // Load db.json\n const dbFile = \"cart.json\";\n const loadDB = () => JSON.parse(fs.readFileSync(dbFile, \"utf-8\"));\n"
+                },
+                {
+                    "date": 1740481725620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n // Middleware\n app.use(cors());\n app.use(bodyParser.json());\n \n-htp://localhost:3001\n+// htp://localhost:3001\n // Load db.json\n const dbFile = \"cart.json\";\n const loadDB = () => JSON.parse(fs.readFileSync(dbFile, \"utf-8\"));\n const saveDB = (db) => fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), \"utf-8\");\n"
+                },
+                {
+                    "date": 1740536670349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,8 @@\n const fs = require(\"fs\");\n const cors = require(\"cors\");\n const bodyParser = require(\"body-parser\");\n \n-const app = express();\n-const PORT = 3001;\n-\n // Middleware\n app.use(cors());\n app.use(bodyParser.json());\n \n"
+                },
+                {
+                    "date": 1740536679005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,4 @@\n \n   saveDB(db);\n   res.json({ success: true, items });\n });\n-\n-// Start server\n-app.listen(PORT, () => {\n-  console.log(`Server is running on port ${PORT}`);\n-});\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1740389306764,

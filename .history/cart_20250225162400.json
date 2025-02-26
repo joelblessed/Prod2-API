@@ -1,0 +1,36 @@
+{
+  "2": [
+    {
+      "id": 2,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "name": "fan",
+      "description": "220v",
+      "status": "Used",
+      "category": "other",
+      "location": "kombe",
+      "adress": "market",
+      "brand": [
+        {
+          "id": 5,
+          "name": "ox",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "isSelected": false
+    
+    
+  
+  "cart": []
+}

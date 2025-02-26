@@ -1,0 +1,30 @@
+{
+    "sourceFile": "formUpload1.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1740520037044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740520046657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,6 +32,6 @@\n   res.json({ message: 'Product uploaded successfully!' });\n });\n \n app.listen(PORT, () => {\n-  console.log(Server running on http://localhost:${PORT});\n+  console.log(`Server running on http://localhost:${PORT});\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740520055096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,6 +32,6 @@\n   res.json({ message: 'Product uploaded successfully!' });\n });\n \n app.listen(PORT, () => {\n-  console.log(`Server running on http://localhost:${PORT});\n+  console.log(`Server running on http://localhost:${PORT}`);\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740520069017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const multer  = require('multer');\n const bodyParser = require('body-parser');\n const app = express();\n-const PORT = 3001;\n+const PORT = 3002;\n \n // Configure storage for images\n const storage = multer.diskStorage({\n   destination: (req, file, cb) => {\n"
+                }
+            ],
+            "date": 1740520037043,
+            "name": "Commit-0",
+            "content": "const express = require('express');\nconst multer  = require('multer');\nconst bodyParser = require('body-parser');\nconst app = express();\nconst PORT = 3001;\n\n// Configure storage for images\nconst storage = multer.diskStorage({\n  destination: (req, file, cb) => {\n    cb(null, 'uploads/'); // Directory to save files\n  },\n  filename: (req, file, cb) => {\n    cb(null, Date.now() + '-' + file.originalname); // Unique filename\n  }\n});\n\n// Initialize upload\nconst upload = multer({ storage: storage });\n\n// Middleware\napp.use(bodyParser.json());\napp.use(bodyParser.urlencoded({ extended: true }));\n\n// Route to handle product upload\napp.post('/upload', upload.array('images', 10), (req, res) => {\n  const productData = req.body;\n  const files = req.files;\n\n  // Process product data and files\n  // For example, save to database\n\n  res.json({ message: 'Product uploaded successfully!' });\n});\n\napp.listen(PORT, () => {\n  console.log(Server running on http://localhost:${PORT});\n});"
+        }
+    ]
+}

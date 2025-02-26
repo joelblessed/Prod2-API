@@ -1,0 +1,278 @@
+{
+    "sourceFile": "jsFiles/formUpload.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 65,
+            "patches": [
+                {
+                    "date": 1740560064025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740560083491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n const fs = require(\"fs\");\n const path = require(\"path\");\n const router = express.Router();\n const app = express();\n-const PORT = 3002;\n \n+\n // Enable CORS for frontend-backend communication\n \n \n \n"
+                },
+                {
+                    "date": 1740560121536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n app.use(express.urlencoded({ extended: true }));\n \n // Serve static files (e.g., uploaded images)\n \n-app.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n+app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n"
+                },
+                {
+                    "date": 1740560129635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n app.use(express.urlencoded({ extended: true }));\n \n // Serve static files (e.g., uploaded images)\n \n-app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n+app.use(\"/images\",express.static(path.join(__dirname,\"./\")));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n"
+                },
+                {
+                    "date": 1740560136883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n app.use(express.urlencoded({ extended: true }));\n \n // Serve static files (e.g., uploaded images)\n \n-app.use(\"/images\",express.static(path.join(__dirname,\"./\")));\n+app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n"
+                },
+                {
+                    "date": 1740560216878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n app.use(express.urlencoded({ extended: true }));\n \n // Serve static files (e.g., uploaded images)\n \n-app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n+app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));public/images\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n"
+                },
+                {
+                    "date": 1740560226614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n app.use(express.urlencoded({ extended: true }));\n \n // Serve static files (e.g., uploaded images)\n \n-app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));public/images\n+app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n   const productData = req.body;\n"
+                },
+                {
+                    "date": 1740560800384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n-  const dbPath = path.join(__dirname, \"db.json\");\n+  const dbPath = path.join(__dirname, \"..db.json\");\n   let db = { products: [] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n"
+                },
+                {
+                    "date": 1740560806234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n-  const dbPath = path.join(__dirname, \"..db.json\");\n+  const dbPath = path.join(__dirname, \"../jsonFdb.json\");\n   let db = { products: [] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n"
+                },
+                {
+                    "date": 1740561662261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n \n   // Construct the product object\n   const newProduct = {\n     id: Date.now(), // Generate a unique ID\n+    \n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n     price: parseFloat(productData.price),\n@@ -58,9 +59,9 @@\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n-  const dbPath = path.join(__dirname, \"../jsonFdb.json\");\n+  const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n   let db = { products: [] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n"
+                },
+                {
+                    "date": 1740561668306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \n   // Construct the product object\n   const newProduct = {\n     id: Date.now(), // Generate a unique ID\n-    \n+    poste\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n     price: parseFloat(productData.price),\n"
+                },
+                {
+                    "date": 1740561673727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \n   // Construct the product object\n   const newProduct = {\n     id: Date.now(), // Generate a unique ID\n-    poste\n+    postedOn\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n     price: parseFloat(productData.price),\n"
+                },
+                {
+                    "date": 1740561745271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \n   // Construct the product object\n   const newProduct = {\n     id: Date.now(), // Generate a unique ID\n-    postedOn\n+    postedOn:productData\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n     price: parseFloat(productData.price),\n"
+                },
+                {
+                    "date": 1740561752199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \n   // Construct the product object\n   const newProduct = {\n     id: Date.now(), // Generate a unique ID\n-    postedOn:productData\n+    postedOn:productData.post\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n     price: parseFloat(productData.price),\n"
+                },
+                {
+                    "date": 1740561993024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,16 +33,16 @@\n \n app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n \n // Route to handle product upload\n-router.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n+router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n     id: Date.now(), // Generate a unique ID\n-    postedOn:productData.post\n+    postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n     price: parseFloat(productData.price),\n"
+                },
+                {
+                    "date": 1740563321405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n     description: productData.description,\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n+    \n     location: productData.location,\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n"
+                },
+                {
+                    "date": 1740563328171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n     description: productData.description,\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n-    \n+    city:\n     location: productData.location,\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n"
+                },
+                {
+                    "date": 1740563334820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n     description: productData.description,\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n-    city:\n+    city:pro\n     location: productData.location,\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n"
+                },
+                {
+                    "date": 1740563340016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n     description: productData.description,\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n-    city:pro\n+    city:productData.city\n     location: productData.location,\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n"
+                },
+                {
+                    "date": 1740564462951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,77 @@\n+const express = require(\"express\");\n+const multer = require(\"multer\");\n+const fs = require(\"fs\");\n+const path = require(\"path\");\n+const router = express.Router();\n+const app = express();\n+\n+\n+// Enable CORS for frontend-backend communication\n+\n+\n+\n+// Multer Storage Configuration\n+const storage = multer.diskStorage({\n+  destination: \"./public/images\",\n+  filename: (req, file, cb) => {\n+      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n+  }\n+});\n+\n+const upload = multer({\n+  storage,\n+  limits: { fileSize: 50 * 1024 * 1024 } // 50MB file size limit\n+});\n+\n+\n+\n+// Middleware to parse JSON and form data\n+app.use(express.json());\n+app.use(express.urlencoded({ extended: true }));\n+\n+// Serve static files (e.g., uploaded images)\n+\n+app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n+\n+// Route to handle product upload\n+router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n+  const productData = req.body;\n+  const files = req.files;\n+\n+  // Construct the product object\n+  const newProduct = {\n+    id: Date.now(), // Generate a unique ID\n+    postedOn:productData.postedOn,\n+    name: productData.name,\n+    brand: JSON.parse(productData.brand), // Parse brand array from string\n+    category: productData.category,\n+    price: parseFloat(productData.price),\n+    quantity: parseInt(productData.quantity),\n+    numberInStock: parseInt(productData.numberInStock),\n+    discount: parseFloat(productData.discount),\n+    owner: productData.owner,\n+    phoneNumber: productData.phoneNumber,\n+    description: productData.description,\n+    status: productData.status,\n+    address: productData.address,\n+    likes: parseInt(productData.likes),\n+    city:productData.city,\n+    location:JSON.parse(productData.brand),\n+    images: files.map((file) => `/images/${file.filename}`), // Save image paths\n+  };\n+\n+  // Save product to db.json\n+  const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n+  let db = { products: [] };\n+\n+  if (fs.existsSync(dbPath)) {\n+    db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n+  }\n+\n+  db.products.push(newProduct);\n+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n+\n+  res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n+});\n+\n+module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740564469843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location:JSON.parse(productData.brand),\n+    location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n@@ -73,82 +73,5 @@\n \n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n-module.exports =router\n-const express = require(\"express\");\n-const multer = require(\"multer\");\n-const fs = require(\"fs\");\n-const path = require(\"path\");\n-const router = express.Router();\n-const app = express();\n-\n-\n-// Enable CORS for frontend-backend communication\n-\n-\n-\n-// Multer Storage Configuration\n-const storage = multer.diskStorage({\n-  destination: \"./public/images\",\n-  filename: (req, file, cb) => {\n-      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n-  }\n-});\n-\n-const upload = multer({\n-  storage,\n-  limits: { fileSize: 50 * 1024 * 1024 } // 50MB file size limit\n-});\n-\n-\n-\n-// Middleware to parse JSON and form data\n-app.use(express.json());\n-app.use(express.urlencoded({ extended: true }));\n-\n-// Serve static files (e.g., uploaded images)\n-\n-app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n-\n-// Route to handle product upload\n-router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n-  const productData = req.body;\n-  const files = req.files;\n-\n-  // Construct the product object\n-  const newProduct = {\n-    id: Date.now(), // Generate a unique ID\n-    postedOn:productData.postedOn,\n-    name: productData.name,\n-    brand: JSON.parse(productData.brand), // Parse brand array from string\n-    category: productData.category,\n-    price: parseFloat(productData.price),\n-    quantity: parseInt(productData.quantity),\n-    numberInStock: parseInt(productData.numberInStock),\n-    discount: parseFloat(productData.discount),\n-    owner: productData.owner,\n-    phoneNumber: productData.phoneNumber,\n-    description: productData.description,\n-    status: productData.status,\n-    address: productData.address,\n-    likes: parseInt(productData.likes),\n-    city:productData.city\n-    location: productData.location,\n-    images: files.map((file) => `/images/${file.filename}`), // Save image paths\n-  };\n-\n-  // Save product to db.json\n-  const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [] };\n-\n-  if (fs.existsSync(dbPath)) {\n-    db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n-  }\n-\n-  db.products.push(newProduct);\n-  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n-\n-  res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n-});\n-\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740565204436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n-  const productData = req.body;\n+  const productData, = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565236087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n-  const productData, = req.body;\n+  const productData,() = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565242892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,10 @@\n app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n-  const productData,() = req.body;\n+  const productData = req.body;\n+  const productData,( locationName,latitude,longitude) = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565248316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n-  const productData,( locationName,latitude,longitude) = req.body;\n+  const ( locationName,latitude,longitude) = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565264559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n-  const ( locationName,latitude,longitude) = req.body;\n+  const {} locationName,latitude,longitude) = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565271253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n-  const {} locationName,latitude,longitude) = req.body;\n+  const { locationName,latitude,longitude} = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565323671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id: Date.now(), // Generate a unique ID\n+    id:, // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n"
+                },
+                {
+                    "date": 1740565329053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id:, // Generate a unique ID\n+    id:db, // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n"
+                },
+                {
+                    "date": 1740565335049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id:db, // Generate a unique ID\n+    id:db.products.length , // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n"
+                },
+                {
+                    "date": 1740565340152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id:db.products.length , // Generate a unique ID\n+    id:db.products.length +1, // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n"
+                },
+                {
+                    "date": 1740565418524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location:JSON.parse(productData.location),\n+    location:,\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565428409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location:,\n+    location: [{id:Date.now(),name:locationName, latitude, longitude},\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565434415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: [{id:Date.now(),name:locationName, latitude, longitude},\n+    location: [{id:Date.now(),name:locationName, latitude, longitude}],\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565445220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: [{id:Date.now(),name:locationName, latitude, longitude}],\n+    location: [{i,name:locationName, latitude, longitude}],\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565451466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: [{i,name:locationName, latitude, longitude}],\n+    location: [{id,name:locationName, latitude, longitude}],\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565461024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,78 @@\n+const express = require(\"express\");\n+const multer = require(\"multer\");\n+const fs = require(\"fs\");\n+const path = require(\"path\");\n+const router = express.Router();\n+const app = express();\n+\n+\n+// Enable CORS for frontend-backend communication\n+\n+\n+\n+// Multer Storage Configuration\n+const storage = multer.diskStorage({\n+  destination: \"./public/images\",\n+  filename: (req, file, cb) => {\n+      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n+  }\n+});\n+\n+const upload = multer({\n+  storage,\n+  limits: { fileSize: 50 * 1024 * 1024 } // 50MB file size limit\n+});\n+\n+\n+\n+// Middleware to parse JSON and form data\n+app.use(express.json());\n+app.use(express.urlencoded({ extended: true }));\n+\n+// Serve static files (e.g., uploaded images)\n+\n+app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n+\n+// Route to handle product upload\n+router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n+  const productData = req.body;\n+  const { locationName,latitude,longitude} = req.body;\n+  const files = req.files;\n+\n+  // Construct the product object\n+  const newProduct = {\n+    id:db.products.length +1, // Generate a unique ID\n+    postedOn:productData.postedOn,\n+    name: productData.name,\n+    brand: JSON.parse(productData.brand), // Parse brand array from string\n+    category: productData.category,\n+    price: parseFloat(productData.price),\n+    quantity: parseInt(productData.quantity),\n+    numberInStock: parseInt(productData.numberInStock),\n+    discount: parseFloat(productData.discount),\n+    owner: productData.owner,\n+    phoneNumber: productData.phoneNumber,\n+    description: productData.description,\n+    status: productData.status,\n+    address: productData.address,\n+    likes: parseInt(productData.likes),\n+    city:productData.city,\n+    location: [{id:,name:locationName, latitude, longitude}],\n+    images: files.map((file) => `/images/${file.filename}`), // Save image paths\n+  };\n+\n+  // Save product to db.json\n+  const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n+  let db = { products: [] };\n+\n+  if (fs.existsSync(dbPath)) {\n+    db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n+  }\n+\n+  db.products.push(newProduct);\n+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n+\n+  res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n+});\n+\n+module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740565467126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: [{id:,name:locationName, latitude, longitude}],\n+    location: [{id:db.,name:locationName, latitude, longitude}],\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n@@ -74,83 +74,5 @@\n \n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n-module.exports =router\n-const express = require(\"express\");\n-const multer = require(\"multer\");\n-const fs = require(\"fs\");\n-const path = require(\"path\");\n-const router = express.Router();\n-const app = express();\n-\n-\n-// Enable CORS for frontend-backend communication\n-\n-\n-\n-// Multer Storage Configuration\n-const storage = multer.diskStorage({\n-  destination: \"./public/images\",\n-  filename: (req, file, cb) => {\n-      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n-  }\n-});\n-\n-const upload = multer({\n-  storage,\n-  limits: { fileSize: 50 * 1024 * 1024 } // 50MB file size limit\n-});\n-\n-\n-\n-// Middleware to parse JSON and form data\n-app.use(express.json());\n-app.use(express.urlencoded({ extended: true }));\n-\n-// Serve static files (e.g., uploaded images)\n-\n-app.use(\"/images\",express.static(path.join(__dirname,\"./public/images\")));\n-\n-// Route to handle product upload\n-router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n-  const productData = req.body;\n-  const { locationName,latitude,longitude} = req.body;\n-  const files = req.files;\n-\n-  // Construct the product object\n-  const newProduct = {\n-    id:db.products.length +1, // Generate a unique ID\n-    postedOn:productData.postedOn,\n-    name: productData.name,\n-    brand: JSON.parse(productData.brand), // Parse brand array from string\n-    category: productData.category,\n-    price: parseFloat(productData.price),\n-    quantity: parseInt(productData.quantity),\n-    numberInStock: parseInt(productData.numberInStock),\n-    discount: parseFloat(productData.discount),\n-    owner: productData.owner,\n-    phoneNumber: productData.phoneNumber,\n-    description: productData.description,\n-    status: productData.status,\n-    address: productData.address,\n-    likes: parseInt(productData.likes),\n-    city:productData.city,\n-    location: [{id,name:locationName, latitude, longitude}],\n-    images: files.map((file) => `/images/${file.filename}`), // Save image paths\n-  };\n-\n-  // Save product to db.json\n-  const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [] };\n-\n-  if (fs.existsSync(dbPath)) {\n-    db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n-  }\n-\n-  db.products.push(newProduct);\n-  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n-\n-  res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n-});\n-\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740565474211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: [{id:db.,name:locationName, latitude, longitude}],\n+    location: [{id:db.products.length +1,name:locationName, latitude, longitude}],\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565598750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n-  const { locationName,latitude,longitude} = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565669238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n+  const { locationName,latitude,longitude} = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565676103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: [{id:db.products.length +1,name:locationName, latitude, longitude}],\n+    location: id:Date.now(),name:locationName, latitude, longitude},\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565688194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n-  const { locationName,latitude,longitude} = req.body;\n+\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n@@ -56,9 +56,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: id:Date.now(),name:locationName, latitude, longitude},\n+    location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565818637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n-\n+  const { locationName,latitude,longitude} = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n"
+                },
+                {
+                    "date": 1740565824961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id:db.products.length +1, // Generate a unique ID\n+    id: Date.now(), // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n"
+                },
+                {
+                    "date": 1740565831779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n \n // Route to handle product upload\n router.post(\"/upload\", upload.array(\"images\", 11), (req, res) => {\n   const productData = req.body;\n-  const { locationName,latitude,longitude} = req.body;\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n@@ -56,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location:JSON.parse(productData.location),\n+    location:JSON.parse(productData.),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565846864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location:JSON.parse(productData.),\n+    location: id:Date.now(),name:locationName, latitude, longitude},\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565854525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: id:Date.now(),name:locationName, latitude, longitude},\n+    location: [id:Date.now(),name:locationName, latitude, longitude}],\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565909498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: [id:Date.now(),name:locationName, latitude, longitude}],\n+    location: [{id:Date.now(),name:locationName, latitude, }],\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565951769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: [{id:Date.now(),name:locationName, latitude, }],\n+    location:JSON.parse(productData.brand),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565975457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id: Date.now(), // Generate a unique ID\n+    id:db, // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n@@ -55,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location:JSON.parse(productData.brand),\n+    location: productData.location,\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740565982309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id:db, // Generate a unique ID\n+    id:db.products.length, // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n"
+                },
+                {
+                    "date": 1740565989267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id:db.products.length, // Generate a unique ID\n+    id:db.products.length +, // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n"
+                },
+                {
+                    "date": 1740566019759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   const files = req.files;\n \n   // Construct the product object\n   const newProduct = {\n-    id:db.products.length +, // Generate a unique ID\n+    id: Date.now(), // Generate a unique ID\n     postedOn:productData.postedOn,\n     name: productData.name,\n     brand: JSON.parse(productData.brand), // Parse brand array from string\n     category: productData.category,\n"
+                },
+                {
+                    "date": 1740566209600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location: productData.location,\n+    location:JSON.parse(productData.brand),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740566215679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    location:JSON.parse(productData.brand),\n+    location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1740567240305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n+      cb(null,(file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740567248300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null,(file.originalname)); // Rename the file with timestamp\n+      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740567259104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n+      cb(null,(file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740567270405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null,(file.originalname)); // Rename the file with timestamp\n+      cb((file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740567428000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb((file.originalname)); // Rename the file with timestamp\n+      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740567578112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n+      cb(null, path.extname(file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740567719858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null, path.extname(file.originalname)); // Rename the file with timestamp\n+      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740567732962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n+      cb(null,  + path.extname(file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740568456006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null,  + path.extname(file.originalname)); // Rename the file with timestamp\n+      cb(null, file.originalname)); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1740568462988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null, file.originalname)); // Rename the file with timestamp\n+      cb(null,file.originalname); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                }
+            ],
+            "date": 1740560064025,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\nconst multer = require(\"multer\");\nconst fs = require(\"fs\");\nconst path = require(\"path\");\nconst router = express.Router();\nconst app = express();\nconst PORT = 3002;\n\n// Enable CORS for frontend-backend communication\n\n\n\n// Multer Storage Configuration\nconst storage = multer.diskStorage({\n  destination: \"./public/images\",\n  filename: (req, file, cb) => {\n      cb(null, Date.now() + path.extname(file.originalname)); // Rename the file with timestamp\n  }\n});\n\nconst upload = multer({\n  storage,\n  limits: { fileSize: 50 * 1024 * 1024 } // 50MB file size limit\n});\n\n\n\n// Middleware to parse JSON and form data\napp.use(express.json());\napp.use(express.urlencoded({ extended: true }));\n\n// Serve static files (e.g., uploaded images)\n\napp.use(\"/images\",express.static(path.join(__dirname,\"public/images\")));\n\n// Route to handle product upload\nrouter.post(\"/upload\", upload.array(\"images\", 10), (req, res) => {\n  const productData = req.body;\n  const files = req.files;\n\n  // Construct the product object\n  const newProduct = {\n    id: Date.now(), // Generate a unique ID\n    name: productData.name,\n    brand: JSON.parse(productData.brand), // Parse brand array from string\n    category: productData.category,\n    price: parseFloat(productData.price),\n    quantity: parseInt(productData.quantity),\n    numberInStock: parseInt(productData.numberInStock),\n    discount: parseFloat(productData.discount),\n    owner: productData.owner,\n    phoneNumber: productData.phoneNumber,\n    description: productData.description,\n    status: productData.status,\n    address: productData.address,\n    likes: parseInt(productData.likes),\n    location: productData.location,\n    images: files.map((file) => `/images/${file.filename}`), // Save image paths\n  };\n\n  // Save product to db.json\n  const dbPath = path.join(__dirname, \"db.json\");\n  let db = { products: [] };\n\n  if (fs.existsSync(dbPath)) {\n    db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n  }\n\n  db.products.push(newProduct);\n  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n\n  res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n});\n\nmodule.exports =router"
+        }
+    ]
+}
