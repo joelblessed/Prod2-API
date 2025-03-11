@@ -1,0 +1,1 @@
+onClick={() => dispatch(addToCartAPI(product))}

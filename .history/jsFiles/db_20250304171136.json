@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 1740560579651,
+      "name": "osaioais",
+      "brand": [
+        {
+          "name": "alfhildsu",
+          "image": ""
+        }
+      ],
+      "category": "Clothing",
+      "price": 857363,
+      "quantity": 1,
+      "numberInStock": 764875846596,
+      "discount": 246278,
+      "owner": "hold",
+      "phoneNumber": "9876543",
+      "description": "aoigphaoi",
+      "status": "New",
+      "address": "aoytriua",
+      "likes": 0,
+      "location": "ofganduignosdl",
+      "images": [
+        "/images/1740560579643.png"
+      ]
+    }
+  ]
+}

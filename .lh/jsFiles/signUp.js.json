@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1740560329714,
@@ -12,6 +12,22 @@
                 {
                     "date": 1740560337064,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const path = require(\"path\");\n const bcrypt = require(\"bcryptjs\");\n const dotenv = require(\"dotenv\");\n const router= express.Router();\n-const accountPath = path.join(__dirname, \"../jsonaccount.json\");\n+const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n dotenv.config();\n \n \n \n"
+                },
+                {
+                    "date": 1740591886335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n       password,\n       userName,\n       fullName,\n       phone,\n+      \n       country,\n       address,\n       gender,\n       role,\n"
+                },
+                {
+                    "date": 1740591900148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,11 @@\n       password,\n       userName,\n       fullName,\n       phone,\n-      \n+      city,\n       country,\n+      wallet\n       address,\n       gender,\n       role,\n     } = req.body;\n"
+                },
+                {
+                    "date": 1740591944052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       fullName,\n       phone,\n       city,\n       country,\n-      wallet\n+      wallet,\n       address,\n       gender,\n       role,\n     } = req.body;\n@@ -45,8 +45,9 @@\n         userName,\n         fullName,\n         phone,\n         country,\n+        city\n         address,\n         gender,\n         role,\n       };\n"
+                },
+                {
+                    "date": 1740591950557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,10 @@\n         userName,\n         fullName,\n         phone,\n         country,\n-        city\n+        city,\n+        wallet,\n         address,\n         gender,\n         role,\n       };\n"
                 }
             ],
             "date": 1740560329714,

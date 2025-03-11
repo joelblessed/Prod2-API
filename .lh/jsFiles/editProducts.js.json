@@ -1,0 +1,58 @@
+{
+    "sourceFile": "jsFiles/editProducts.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1740992405457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740992412861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-onst express = require(\"express\");\n+const express = require(\"express\");\n const fs = require(\"fs\");\n const cors = require(\"cors\");\n const bodyParser = require(\"body-parser\");\n \n"
+                },
+                {
+                    "date": 1740992419872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,6 +52,6 @@\n });\n \n // Start server\n app.listen(PORT, () => {\n-  console.log(Server running on http://localhost:${PORT});\n+  console.log(`Server running on http://localhost:${PORT});\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740992436092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const cors = require(\"cors\");\n const bodyParser = require(\"body-parser\");\n \n const app = express();\n-const PORT = 5000; // Same port as db.json server\n+const PORT = 5001; // Same port as db.json server\n \n app.use(cors());\n app.use(bodyParser.json());\n \n@@ -52,6 +52,6 @@\n });\n \n // Start server\n app.listen(PORT, () => {\n-  console.log(`Server running on http://localhost:${PORT});\n+  console.log(`Server running on http://localhost:${PORT}`);\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740992463292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n app.use(cors());\n app.use(bodyParser.json());\n \n // Path to db.json\n-const dbFilePath = \"./db.json\";\n+const dbFilePath = \".j/db.json\";\n \n // Read data from db.json\n const readDB = () => {\n   const data = fs.readFileSync(dbFilePath);\n"
+                },
+                {
+                    "date": 1740992469669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n app.use(cors());\n app.use(bodyParser.json());\n \n // Path to db.json\n-const dbFilePath = \".j/db.json\";\n+const dbFilePath = \".jsonFiles/db.json\";\n \n // Read data from db.json\n const readDB = () => {\n   const data = fs.readFileSync(dbFilePath);\n"
+                },
+                {
+                    "date": 1740992531665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n app.use(cors());\n app.use(bodyParser.json());\n \n // Path to db.json\n-const dbFilePath = \".jsonFiles/db.json\";\n+const dbFilePath = \"../jsonFiles/db.json\";\n \n // Read data from db.json\n const readDB = () => {\n   const data = fs.readFileSync(dbFilePath);\n"
+                },
+                {
+                    "date": 1740992542311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n app.use(cors());\n app.use(bodyParser.json());\n \n // Path to db.json\n-const dbFilePath = \"../jsonFiles/db.json\";\n+const dbFilePath = \"./\";\n \n // Read data from db.json\n const readDB = () => {\n   const data = fs.readFileSync(dbFilePath);\n"
+                },
+                {
+                    "date": 1740992550523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n app.use(cors());\n app.use(bodyParser.json());\n \n // Path to db.json\n-const dbFilePath = \"./\";\n+const dbFilePath = \"../\";\n \n // Read data from db.json\n const readDB = () => {\n   const data = fs.readFileSync(dbFilePath);\n"
+                },
+                {
+                    "date": 1740992555761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n app.use(cors());\n app.use(bodyParser.json());\n \n // Path to db.json\n-const dbFilePath = \"../\";\n+const dbFilePath = \"./jsonFiles/db.json\";\n \n // Read data from db.json\n const readDB = () => {\n   const data = fs.readFileSync(dbFilePath);\n"
+                },
+                {
+                    "date": 1740992561851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n app.use(cors());\n app.use(bodyParser.json());\n \n // Path to db.json\n-const dbFilePath = \"./jsonFiles/db.json\";\n+const dbFilePath = \"../jsonFiles/db.json\";\n \n // Read data from db.json\n const readDB = () => {\n   const data = fs.readFileSync(dbFilePath);\n"
+                }
+            ],
+            "date": 1740992405457,
+            "name": "Commit-0",
+            "content": "onst express = require(\"express\");\nconst fs = require(\"fs\");\nconst cors = require(\"cors\");\nconst bodyParser = require(\"body-parser\");\n\nconst app = express();\nconst PORT = 5000; // Same port as db.json server\n\napp.use(cors());\napp.use(bodyParser.json());\n\n// Path to db.json\nconst dbFilePath = \"./db.json\";\n\n// Read data from db.json\nconst readDB = () => {\n  const data = fs.readFileSync(dbFilePath);\n  return JSON.parse(data);\n};\n\n// Write data to db.json\nconst writeDB = (data) => {\n  fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2));\n};\n\n// Get a product by ID\napp.get(\"/products/:id\", (req, res) => {\n  const { id } = req.params;\n  const db = readDB();\n  const product = db.products.find((p) => p.id == id);\n  if (product) {\n    res.json(product);\n  } else {\n    res.status(404).json({ message: \"Product not found\" });\n  }\n});\n\n// Update a product by ID\napp.put(\"/products/:id\", (req, res) => {\n  const { id } = req.params;\n  const updatedProduct = req.body;\n  const db = readDB();\n\n  const productIndex = db.products.findIndex((p) => p.id == id);\n  if (productIndex !== -1) {\n    db.products[productIndex] = updatedProduct;\n    writeDB(db);\n    res.json({ message: \"Product updated successfully\", product: updatedProduct });\n  } else {\n    res.status(404).json({ message: \"Product not found\" });\n  }\n});\n\n// Start server\napp.listen(PORT, () => {\n  console.log(Server running on http://localhost:${PORT});\n});"
+        }
+    ]
+}

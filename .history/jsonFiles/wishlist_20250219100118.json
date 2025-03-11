@@ -1,0 +1,33 @@
+{
+  "wishlist": [
+    {
+      "id": 3,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "name": "force UP",
+      "description": "12 gb Ram",
+      "status": "Used",
+      "brand": [
+        {
+          "id": 6,
+          "name": "Dell",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "category": "computer",
+      "location": "kombe",
+      "adress": "market",
+      "isSelected": false
+    }
+  ]
+}

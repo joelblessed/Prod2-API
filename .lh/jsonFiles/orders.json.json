@@ -1,0 +1,18 @@
+{
+    "sourceFile": "jsonFiles/orders.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1741592260848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1741592260848,
+            "name": "Commit-0",
+            "content": "{\n  \"orders\": [\n   \n  ]\n}"
+        }
+    ]
+}
