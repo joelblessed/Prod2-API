@@ -76,8 +76,8 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(cors({
     origin:[
-      "http://localhost:3000",
-      "https://apaxt.netlify.app"
+      "http://localhost:3000"
+      "https://apaxt.netlify.app/"
     ],
     methods:"GET, POST, PUT, DELETE",
     allowedHeaders:"Content-Type, Athorization"
