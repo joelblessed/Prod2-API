@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1740559322955,
@@ -36,6 +36,22 @@
                 {
                     "date": 1740559909751,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n app.use(express.urlencoded({extended:true}))\n \n \n \n-const accountPath = path.join(__dirname, \"./jsonFiles/account.json\");\n+const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n \n \n router.post(\"/signin\", async (req, res) => {\n   const { identifier, password} = req.body;\n"
+                },
+                {
+                    "date": 1741881567344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,5 +90,17 @@\n   }\n });\n \n \n+router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n+  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n+  const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n+  if (userIndex !== -1) {\n+    db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n+    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n+    res.json(db.users[userIndex]);\n+  } else {\n+    res.status(404).json({ message: 'User not found' });\n+  }\n+});\n+\n module.exports= router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741881587476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,13 +91,13 @@\n });\n \n \n router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n+  const db = JSON.parse(fs.readFileSync(dbFPath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n-    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n+    fs.writeFileSync(dbFPath, JSON.stringify(db, null, 2));\n     res.json(db.users[userIndex]);\n   } else {\n     res.status(404).json({ message: 'User not found' });\n   }\n"
+                },
+                {
+                    "date": 1741881594551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,13 +91,13 @@\n });\n \n \n router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(dbFPath, 'utf-8'));\n+  const db = JSON.parse(fs.readFileSync(Path, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n-    fs.writeFileSync(dbFPath, JSON.stringify(db, null, 2));\n+    fs.writeFileSync(Path, JSON.stringify(db, null, 2));\n     res.json(db.users[userIndex]);\n   } else {\n     res.status(404).json({ message: 'User not found' });\n   }\n"
+                },
+                {
+                    "date": 1741881603110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,13 +91,13 @@\n });\n \n \n router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(Path, 'utf-8'));\n+  const db = JSON.parse(fs.readFileSync(accountPath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n-    fs.writeFileSync(Path, JSON.stringify(db, null, 2));\n+    fs.writeFileSync(accountPath, JSON.stringify(db, null, 2));\n     res.json(db.users[userIndex]);\n   } else {\n     res.status(404).json({ message: 'User not found' });\n   }\n"
                 }
             ],
             "date": 1740559322955,

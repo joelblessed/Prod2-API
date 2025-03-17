@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 65,
+            "activePatchIndex": 91,
             "patches": [
                 {
                     "date": 1740560064025,
@@ -268,6 +268,110 @@
                 {
                     "date": 1740568462988,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n // Multer Storage Configuration\n const storage = multer.diskStorage({\n   destination: \"./public/images\",\n   filename: (req, file, cb) => {\n-      cb(null, file.originalname)); // Rename the file with timestamp\n+      cb(null,file.originalname); // Rename the file with timestamp\n   }\n });\n \n const upload = multer({\n"
+                },
+                {
+                    "date": 1741857414348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,5 +73,49 @@\n \n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n+\n+// Route to handle product update by ID\n+router.put(\"/update/:id\", upload.array(\"images\", 11), (req, res) => {\n+  const productId = parseInt(req.params.id);\n+  const updatedData = req.body;\n+  const files = req.files;\n+\n+  // Read the existing products from db.json\n+  const dbPath = path.join(__dirname, \"./jsonFiles/db.json\");\n+  let db = { products: [] };\n+\n+  if (fs.existsSync(dbPath)) {\n+    db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n+  }\n+\n+  // Find the product by ID\n+  const productIndex = db.products.findIndex((product) => product.id === productId);\n+\n+  if (productIndex === -1) {\n+    return res.status(404).json({ message: \"Product not found\" });\n+  }\n+\n+  // Update the product details\n+  const updatedProduct = {\n+    ...db.products[productIndex],\n+    ...updatedData,\n+    price: parseFloat(updatedData.price),\n+    quantity: parseInt(updatedData.quantity),\n+    numberInStock: parseInt(updatedData.numberInStock),\n+    discount: parseFloat(updatedData.discount),\n+    likes: parseInt(updatedData.likes),\n+    brand: JSON.parse(updatedData.brand),\n+    location: JSON.parse(updatedData.location),\n+    images: files.length > 0 ? files.map((file) => `/images/${file.filename}`) : db.products[productIndex].images,\n+  };\n+\n+  db.products[productIndex] = updatedProduct;\n+\n+  // Save the updated products back to db.json\n+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n+\n+  res.json({ message: \"Product updated successfully!\", product: updatedProduct });\n+});\n+\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741858381424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,8 +74,12 @@\n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n \n+\n+\n+\n+\n // Route to handle product update by ID\n router.put(\"/update/:id\", upload.array(\"images\", 11), (req, res) => {\n   const productId = parseInt(req.params.id);\n   const updatedData = req.body;\n"
+                },
+                {
+                    "date": 1741858397832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,11 +75,33 @@\n });\n \n \n \n+// Update a product by ID\n+app.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n+  const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));\n+  const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n+  if (productIndex !== -1) {\n+    const updatedProduct = { ...db.products[productIndex], ...JSON.parse(req.body.product) };\n \n+    // Handle image uploads\n+    if (req.files && req.files.length > 0) {\n+      updatedProduct.images = req.files.map(file => `data:${file.mimetype};base64,${file.buffer.toString('base64')}`);\n+    }\n \n+    db.products[productIndex] = updatedProduct;\n+    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n+    res.json(updatedProduct);\n+  } else {\n+    res.status(404).json({ message: 'Product not found' });\n+  }\n+});\n \n+\n+\n+\n+\n+\n // Route to handle product update by ID\n router.put(\"/update/:id\", upload.array(\"images\", 11), (req, res) => {\n   const productId = parseInt(req.params.id);\n   const updatedData = req.body;\n"
+                },
+                {
+                    "date": 1741858530667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n \n \n \n // Update a product by ID\n-app.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n+.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));\n   const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n   if (productIndex !== -1) {\n     const updatedProduct = { ...db.products[productIndex], ...JSON.parse(req.body.product) };\n"
+                },
+                {
+                    "date": 1741858613497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n \n \n \n // Update a product by ID\n-.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n+app.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));\n   const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n   if (productIndex !== -1) {\n     const updatedProduct = { ...db.products[productIndex], ...JSON.parse(req.body.product) };\n"
+                },
+                {
+                    "date": 1741908024943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,9 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n+    \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n@@ -73,75 +74,5 @@\n \n   res.json({ message: \"Product uploaded successfully!\", product: newProduct });\n });\n \n-\n-\n-// Update a product by ID\n-app.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));\n-  const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n-  if (productIndex !== -1) {\n-    const updatedProduct = { ...db.products[productIndex], ...JSON.parse(req.body.product) };\n-\n-    // Handle image uploads\n-    if (req.files && req.files.length > 0) {\n-      updatedProduct.images = req.files.map(file => `data:${file.mimetype};base64,${file.buffer.toString('base64')}`);\n-    }\n-\n-    db.products[productIndex] = updatedProduct;\n-    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n-    res.json(updatedProduct);\n-  } else {\n-    res.status(404).json({ message: 'Product not found' });\n-  }\n-});\n-\n-\n-\n-\n-\n-\n-// Route to handle product update by ID\n-router.put(\"/update/:id\", upload.array(\"images\", 11), (req, res) => {\n-  const productId = parseInt(req.params.id);\n-  const updatedData = req.body;\n-  const files = req.files;\n-\n-  // Read the existing products from db.json\n-  const dbPath = path.join(__dirname, \"./jsonFiles/db.json\");\n-  let db = { products: [] };\n-\n-  if (fs.existsSync(dbPath)) {\n-    db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n-  }\n-\n-  // Find the product by ID\n-  const productIndex = db.products.findIndex((product) => product.id === productId);\n-\n-  if (productIndex === -1) {\n-    return res.status(404).json({ message: \"Product not found\" });\n-  }\n-\n-  // Update the product details\n-  const updatedProduct = {\n-    ...db.products[productIndex],\n-    ...updatedData,\n-    price: parseFloat(updatedData.price),\n-    quantity: parseInt(updatedData.quantity),\n-    numberInStock: parseInt(updatedData.numberInStock),\n-    discount: parseFloat(updatedData.discount),\n-    likes: parseInt(updatedData.likes),\n-    brand: JSON.parse(updatedData.brand),\n-    location: JSON.parse(updatedData.location),\n-    images: files.length > 0 ? files.map((file) => `/images/${file.filename}`) : db.products[productIndex].images,\n-  };\n-\n-  db.products[productIndex] = updatedProduct;\n-\n-  // Save the updated products back to db.json\n-  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));\n-\n-  res.json({ message: \"Product updated successfully!\", product: updatedProduct });\n-});\n-\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741908033124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,10 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    \n+    color:productData.city,\n+\n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n"
+                },
+                {
+                    "date": 1741908042433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,10 @@\n     status: productData.status,\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n-    color:productData.city,\n+    color:productData.color,\n+    city:productData.city,\n \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n"
+                },
+                {
+                    "date": 1741908048674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n     color:productData.color,\n-    city:productData.city,\n+    :productData.city,\n \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n"
+                },
+                {
+                    "date": 1741908058504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     address: productData.address,\n     likes: parseInt(productData.likes),\n     city:productData.city,\n     color:productData.color,\n-    :productData.city,\n+    weight:productData.weight,\n \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n"
+                },
+                {
+                    "date": 1741908079455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     likes: parseInt(productData.likes),\n     city:productData.city,\n     color:productData.color,\n     weight:productData.weight,\n-\n+   \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n"
+                },
+                {
+                    "date": 1741908085672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,9 @@\n     likes: parseInt(productData.likes),\n     city:productData.city,\n     color:productData.color,\n     weight:productData.weight,\n+    :productData.city,\n    \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n"
+                },
+                {
+                    "date": 1741908093012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     likes: parseInt(productData.likes),\n     city:productData.city,\n     color:productData.color,\n     weight:productData.weight,\n-    :productData.city,\n+    oewn:productData.city,\n    \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n"
+                },
+                {
+                    "date": 1741908098146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     likes: parseInt(productData.likes),\n     city:productData.city,\n     color:productData.color,\n     weight:productData.weight,\n-    oewn:productData.city,\n+    owner:productData.city,\n    \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n"
+                },
+                {
+                    "date": 1741908105556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     likes: parseInt(productData.likes),\n     city:productData.city,\n     color:productData.color,\n     weight:productData.weight,\n-    owner:productData.city,\n+    ownerId:productData.,\n    \n     location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n"
+                },
+                {
+                    "date": 1741908115016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,11 +57,10 @@\n     likes: parseInt(productData.likes),\n     city:productData.city,\n     color:productData.color,\n     weight:productData.weight,\n-    ownerId:productData.,\n-   \n-    location:JSON.parse(productData.location),\n+    ownerId:productData.ownerId,\n+   location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n"
+                },
+                {
+                    "date": 1742134995420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,15 +58,15 @@\n     city:productData.city,\n     color:productData.color,\n     weight:productData.weight,\n     ownerId:productData.ownerId,\n-   location:JSON.parse(productData.location),\n+    location:JSON.parse(productData.location),\n     images: files.map((file) => `/images/${file.filename}`), // Save image paths\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [] };\n+  let db = { products: [g] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135001686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [g] };\n+  let db = { products: [global] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135014322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [global] };\n+  let db = { products: [global\\:[]] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135021118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [global\\:[]] };\n+  let db = { products: [gl:[]] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135026996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [gl:[]] };\n+  let db = { products: [] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135175825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [] };\n+  let db = { products: [[]] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135180997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [[]] };\n+  let db = { products: [{go}] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135186228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [{go}] };\n+  let db = { products: [{go:[]}] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135515615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: [{go:[]}] };\n+  let db = { products: ] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
+                },
+                {
+                    "date": 1742135521080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n   };\n \n   // Save product to db.json\n   const dbPath = path.join(__dirname, \"../jsonFiles/db.json\");\n-  let db = { products: ] };\n+  let db = { products: []] };\n \n   if (fs.existsSync(dbPath)) {\n     db = JSON.parse(fs.readFileSync(dbPath, \"utf-8\"));\n   }\n"
                 }
             ],
             "date": 1740560064025,

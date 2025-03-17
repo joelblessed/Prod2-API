@@ -4,66 +4,6 @@
       "userId": 2,
       "cart": [
         {
-          "id": 355,
-          "forCount": 1,
-          "quantity": 1,
-          "price": 242,
-          "likes": 0,
-          "discount": 0,
-          "numberInStock": 6,
-          "owner": "joelblessed",
-          "phoneNumber": 34554,
-          "name": "xr",
-          "description": "64 Gb",
-          "status": "Used",
-          "weight": 10,
-          "brand": [
-            {
-              "id": 1,
-              "name": "iphone",
-              "image": "/images/oh.png"
-            }
-          ],
-          "images": [
-            "/images/3.png",
-            "/images/oh.png"
-          ],
-          "category": "phone",
-          "location": "kombe",
-          "adress": "market",
-          "isSelected": false
-        },
-        {
-          "id": 353,
-          "forCount": 1,
-          "quantity": 1,
-          "price": 532,
-          "likes": 0,
-          "discount": 0,
-          "numberInStock": 6,
-          "owner": "joelblessed",
-          "phoneNumber": 9679,
-          "name": "Latitude",
-          "description": "12 gb Ram",
-          "status": "Used",
-          "weight": 50,
-          "brand": [
-            {
-              "id": 2,
-              "name": "Dell",
-              "image": "/images/oh.png"
-            }
-          ],
-          "images": [
-            "/images/oh.png",
-            "/images/1738676289852.jpg"
-          ],
-          "category": "computer",
-          "location": "kombe",
-          "adress": "market",
-          "isSelected": false
-        },
-        {
           "id": 34354,
           "forCount": 1,
           "quantity": 1,
@@ -78,7 +18,14 @@
           "status": "new",
           "weight": 1,
           "category": "farm",
-          "location": "kombe",
+          "location": [
+            {
+              "id": 1,
+              "name": "Location 1",
+              "latitude": 0,
+              "longitude": 0
+            }
+          ],
           "adress": "market",
           "brand": [
             {
@@ -92,41 +39,6 @@
             "/images/oh.png"
           ],
           "isSelected": true
-        }
-      ]
-    },
-    {
-      "userId": 4,
-      "cart": [
-        {
-          "id": 1,
-          "forCount": 1,
-          "quantity": 1,
-          "price": 9999,
-          "discount": 0,
-          "likes": 0,
-          "numberInStock": 6,
-          "owner": "joelblessed",
-          "phoneNumber": 5457,
-          "name": "Speaker",
-          "description": "220v",
-          "status": "Used",
-          "weight": 1,
-          "category": "accesseries",
-          "location": "kombe",
-          "adress": "market",
-          "brand": [
-            {
-              "id": 3,
-              "name": "jbl",
-              "image": "/images/oh.png"
-            }
-          ],
-          "images": [
-            "/images/oh.png",
-            "/images/1738676289852.jpg"
-          ],
-          "isSelected": false
         }
       ]
     }

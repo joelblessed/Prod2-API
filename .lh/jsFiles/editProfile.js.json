@@ -1,0 +1,126 @@
+{
+    "sourceFile": "jsFiles/editProfile.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 27,
+            "patches": [
+                {
+                    "date": 1741880942340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1741880949936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   }\n });\n \n // Update user profile\n-router.put('//:id', authenticateToken, (req, res) => {\n+router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n"
+                },
+                {
+                    "date": 1741881437159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   });\n };\n \n // Get user profile\n-router.get('/user/:id', authenticateToken, (req, res) => {\n+router.get('/profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const user = db.users.find(u => u.id === parseInt(req.params.id));\n   if (user) {\n     res.json(user);\n"
+                },
+                {
+                    "date": 1741881539175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,17 +38,7 @@\n   }\n });\n \n // Update user profile\n-router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n-  const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n-  if (userIndex !== -1) {\n-    db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n-    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n-    res.json(db.users[userIndex]);\n-  } else {\n-    res.status(404).json({ message: 'User not found' });\n-  }\n-});\n \n+\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741881818420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,40 +5,7 @@\n const bodyParser = require('body-parser');\n const jwt = require('jsonwebtoken');\n const router = express.Router();\n \n-const app = express();\n-const PORT = 5000;\n-const dbFilePath = path.join(__dirname, \"../jsonFiles/account.json\");\n-const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n-app.use(cors());\n-app.use(bodyParser.json());\n-app.use(bodyParser.urlencoded({ extended: true }));\n \n-// Middleware to authenticate token\n-const authenticateToken = (req, res, next) => {\n-  const token = req.headers['authorization'];\n-  if (!token) return res.sendStatus(401);\n-\n-  jwt.verify(token, SECRET_KEY, (err, user) => {\n-    if (err) return res.sendStatus(403);\n-    req.user = user;\n-    next();\n-  });\n-};\n-\n-// Get user profile\n-router.get('/profile/:id', authenticateToken, (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n-  const user = db.users.find(u => u.id === parseInt(req.params.id));\n-  if (user) {\n-    res.json(user);\n-  } else {\n-    res.status(404).json({ message: 'User not found' });\n-  }\n-});\n-\n-// Update user profile\n-\n-\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741881824335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,7 @@\n-const express = require('express');\n-const cors = require('cors');\n-const fs = require('fs');\n-const path = require('path');\n-const bodyParser = require('body-parser');\n-const jwt = require('jsonwebtoken');\n+\n const router = express.Router();\n \n \n \n+\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741881842697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,61 @@\n \n const router = express.Router();\n+const express = require('express');\n+const cors = require('cors');\n+const fs = require('fs');\n+const path = require('path');\n+const bodyParser = require('body-parser');\n+const jwt = require('jsonwebtoken');\n \n+const app = express();\n+const PORT = 5000;\n+const dbFilePath = path.join(__dirname, 'db.json');\n+const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n+app.use(cors());\n+app.use(bodyParser.json());\n+app.use(bodyParser.urlencoded({ extended: true }));\n \n+// Middleware to authenticate token\n+const authenticateToken = (req, res, next) => {\n+  const token = req.headers['authorization'];\n+  if (!token) return res.sendStatus(401);\n \n+  jwt.verify(token, SECRET_KEY, (err, user) => {\n+    if (err) return res.sendStatus(403);\n+    req.user = user;\n+    next();\n+  });\n+};\n+\n+// Get user profile\n+app.get('/api/profile/:id', authenticateToken, (req, res) => {\n+  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n+  const user = db.users.find(u => u.id === parseInt(req.params.id));\n+  if (user) {\n+    res.json(user);\n+  } else {\n+    res.status(404).json({ message: 'User not found' });\n+  }\n+});\n+\n+// Update user profile\n+app.put('/api/updateProfile/:id', authenticateToken, (req, res) => {\n+  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n+  const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n+  if (userIndex !== -1) {\n+    db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n+    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n+    res.json(db.users[userIndex]);\n+  } else {\n+    res.status(404).json({ message: 'User not found' });\n+  }\n+});\n+\n+app.listen(PORT, () => {\n+  console.log(`Server is running on http://localhost:${PORT}`);\n+});\n+\n+\n+\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741881849485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,11 +51,10 @@\n     res.status(404).json({ message: 'User not found' });\n   }\n });\n \n-app.listen(PORT, () => {\n-  console.log(`Server is running on http://localhost:${PORT}`);\n-});\n \n \n \n+\n+\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741881863810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const bodyParser = require('body-parser');\n const jwt = require('jsonwebtoken');\n \n const app = express();\n-const PORT = 5000;\n+\n const dbFilePath = path.join(__dirname, 'db.json');\n const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n app.use(cors());\n"
+                },
+                {
+                    "date": 1741881891103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   });\n };\n \n // Get user profile\n-app.get('/api/profile/:id', authenticateToken, (req, res) => {\n+router.get('/api/profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const user = db.users.find(u => u.id === parseInt(req.params.id));\n   if (user) {\n     res.json(user);\n"
+                },
+                {
+                    "date": 1741881901450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   }\n });\n \n // Update user profile\n-app.put('/api/updateProfile/:id', authenticateToken, (req, res) => {\n+router.put('/api/updateProfile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n"
+                },
+                {
+                    "date": 1741881917703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n \n-const router = express.Router();\n+\n const express = require('express');\n const cors = require('cors');\n const fs = require('fs');\n const path = require('path');\n"
+                },
+                {
+                    "date": 1741882200604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n const bodyParser = require('body-parser');\n const jwt = require('jsonwebtoken');\n \n const app = express();\n-\n-const dbFilePath = path.join(__dirname, 'db.json');\n+const router = express.Router();\n+const dbFilePath = path.join(__dirname, \"../jsonFiles/account.json\");\n const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n app.use(cors());\n app.use(bodyParser.json());\n"
+                },
+                {
+                    "date": 1741882214769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   });\n };\n \n // Get user profile\n-router.get('/api/profile/:id', authenticateToken, (req, res) => {\n+router.get('/profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const user = db.users.find(u => u.id === parseInt(req.params.id));\n   if (user) {\n     res.json(user);\n"
+                },
+                {
+                    "date": 1741882222752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   }\n });\n \n // Update user profile\n-router.put('/api/updateProfile/:id', authenticateToken, (req, res) => {\n+router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n"
+                },
+                {
+                    "date": 1741883244201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,14 @@\n-\n-\n const express = require('express');\n const cors = require('cors');\n const fs = require('fs');\n const path = require('path');\n const bodyParser = require('body-parser');\n const jwt = require('jsonwebtoken');\n \n const app = express();\n-const router = express.Router();\n-const dbFilePath = path.join(__dirname, \"../jsonFiles/account.json\");\n+const PORT = 5000;\n+const dbFilePath = path.join(__dirname, 'db.json');\n const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n app.use(cors());\n app.use(bodyParser.json());\n@@ -28,9 +26,9 @@\n   });\n };\n \n // Get user profile\n-router.get('/profile/:id', authenticateToken, (req, res) => {\n+app.get('/api/profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const user = db.users.find(u => u.id === parseInt(req.params.id));\n   if (user) {\n     res.json(user);\n@@ -39,9 +37,9 @@\n   }\n });\n \n // Update user profile\n-router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n+app.put('/api/profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n@@ -51,8 +49,11 @@\n     res.status(404).json({ message: 'User not found' });\n   }\n });\n \n+app.listen(PORT, () => {\n+  console.log(`Server is running on http://localhost:${PORT}`);\n+});\n \n \n \n \n"
+                },
+                {
+                    "date": 1741883251594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,11 +49,8 @@\n     res.status(404).json({ message: 'User not found' });\n   }\n });\n \n-app.listen(PORT, () => {\n-  console.log(`Server is running on http://localhost:${PORT}`);\n-});\n \n \n \n \n"
+                },
+                {
+                    "date": 1741883395297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const bodyParser = require('body-parser');\n const jwt = require('jsonwebtoken');\n \n const app = express();\n-const PORT = 5000;\n+\n const dbFilePath = path.join(__dirname, 'db.json');\n const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n app.use(cors());\n"
+                },
+                {
+                    "date": 1741883449875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const bodyParser = require('body-parser');\n const jwt = require('jsonwebtoken');\n \n const app = express();\n-\n+const router = express.Router();\n const dbFilePath = path.join(__dirname, 'db.json');\n const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n app.use(cors());\n"
+                },
+                {
+                    "date": 1741883475454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n   });\n };\n \n // Get user profile\n-app.get('/api/profile/:id', authenticateToken, (req, res) => {\n+router.get('/api/profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const user = db.users.find(u => u.id === parseInt(req.params.id));\n   if (user) {\n     res.json(user);\n"
+                },
+                {
+                    "date": 1741883537513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const jwt = require('jsonwebtoken');\n \n const app = express();\n const router = express.Router();\n-const dbFilePath = path.join(__dirname, 'db.json');\n+const dbFilePath = path.join(__dirname, );\n const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n app.use(cors());\n app.use(bodyParser.json());\n@@ -37,9 +37,9 @@\n   }\n });\n \n // Update user profile\n-app.put('/api/profile/:id', authenticateToken, (req, res) => {\n+router.put('/api/profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n"
+                },
+                {
+                    "date": 1741883670998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const jwt = require('jsonwebtoken');\n \n const app = express();\n const router = express.Router();\n-const dbFilePath = path.join(__dirname, );\n+const dbFilePath = path.join(__dirname, \"../jsonFiles/account.json\");\n const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n \n app.use(cors());\n app.use(bodyParser.json());\n@@ -26,9 +26,9 @@\n   });\n };\n \n // Get user profile\n-router.get('/api/profile/:id', authenticateToken, (req, res) => {\n+router.get('profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const user = db.users.find(u => u.id === parseInt(req.params.id));\n   if (user) {\n     res.json(user);\n"
+                },
+                {
+                    "date": 1741883678626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n   });\n };\n \n // Get user profile\n-router.get('profile/:id', authenticateToken, (req, res) => {\n+router.get('/profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const user = db.users.find(u => u.id === parseInt(req.params.id));\n   if (user) {\n     res.json(user);\n@@ -37,9 +37,9 @@\n   }\n });\n \n // Update user profile\n-router.put('/api/profile/:id', authenticateToken, (req, res) => {\n+router.put('profile/:id', authenticateToken, (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n"
+                },
+                {
+                    "date": 1741914738159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,58 +0,0 @@\n-const express = require('express');\n-const cors = require('cors');\n-const fs = require('fs');\n-const path = require('path');\n-const bodyParser = require('body-parser');\n-const jwt = require('jsonwebtoken');\n-\n-const app = express();\n-const router = express.Router();\n-const dbFilePath = path.join(__dirname, \"../jsonFiles/account.json\");\n-const SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n-\n-app.use(cors());\n-app.use(bodyParser.json());\n-app.use(bodyParser.urlencoded({ extended: true }));\n-\n-// Middleware to authenticate token\n-const authenticateToken = (req, res, next) => {\n-  const token = req.headers['authorization'];\n-  if (!token) return res.sendStatus(401);\n-\n-  jwt.verify(token, SECRET_KEY, (err, user) => {\n-    if (err) return res.sendStatus(403);\n-    req.user = user;\n-    next();\n-  });\n-};\n-\n-// Get user profile\n-router.get('/profile/:id', authenticateToken, (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n-  const user = db.users.find(u => u.id === parseInt(req.params.id));\n-  if (user) {\n-    res.json(user);\n-  } else {\n-    res.status(404).json({ message: 'User not found' });\n-  }\n-});\n-\n-// Update user profile\n-router.put('profile/:id', authenticateToken, (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n-  const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n-  if (userIndex !== -1) {\n-    db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n-    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n-    res.json(db.users[userIndex]);\n-  } else {\n-    res.status(404).json({ message: 'User not found' });\n-  }\n-});\n-\n-\n-\n-\n-\n-\n-module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741914743696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,81 @@\n+const express = require(\"express\");\n+const multer = require(\"multer\");\n+const path = require(\"path\");\n+const fs = require(\"fs\");\n+const app = express();\n+const port = 5000;\n+\n+// Middleware to parse JSON and urlencoded data\n+app.use(express.json());\n+app.use(express.urlencoded({ extended: true }));\n+\n+// Set up multer for file uploads\n+const storage = multer.diskStorage({\n+  destination: (req, file, cb) => {\n+    cb(null, \"uploads/\");\n+  },\n+  filename: (req, file, cb) => {\n+    cb(null, ${Date.now()}-${file.originalname});\n+  },\n+});\n+\n+const upload = multer({ storage });\n+\n+// Ensure uploads directory exists\n+if (!fs.existsSync(\"uploads\")) {\n+  fs.mkdirSync(\"uploads\");\n+}\n+\n+// Mock user data\n+let users = [\n+  {\n+    id: \"1\",\n+    email: \"user@example.com\",\n+    userName: \"user123\",\n+    fullName: \"John Doe\",\n+    phone: \"1234567890\",\n+    address: \"123 Main St\",\n+    profileImage: \"\",\n+  },\n+];\n+\n+// Route to get user profile\n+app.get(\"/profile\", (req, res) => {\n+  const token = req.headers.authorization?.split(\" \")[1];\n+  if (!token) {\n+    return res.status(401).json({ error: \"No token provided\" });\n+  }\n+\n+  const user = users.find((u) => u.id === \"1\"); // Mock user ID\n+  if (!user) {\n+    return res.status(404).json({ error: \"User not found\" });\n+  }\n+\n+  res.json(user);\n+});\n+\n+// Route to update user profile\n+app.put(\"/updateProfile/:id\", upload.single(\"profileImage\"), (req, res) => {\n+  const userId = req.params.id;\n+  const { userName, fullName, email, phone, address } = req.body;\n+  const profileImage = req.file ? /uploads/${req.file.filename} : \"\";\n+\n+  const user = users.find((u) => u.id === userId);\n+  if (!user) {\n+    return res.status(404).json({ error: \"User not found\" });\n+  }\n+\n+  user.userName = userName;\n+  user.fullName = fullName;\n+  user.email = email;\n+  user.phone = phone;\n+  user.address = address;\n+  if (profileImage) {\n+    user.profileImage = profileImage;\n+  }\n+\n+  res.json({ message: \"Profile updated successfully\", user });\n+});\n+\n+// Serve uploaded files statically\n+app.use(\"/uploads\", express.static(path.join(__dirname, \"uploads\")));\n"
+                },
+                {
+                    "date": 1741914762745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,4 +78,5 @@\n });\n \n // Serve uploaded files statically\n app.use(\"/uploads\", express.static(path.join(__dirname, \"uploads\")));\n+\n"
+                },
+                {
+                    "date": 1741914770272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,4 +79,5 @@\n \n // Serve uploaded files statically\n app.use(\"/uploads\", express.static(path.join(__dirname, \"uploads\")));\n \n+module\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741914777780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,5 +79,5 @@\n \n // Serve uploaded files statically\n app.use(\"/uploads\", express.static(path.join(__dirname, \"uploads\")));\n \n-module.exports = app;\n\\ No newline at end of file\n+module.exports = router;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1741880942340,
+            "name": "Commit-0",
+            "content": "const express = require('express');\nconst cors = require('cors');\nconst fs = require('fs');\nconst path = require('path');\nconst bodyParser = require('body-parser');\nconst jwt = require('jsonwebtoken');\nconst router = express.Router();\n\nconst app = express();\nconst PORT = 5000;\nconst dbFilePath = path.join(__dirname, \"../jsonFiles/account.json\");\nconst SECRET_KEY = 'your_secret_key'; // Replace with your actual secret key\n\napp.use(cors());\napp.use(bodyParser.json());\napp.use(bodyParser.urlencoded({ extended: true }));\n\n// Middleware to authenticate token\nconst authenticateToken = (req, res, next) => {\n  const token = req.headers['authorization'];\n  if (!token) return res.sendStatus(401);\n\n  jwt.verify(token, SECRET_KEY, (err, user) => {\n    if (err) return res.sendStatus(403);\n    req.user = user;\n    next();\n  });\n};\n\n// Get user profile\nrouter.get('/user/:id', authenticateToken, (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  const user = db.users.find(u => u.id === parseInt(req.params.id));\n  if (user) {\n    res.json(user);\n  } else {\n    res.status(404).json({ message: 'User not found' });\n  }\n});\n\n// Update user profile\nrouter.put('//:id', authenticateToken, (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n  if (userIndex !== -1) {\n    db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n    res.json(db.users[userIndex]);\n  } else {\n    res.status(404).json({ message: 'User not found' });\n  }\n});\n\nmodule.exports =router"
+        }
+    ]
+}

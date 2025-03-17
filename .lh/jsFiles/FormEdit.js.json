@@ -1,0 +1,42 @@
+{
+    "sourceFile": "jsFiles/FormEdit.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1741858661675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1741858769944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,7 +52,5 @@\n     res.status(404).json({ message: 'Product not found' });\n   }\n });\n \n-app.listen(PORT, () => {\n-  console.log(`Server is running on http://localhost:${PORT}`);\n-});\n\\ No newline at end of file\n+module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741858854073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const cors = require('cors');\n const fs = require('fs');\n const path = require('path');\n const multer = require('multer');\n-\n+const router = express.Router();\n const app = express();\n const PORT = 5000;\n const dbFilePath = path.join(__dirname, 'db.json');\n \n"
+                },
+                {
+                    "date": 1741858886170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n const storage = multer.memoryStorage();\n const upload = multer({ storage: storage });\n \n // Get all products\n-app.get('/products', (req, res) => {\n+ap.get('/products', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   res.json(db.products);\n });\n \n"
+                },
+                {
+                    "date": 1741858897903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,15 +16,15 @@\n const storage = multer.memoryStorage();\n const upload = multer({ storage: storage });\n \n // Get all products\n-ap.get('/products', (req, res) => {\n+router.get('/products', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   res.json(db.products);\n });\n \n // Get a single product by ID\n-app.get('/products/:id', (req, res) => {\n+router.get('/products/:id', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const product = db.products.find(p => p.id === parseInt(req.params.id));\n   if (product) {\n     res.json(product);\n"
+                },
+                {
+                    "date": 1741858906816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   }\n });\n \n // Update a product by ID\n-app.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n+router.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n   if (productIndex !== -1) {\n     const updatedProduct = { ...db.products[productIndex], ...JSON.parse(req.body.product) };\n"
+                },
+                {
+                    "date": 1741858989419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const multer = require('multer');\n const router = express.Router();\n const app = express();\n const PORT = 5000;\n-const dbFilePath = path.join(__dirname, 'db.json');\n+const dbFilePath = path.join(__dirname, ');\n \n app.use(cors());\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n"
+                }
+            ],
+            "date": 1741858661675,
+            "name": "Commit-0",
+            "content": "const express = require('express');\nconst cors = require('cors');\nconst fs = require('fs');\nconst path = require('path');\nconst multer = require('multer');\n\nconst app = express();\nconst PORT = 5000;\nconst dbFilePath = path.join(__dirname, 'db.json');\n\napp.use(cors());\napp.use(express.json());\napp.use(express.urlencoded({ extended: true }));\n\n// Set up multer for file uploads\nconst storage = multer.memoryStorage();\nconst upload = multer({ storage: storage });\n\n// Get all products\napp.get('/products', (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  res.json(db.products);\n});\n\n// Get a single product by ID\napp.get('/products/:id', (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  const product = db.products.find(p => p.id === parseInt(req.params.id));\n  if (product) {\n    res.json(product);\n  } else {\n    res.status(404).json({ message: 'Product not found' });\n  }\n});\n\n// Update a product by ID\napp.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n  if (productIndex !== -1) {\n    const updatedProduct = { ...db.products[productIndex], ...JSON.parse(req.body.product) };\n\n    // Handle image uploads\n    if (req.files && req.files.length > 0) {\n      updatedProduct.images = req.files.map(file => `data:${file.mimetype};base64,${file.buffer.toString('base64')}`);\n    }\n\n    db.products[productIndex] = updatedProduct;\n    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n    res.json(updatedProduct);\n  } else {\n    res.status(404).json({ message: 'Product not found' });\n  }\n});\n\napp.listen(PORT, () => {\n  console.log(`Server is running on http://localhost:${PORT}`);\n});"
+        }
+    ]
+}

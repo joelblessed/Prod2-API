@@ -1,0 +1,42 @@
+{
+    "sourceFile": "jsFiles/products.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1741859825487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1741859837784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     res.status(404).json({ message: 'Product not found' });\n   }\n });\n \n-\n+// \n router.delete('/deleteProduct/:id', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n   if (productIndex !== -1) {\n"
+                },
+                {
+                    "date": 1741859844074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     res.status(404).json({ message: 'Product not found' });\n   }\n });\n \n-// \n+// delete a product by ID\n router.delete('/deleteProduct/:id', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n   if (productIndex !== -1) {\n"
+                },
+                {
+                    "date": 1741883437778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const path = require('path');\n const multer = require('multer');\n const router = express.Router();\n const app = express();\n-const PORT = 5000;\n+\n const dbFilePath = path.join(__dirname, \"../jsonFiles/db.json\");\n \n app.use(cors());\n app.use(express.json());\n"
+                },
+                {
+                    "date": 1742136369541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,5 +65,6 @@\n     res.status(404).json({ message: 'Product not found' });\n   }\n });\n \n+\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742136397102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,6 +65,16 @@\n     res.status(404).json({ message: 'Product not found' });\n   }\n });\n \n+app.get(\"/products/:ownerId\", (req, res) => {\n+  const db = \n+  const ownerId = req.params.ownerId;\n \n+  // Filter products by ownerId\n+  const filteredProducts = db.products.filter(\n+    (product) => String(product.ownerId) === ownerId\n+  );\n+\n+  res.json(filteredProducts);\n+});\n module.exports =router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742136421658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n     res.status(404).json({ message: 'Product not found' });\n   }\n });\n \n-app.get(\"/products/:ownerId\", (req, res) => {\n+router.get(\"/products/:ownerId\", (req, res) => {\n   const db =  JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const ownerId = req.params.ownerId;\n \n   // Filter products by ownerId\n"
+                }
+            ],
+            "date": 1741859825487,
+            "name": "Commit-0",
+            "content": "const express = require('express');\nconst cors = require('cors');\nconst fs = require('fs');\nconst path = require('path');\nconst multer = require('multer');\nconst router = express.Router();\nconst app = express();\nconst PORT = 5000;\nconst dbFilePath = path.join(__dirname, \"../jsonFiles/db.json\");\n\napp.use(cors());\napp.use(express.json());\napp.use(express.urlencoded({ extended: true }));\n\n// Set up multer for file uploads\nconst storage = multer.memoryStorage();\nconst upload = multer({ storage: storage });\n\n// Get all products\nrouter.get('/products', (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  res.json(db.products);\n});\n\n// Get a single product by ID\nrouter.get('/products/:id', (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  const product = db.products.find(p => p.id === parseInt(req.params.id));\n  if (product) {\n    res.json(product);\n  } else {\n    res.status(404).json({ message: 'Product not found' });\n  }\n});\n\n// Update a product by ID\nrouter.put('/updateProduct/:id', upload.array('images'), (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n  if (productIndex !== -1) {\n    const updatedProduct = { ...db.products[productIndex], ...JSON.parse(req.body.product) };\n\n    // Handle image uploads\n    if (req.files && req.files.length > 0) {\n      updatedProduct.images = req.files.map(file => `data:${file.mimetype};base64,${file.buffer.toString('base64')}`);\n    }\n\n    db.products[productIndex] = updatedProduct;\n    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n    res.json(updatedProduct);\n  } else {\n    res.status(404).json({ message: 'Product not found' });\n  }\n});\n\n\nrouter.delete('/deleteProduct/:id', (req, res) => {\n  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n  const productIndex = db.products.findIndex(p => p.id === parseInt(req.params.id));\n  if (productIndex !== -1) {\n    db.products.splice(productIndex, 1);\n    fs.writeFileSync(dbFilePath, JSON.stringify(db, null, 2));\n    res.json({ message: 'Product deleted successfully' });\n  } else {\n    res.status(404).json({ message: 'Product not found' });\n  }\n});\n\nmodule.exports =router"
+        }
+    ]
+}
