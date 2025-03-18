@@ -1,86 +1,6 @@
 {
   "products": [
     {
-      "id": 355,
-      "forCount": 1,
-      "quantity": 1,
-      "price": 242,
-      "likes": 0,
-      "discount": "100",
-      "numberInStock": 6,
-      "owner": "joelblessed",
-      "phoneNumber": 34554,
-      "ownerId": 2,
-      "color": "red",
-      "name": "iphine xr",
-      "description": "64 Gb",
-      "status": "Used",
-      "weight": 10,
-      "brand": [
-        {
-          "id": 1,
-          "name": "iphone",
-          "image": "/images/oh.png"
-        }
-      ],
-      "images": [
-        "/images/3.png",
-        "/images/oh.png"
-      ],
-      "category": "phone",
-      "location": [
-        {
-          "id": 1,
-          "name": "Location 1",
-          "latitude": 0,
-          "longitude": 0
-        }
-      ],
-      "address": "market",
-      "city": "kigali",
-      "isSelected": false,
-      "postedOn": "2025-03-13T09:40:15.250Z"
-    },
-    {
-      "id": 353,
-      "forCount": 1,
-      "quantity": 1,
-      "price": 532,
-      "likes": 0,
-      "discount": 0,
-      "numberInStock": 6,
-      "owner": "joelblessed",
-      "phoneNumber": 9679,
-      "ownerId": 2,
-      "color": "red",
-      "name": "Latitude",
-      "description": "12 gb Ram",
-      "status": "Used",
-      "weight": 50,
-      "brand": [
-        {
-          "id": 2,
-          "name": "Dell",
-          "image": "/images/oh.png"
-        }
-      ],
-      "images": [
-        "/images/oh.png",
-        "/images/1738676289852.jpg"
-      ],
-      "category": "computer",
-      "location": [
-        {
-          "id": 1,
-          "name": "Location 1",
-          "latitude": 0,
-          "longitude": 0
-        }
-      ],
-      "adress": "market",
-      "isSelected": false
-    },
-    {
       "id": 34354,
       "forCount": 1,
       "quantity": 1,
@@ -506,79 +426,6 @@
       "isSelected": false
     },
     {
-      "id": 1740567588217,
-      "postedOn": "02/26/2025, 11:56:02 AM",
-      "name": "fythgjh",
-      "brand": [
-        {
-          "id": 1740567362409,
-          "name": "tfgyuhi",
-          "image": ""
-        }
-      ],
-      "category": "Electronics",
-      "price": 35456789,
-      "quantity": 1,
-      "numberInStock": 546789,
-      "discount": 456789,
-      "owner": "hold",
-      "phoneNumber": "23456789",
-      "ownerId": 2,
-      "color": "red",
-      "description": "serdtcvybuni",
-      "status": "New",
-      "address": "23456789",
-      "likes": 0,
-      "weight": 1,
-      "city": "werdtfyguhijo",
-      "location": [
-        {
-          "id": 1740567362409
-        }
-      ],
-      "images": [
-        "/images/.jpg"
-      ]
-    },
-    {
-      "id": 1740567849227,
-      "postedOn": "02/26/2025, 12:03:20 PM",
-      "name": "uuui",
-      "brand": [
-        {
-          "id": 1740567800263,
-          "name": "etrdyfuguhi",
-          "image": ""
-        }
-      ],
-      "category": "Electronics",
-      "price": 4354567,
-      "quantity": 1,
-      "numberInStock": 3545678,
-      "discount": 3546678,
-      "owner": "jeff",
-      "phoneNumber": "23456789",
-      "ownerId": 2,
-      "color": "red",
-      "description": "wertyn",
-      "status": "New",
-      "address": "2345678",
-      "likes": 0,
-      "weight": 1,
-      "city": "345677",
-      "location": [
-        {
-          "id": 1,
-          "name": "Location 1",
-          "latitude": 0,
-          "longitude": 0
-        }
-      ],
-      "images": [
-        "/images/undefined.jpg"
-      ]
-    },
-    {
       "id": 1740568542384,
       "postedOn": "02/26/2025, 12:14:50 PM",
       "name": "3456789",
@@ -592,7 +439,7 @@
       "category": "Clothing",
       "price": 3545678,
       "quantity": 1,
-      "numberInStock": 2345678,
+      "numberInStock": "23",
       "discount": 546789,
       "owner": "hold",
       "phoneNumber": "234567890",
@@ -616,82 +463,6 @@
         "/images/to.jpg"
       ],
       "soled": false
-    },
-    {
-      "id": 1742131395628,
-      "postedOn": "03/16/2025, 01:21:31 PM",
-      "name": "testd",
-      "brand": [
-        {
-          "id": 1742131291846,
-          "name": "pojkb",
-          "image": ""
-        }
-      ],
-      "category": "Electronics",
-      "price": 67,
-      "quantity": 1,
-      "numberInStock": 9,
-      "discount": null,
-      "owner": "joelblessed",
-      "phoneNumber": "9876542345678",
-      "description": "strcdyvfubinoiunhlibyguff",
-      "status": "New",
-      "address": "hoishdid",
-      "likes": 0,
-      "city": "kcxn;nxckxc",
-      "color": "red",
-      "weight": "3",
-      "ownerId": "2",
-      "location": [
-        {
-          "id": 1742131291846,
-          "location": "",
-          "latitude": "",
-          "longitude": ""
-        }
-      ],
-      "images": [
-        "/images/Screenshot from 2025-03-12 17-26-58.png"
-      ]
-    },
-    {
-      "id": 1742135296760,
-      "postedOn": "03/16/2025, 02:26:57 PM",
-      "name": "hjlllbh",
-      "brand": [
-        {
-          "id": 1742135217282,
-          "name": "hhbl;i;j",
-          "image": ""
-        }
-      ],
-      "category": "Clothing",
-      "price": 988,
-      "quantity": 1,
-      "numberInStock": 90,
-      "discount": null,
-      "owner": "joelblessed",
-      "phoneNumber": "989080800",
-      "description": "yguvbuib",
-      "status": "Used",
-      "address": "onlpin",
-      "likes": 0,
-      "city": "bjkbml",
-      "color": "tuy",
-      "weight": "0898",
-      "ownerId": "2",
-      "location": [
-        {
-          "id": 1742135217283,
-          "location": "",
-          "latitude": "",
-          "longitude": ""
-        }
-      ],
-      "images": [
-        "/images/Screenshot from 2025-03-12 17-26-58.png"
-      ]
     }
   ]
 }

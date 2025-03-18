@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 27,
+            "activePatchIndex": 28,
             "patches": [
                 {
                     "date": 1741880942340,
@@ -116,6 +116,10 @@
                 {
                     "date": 1741914777780,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,5 +79,5 @@\n \n // Serve uploaded files statically\n app.use(\"/uploads\", express.static(path.join(__dirname, \"uploads\")));\n \n-module.exports = app;\n\\ No newline at end of file\n+module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742242627434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \n // Middleware\n app.use(cors());\n app.use(bodyParser.json());\n-app.use(\"/public/\", express.static(\"uploads\")); // Serve uploaded images\n+app.use(\"/public/i\", express.static(\"uploads\")); // Serve uploaded images\n \n // Multer Configuration for Image Uploads\n const storage = multer.diskStorage({\n   destination: (req, file, cb) => {\n"
                 }
             ],
             "date": 1741880942340,

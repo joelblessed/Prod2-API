@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "email": "joelblessed@gmail.com",
+      "password": "$2a$10$2OAc3/sDXDsBIO0N1HenXeGuspIhn5pt7ZUsLaRQQzAnypSHPbU1e",
+      "userName": "joelblessed",
+      "fullName": "joel blessed",
+      "phone": "677130189",
+      "country": "usa",
+      "address": "kombe",
+      "gender": "male",
+      "profileImage": "/images/oh.png",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "email": "joelblessedgo@gmail.com",
+      "password": "$2a$10$QNJNga1o8pOoA9ByJBDb1eHkOwIFumdyP9jHYYBwygIQmwaSm0eWa",
+      "userName": "joeltest",
+      "fullName": "joel blessed",
+      "phone": "677331862",
+      "country": "Kameroon",
+      "city": "",
+      "wallet": 0,
+      "profileImage": "/images/oh.png",
+      "address": "kombe",
+      "gender": "male",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "email": "joelblessedgod@gmail.com",
+      "password": "$2a$10$1.waJSBhj8rf/KbuIk53H.EAydlqawl.KsyMbAsBrL7Px.JYQwHe6",
+      "userName": "joeltest2",
+      "fullName": "joel blessed",
+      "phone": "677331862",
+      "country": "Cameroon",
+      "city": "Duaola",
+      "wallet": 0,
+      "address": "kombe",
+      "gender": "male",
+      "role": "user"
+    }
+  ],
+  "roleaccess": [
+    {
+      "role": "admin",
+      "menu": "customer",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": true,
+      "id": "33ae"
+    },
+    {
+      "role": "admin",
+      "menu": "supplier",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": true,
+      "id": "7c4b"
+    },
+    {
+      "role": "user",
+      "menu": "customer",
+      "haveadd": false,
+      "haveedit": false,
+      "havedelete": false,
+      "id": "6d0b"
+    },
+    {
+      "role": "user1",
+      "menu": "customer",
+      "haveadd": false,
+      "haveedit": false,
+      "havedelete": false,
+      "id": "2c13"
+    }
+  ],
+  "customer": [
+    {
+      "code": 1,
+      "name": "Chris",
+      "email": "chris@in.com",
+      "id": "6bd0"
+    }
+  ]
+}

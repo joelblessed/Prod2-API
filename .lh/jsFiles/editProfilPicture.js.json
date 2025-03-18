@@ -1,0 +1,34 @@
+{
+    "sourceFile": "jsFiles/editProfilPicture.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1742297984366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1742297995582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n   if (!req.file) return res.status(400).json({ message: \"No file uploaded\" });\n \n   // Save the correct image path\n-  const imageUrl = /public/profileImages/${req.file.filename};\n+  const imageUrl = `/public/profileImages/${req.file.filename};\n   users[userIndex].profileImage = imageUrl;\n \n   writeUsers(users);\n \n"
+                },
+                {
+                    "date": 1742298000938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n \n   if (!req.file) return res.status(400).json({ message: \"No file uploaded\" });\n \n   // Save the correct image path\n-  const imageUrl = `/public/profileImages/${req.file.filename};\n+  const imageUrl = `/public/profileImages/${req.file.filename}`;\n   users[userIndex].profileImage = imageUrl;\n \n   writeUsers(users);\n \n"
+                },
+                {
+                    "date": 1742298006427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath, { recursive: true }); // Ensure directory exists\n     cb(null, uploadPath);\n   },\n   filename: (req, file, cb) => {\n-    cb(null, ${Date.now()}-${file.originalname}); // Prevent duplicate names\n+    cb(null, `${Date.now()}-${file.originalname}); // Prevent duplicate names\n   },\n });\n \n const upload = multer({ storage });\n"
+                },
+                {
+                    "date": 1742298013324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath, { recursive: true }); // Ensure directory exists\n     cb(null, uploadPath);\n   },\n   filename: (req, file, cb) => {\n-    cb(null, `${Date.now()}-${file.originalname}); // Prevent duplicate names\n+    cb(null, `${Date.now()}-${file.originalname}`); // Prevent duplicate names\n   },\n });\n \n const upload = multer({ storage });\n"
+                }
+            ],
+            "date": 1742297984366,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\nconst cors = require(\"cors\");\nconst fs = require(\"fs\");\nconst bodyParser = require(\"body-parser\");\nconst multer = require(\"multer\");\nconst path = require(\"path\");\n\nconst router = express.Router();\nconst USERS_FILE = \"./jsonFiles/account.json\";\n\n// Middleware\nrouter.use(cors());\nrouter.use(bodyParser.json());\nrouter.use(\"/public/profileImages\", express.static(\"public/profileImages\")); // Serve profile images\n\n// Multer Configuration for Profile Image Uploads\nconst storage = multer.diskStorage({\n  destination: (req, file, cb) => {\n    const uploadPath = \"public/profileImages\"; \n    if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath, { recursive: true }); // Ensure directory exists\n    cb(null, uploadPath);\n  },\n  filename: (req, file, cb) => {\n    cb(null, ${Date.now()}-${file.originalname}); // Prevent duplicate names\n  },\n});\n\nconst upload = multer({ storage });\n\n// Read Users from File\nconst readUsers = () => {\n  try {\n    const data = fs.readFileSync(USERS_FILE);\n    return JSON.parse(data).users;\n  } catch (error) {\n    return [];\n  }\n};\n\n// Write Users to File\nconst writeUsers = (users) => {\n  fs.writeFileSync(USERS_FILE, JSON.stringify({ users }, null, 2));\n};\n\n// 🟠 *Upload and Update Profile Picture*\nrouter.put(\"/profile/update-image/:userId\", upload.single(\"profileImage\"), (req, res) => {\n  const { userId } = req.params;\n  let users = readUsers();\n  const userIndex = users.findIndex((user) => user.id === parseInt(userId));\n\n  if (userIndex === -1) return res.status(404).json({ message: \"User not found\" });\n\n  if (!req.file) return res.status(400).json({ message: \"No file uploaded\" });\n\n  // Save the correct image path\n  const imageUrl = /public/profileImages/${req.file.filename};\n  users[userIndex].profileImage = imageUrl;\n\n  writeUsers(users);\n\n  res.json({ message: \"Profile image updated\", user: users[userIndex] });\n});\n\nmodule.exports = router;"
+        }
+    ]
+}

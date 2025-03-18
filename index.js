@@ -38,6 +38,7 @@ const wishlistRoutes = require("./jsFiles/wishlist");
 const signUpRoutes = require("./jsFiles/signUp");
 const signInRoutes = require("./jsFiles/signIn");
 const editProfileRoutes = require("./jsFiles/editProfile");
+const editProfilePictureRoutes = require("./jsFiles/editProfilePicture");
 const formUploadRoutes = require("./jsFiles/formUpload");
 const productsRoutes = require("./jsFiles/products");
 const passwardResetRoutes = require("./jsFiles/passwardReset");
@@ -98,13 +99,14 @@ app.use("/", wishlistRoutes);
 app.use("/", signUpRoutes);
 app.use("/", signInRoutes);
 app.use("/", editProfileRoutes);
+app.use("/", editProfilePictureRoutes);
 app.use("/", formUploadRoutes);
 app.use("/", productsRoutes);
 app.use("/", passwardResetRoutes);
 app.use("/", paymentRoutes);
 
 
-
+app.use("/public/profileImages", express.static(path.join(__dirname,"public","profileImages"))); // Serve profile images
 
 
 // Read db.json
@@ -643,6 +645,7 @@ app.delete("/productsRemoveItem/:id", (req, res) => {
 
 // Images
 app.use("/images",express.static(path.join(__dirname,"public/images")));
+app.use("/public/profileImages", express.static(path.join(__dirname,"public","profileImages"))); // Serve profile images
 
 // Multer Storage Configuration
 const storage = multer.diskStorage({

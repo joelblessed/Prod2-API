@@ -9,14 +9,14 @@ const router = express.Router();
 const USERS_FILE = "./jsonFiles/account.json";
 
 // Middleware
-app.use(cors());
-app.use(bodyParser.json());
-app.use("/uploads", express.static("uploads")); // Serve uploaded images
+router.use(cors());
+router.use(bodyParser.json());
+router.use("/public/profileImages", express.static("public/profileImages")); // Serve uploaded images
 
 // Multer Configuration for Image Uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/"); // Save images in "uploads" folder
+    cb(null, "public/profileImages"); // Save images in "uploads" folder
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname); // Keep original file name
@@ -65,17 +65,17 @@ router.put("/profile/update", (req, res) => {
   res.json({ message: "Profile updated successfully", user: users[userIndex] });
 });
 
-// 🟠 *Upload profile image*
-router.put("/profile/update-image/:userId", upload.single("profileImage"), (req, res) => {
-  const { userId } = req.params;
-  let users = readUsers();
-  const userIndex = users.findIndex((user) => user.id === parseInt(userId));
+// // 🟠 *Upload profile image*
+// router.put("/profile/update-image/:userId", upload.single("profileImage"), (req, res) => {
+//   const { userId } = req.params;
+//   let users = readUsers();
+//   const userIndex = users.findIndex((user) => user.id === parseInt(userId));
 
-  if (userIndex === -1) return res.status(404).json({ message: "User not found" });
+//   if (userIndex === -1) return res.status(404).json({ message: "User not found" });
 
-  users[userIndex].profileImage = `/uploads/${req.file.filename}`;
-  writeUsers(users);
+//   users[userIndex].profileImage = `/profileImages/${req.file.filename}`;
+//   writeUsers(users);
 
-  res.json({ message: "Profile image updated", user: users[userIndex] });
-});
+//   res.json({ message: "Profile image updated", user: users[userIndex] });
+// });
 module.exports = router;
