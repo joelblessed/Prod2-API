@@ -95,8 +95,8 @@ router.patch("/products/:id/like", (req, res) => {
   res.json({ message: "Likes updated", likes: data.products[productIndex].likes });
 });
 
-// *decrement likes for a product*
-router.patch("/products/:id/dislike", (req, res) => {
+// *dencrement likes for a product*
+router.patch("/products/:id/like", (req, res) => {
   const data = JSON.parse(fs.readFileSync(dbFilePath));
   const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));
 

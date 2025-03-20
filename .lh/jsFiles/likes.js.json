@@ -1,0 +1,30 @@
+{
+    "sourceFile": "jsFiles/likes.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1742492756096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1742492763834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,5 @@\n \n   res.json({ message: \"Likes updated\", likes: data.products[productIndex].likes });\n });\n \n-// *Start the server*\n-const PORT = 5000;\n-app.listen(PORT, () => {\n-  console.log(Server is running on http://localhost:${PORT});\n-});\n\\ No newline at end of file\n+module\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742492771680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,5 +47,5 @@\n \n   res.json({ message: \"Likes updated\", likes: data.products[productIndex].likes });\n });\n \n-module\n\\ No newline at end of file\n+module.exports= \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742492778320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,5 +47,5 @@\n \n   res.json({ message: \"Likes updated\", likes: data.products[productIndex].likes });\n });\n \n-module.exports= \n\\ No newline at end of file\n+module.exports= router;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1742492756096,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\nconst fs = require(\"fs\");\nconst cors = require(\"cors\");\n\nconst app = express();\napp.use(express.json());\napp.use(cors());\n\nconst DB_FILE = \"db.json\";\n\n// Function to read data from db.json\nconst readDB = () => {\n  return JSON.parse(fs.readFileSync(DB_FILE));\n};\n\n// Function to write data to db.json\nconst writeDB = (data) => {\n  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));\n};\n\n// *Get all products*\napp.get(\"/products\", (req, res) => {\n  const data = readDB();\n  res.json(data.products);\n});\n\n// *Get single product by ID*\napp.get(\"/products/:id\", (req, res) => {\n  const data = readDB();\n  const product = data.products.find(p => p.id === parseInt(req.params.id));\n  \n  if (!product) return res.status(404).json({ message: \"Product not found\" });\n  res.json(product);\n});\n\n// *Increment likes for a product*\napp.patch(\"/products/:id/like\", (req, res) => {\n  const data = readDB();\n  const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));\n\n  if (productIndex === -1) {\n    return res.status(404).json({ message: \"Product not found\" });\n  }\n\n  data.products[productIndex].likes += 1;\n  writeDB(data);\n\n  res.json({ message: \"Likes updated\", likes: data.products[productIndex].likes });\n});\n\n// *Start the server*\nconst PORT = 5000;\napp.listen(PORT, () => {\n  console.log(Server is running on http://localhost:${PORT});\n});"
+        }
+    ]
+}

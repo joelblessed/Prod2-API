@@ -5,8 +5,8 @@
       "forCount": 1,
       "quantity": 1,
       "price": 2343,
-      "discount": "2000",
-      "likes": 1,
+      "discount": 0,
+      "likes": 0,
       "numberInStock": 6,
       "owner": "joelblessed",
       "phoneNumber": 8232,
@@ -16,8 +16,6 @@
       "description": "grass killer",
       "status": "new",
       "weight": 1,
-      "address": "3456789",
-      "city": "23445678",
       "category": "farm",
       "location": [
         {
@@ -39,15 +37,14 @@
         "/images/to.jpg",
         "/images/oh.png"
       ],
-      "isSelected": true,
-      "postedOn": "2025-03-20T07:52:44.667Z"
+      "isSelected": true
     },
     {
       "id": 1,
       "forCount": 1,
       "quantity": 1,
       "price": 9999,
-      "discount": "999",
+      "discount": 0,
       "likes": 0,
       "numberInStock": 6,
       "owner": "joelblessed",
@@ -58,8 +55,6 @@
       "description": "220v",
       "status": "Used",
       "weight": 1,
-      "address": "3456789",
-      "city": "23445678",
       "category": "accesseries",
       "location": [
         {
@@ -81,8 +76,7 @@
         "/images/oh.png",
         "/images/1738676289852.jpg"
       ],
-      "isSelected": false,
-      "postedOn": "2025-03-20T10:17:43.476Z"
+      "isSelected": false
     },
     {
       "id": 2,
@@ -101,8 +95,6 @@
       "description": "220v",
       "status": "Used",
       "category": "other",
-      "address": "3456789",
-      "city": "23445678",
       "weight": 1,
       "location": [
         {
@@ -140,8 +132,6 @@
       "color": "red",
       "name": "force UP",
       "weight": 1,
-      "address": "3456789",
-      "city": "23445678",
       "description": "12 gb Ram",
       "status": "Used",
       "brand": [
@@ -182,8 +172,6 @@
       "name": "force UP",
       "description": "grass killer",
       "status": "new",
-      "address": "3456789",
-      "city": "23445678",
       "weight": 1,
       "category": "farm",
       "location": [
@@ -223,8 +211,6 @@
       "name": "Speaker",
       "description": "220v",
       "status": "Used",
-      "address": "3456789",
-      "city": "23445678",
       "category": "accesseries",
       "weight": 1,
       "location": [
@@ -266,8 +252,6 @@
       "description": "220v",
       "status": "Used",
       "category": "other",
-      "address": "3456789",
-      "city": "23445678",
       "weight": 1,
       "location": [
         {
@@ -304,8 +288,6 @@
       "ownerId": 2,
       "color": "red",
       "name": "Latitude",
-      "address": "3456789",
-      "city": "23445678",
       "description": "12 gb Ram",
       "status": "Used",
       "weight": 1,
@@ -347,8 +329,6 @@
       "name": "force UP",
       "description": "grass killer",
       "status": "new",
-      "address": "3456789",
-      "city": "23445678",
       "category": "farm",
       "weight": 1,
       "location": [
@@ -388,8 +368,6 @@
       "name": "Speaker",
       "description": "220v",
       "status": "Used",
-      "address": "3456789",
-      "city": "23445678",
       "category": "accesseries",
       "weight": 1,
       "location": [
@@ -431,8 +409,7 @@
       "description": "220v",
       "status": "Used",
       "category": "other",
-      "address": "3456789",
-      "city": "23445678",
+      
       "weight": 1,
       "location": "kombe",
       "adress": "market",
@@ -475,6 +452,7 @@
       "city": "23445678",
       "weight": 1,
       "likes": 0,
+     
       "location": [
         {
           "id": 1,

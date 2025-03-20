@@ -96,7 +96,7 @@ router.patch("/products/:id/like", (req, res) => {
 });
 
 // *decrement likes for a product*
-router.patch("/products/:id/dislike", (req, res) => {
+router.patch("/products/:id/Dilike", (req, res) => {
   const data = JSON.parse(fs.readFileSync(dbFilePath));
   const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));
 

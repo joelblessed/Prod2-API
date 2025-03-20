@@ -81,8 +81,8 @@ router.get("/products/:ownerId", (req, res) => {
 
 
 // *Increment likes for a product*
-router.patch("/products/:id/like", (req, res) => {
-  const data = JSON.parse(fs.readFileSync(dbFilePath));
+app.patch("/products/:id/like", (req, res) => {
+  const data = JSON.parse(fs.readFileSync(DB_FILE));
   const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));
 
   if (productIndex === -1) {
@@ -90,23 +90,9 @@ router.patch("/products/:id/like", (req, res) => {
   }
 
   data.products[productIndex].likes += 1;
-   fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2));;
+   fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));;
 
   res.json({ message: "Likes updated", likes: data.products[productIndex].likes });
 });
 
-// *decrement likes for a product*
-router.patch("/products/:id/dislike", (req, res) => {
-  const data = JSON.parse(fs.readFileSync(dbFilePath));
-  const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));
-
-  if (productIndex === -1) {
-    return res.status(404).json({ message: "Product not found" });
-  }
-
-  data.products[productIndex].likes -= 1;
-   fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2));;
-
-  res.json({ message: "Likes updated", likes: data.products[productIndex].likes });
-});
 module.exports =router
