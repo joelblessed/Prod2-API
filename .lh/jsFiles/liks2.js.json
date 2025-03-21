@@ -1,0 +1,18 @@
+{
+    "sourceFile": "jsFiles/liks2.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1742504722111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1742504722111,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\nconst fs = require(\"fs\");\nconst cors = require(\"cors\");\n\nconst app = express();\napp.use(express.json());\napp.use(cors());\n\nconst DB_FILE = \"db.json\";\n\n// Read db.json\nconst readDB = () => JSON.parse(fs.readFileSync(DB_FILE));\n\n// Write to db.json\nconst writeDB = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));\n\n// *Like a product*\napp.patch(\"/products/:id/like\", (req, res) => {\n  const data = readDB();\n  const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));\n\n  if (productIndex === -1) {\n    return res.status(404).json({ message: \"Product not found\" });\n  }\n\n  data.products[productIndex].likes += 1;\n  data.products[productIndex].liked = true; // Mark as liked\n  writeDB(data);\n\n  res.json({ message: \"Liked\", likes: data.products[productIndex].likes, liked: true });\n});\n\n// *Dislike (remove like)*\napp.patch(\"/products/:id/dislike\", (req, res) => {\n  const data = readDB();\n  const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));\n\n  if (productIndex === -1) {\n    return res.status(404).json({ message: \"Product not found\" });\n  }\n\n  // Prevent negative likes\n  if (data.products[productIndex].likes > 0) {\n    data.products[productIndex].likes -= 1;\n  }\n  \n  data.products[productIndex].liked = false; // Mark as not liked\n  writeDB(data);\n  \n  res.json({ message: \"Disliked\", likes: data.products[productIndex].likes, liked: false });\n});\n\n// *Start the server*\nconst PORT = 5000;\napp.listen(PORT, () => {\n  console.log(Server running on http://localhost:${PORT});\n});"
+        }
+    ]
+}

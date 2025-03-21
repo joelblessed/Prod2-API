@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1741859825487,
@@ -32,6 +32,10 @@
                 {
                     "date": 1742136421658,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n     res.status(404).json({ message: 'Product not found' });\n   }\n });\n \n-app.get(\"/products/:ownerId\", (req, res) => {\n+router.get(\"/products/:ownerId\", (req, res) => {\n   const db =  JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n   const ownerId = req.params.ownerId;\n \n   // Filter products by ownerId\n"
+                },
+                {
+                    "date": 1742504890988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,9 +95,9 @@\n });\n \n // *Dislike (remove like)*\n app.patch(\"/products/:id/dislike\", (req, res) => {\n-  const data = JSON.parse(fs.readFileSync());\n+  const data = JSON.parse(fs.readFileSync(d));\n   const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));\n \n   if (productIndex === -1) {\n     return res.status(404).json({ message: \"Product not found\" });\n"
                 }
             ],
             "date": 1741859825487,

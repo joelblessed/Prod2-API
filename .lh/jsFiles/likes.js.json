@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1742492756096,
@@ -20,6 +20,26 @@
                 {
                     "date": 1742492778320,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,5 +47,5 @@\n \n   res.json({ message: \"Likes updated\", likes: data.products[productIndex].likes });\n });\n \n-module.exports= \n\\ No newline at end of file\n+module.exports= router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742507272411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,45 +7,63 @@\n app.use(cors());\n \n const DB_FILE = \"db.json\";\n \n-// Function to read data from db.json\n-const readDB = () => {\n-  return JSON.parse(fs.readFileSync(DB_FILE));\n-};\n+// Read db.json\n+const readDB = () => JSON.parse(fs.readFileSync(DB_FILE));\n \n-// Function to write data to db.json\n-const writeDB = (data) => {\n-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));\n-};\n+// Write to db.json\n+const writeDB = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));\n \n-// *Get all products*\n-app.get(\"/products\", (req, res) => {\n+// *Like a product (Per User)*\n+app.patch(\"/products/:id/like\", (req, res) => {\n+  const { userId } = req.body; // User ID from frontend\n+  if (!userId) return res.status(400).json({ message: \"User ID is required\" });\n+\n   const data = readDB();\n-  res.json(data.products);\n-});\n+  const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));\n \n-// *Get single product by ID*\n-app.get(\"/products/:id\", (req, res) => {\n-  const data = readDB();\n-  const product = data.products.find(p => p.id === parseInt(req.params.id));\n-  \n-  if (!product) return res.status(404).json({ message: \"Product not found\" });\n-  res.json(product);\n+  if (productIndex === -1) {\n+    return res.status(404).json({ message: \"Product not found\" });\n+  }\n+\n+  let product = data.products[productIndex];\n+\n+  // Only like if the user hasn't liked it already\n+  if (!product.likedBy.includes(userId)) {\n\\ No newline at end of file\n+    product.likes += 1;\n+    product.likedBy.push(userId);\n+  }\n+\n+  writeDB(data);\n+  res.json({ message: \"Liked\", likes: product.likes, likedBy: product.likedBy });\n });\n \n-// *Increment likes for a product*\n-app.patch(\"/products/:id/like\", (req, res) => {\n+// *Dislike (remove like) for a specific user*\n+app.patch(\"/products/:id/dislike\", (req, res) => {\n+  const { userId } = req.body;\n+  if (!userId) return res.status(400).json({ message: \"User ID is required\" });\n+\n   const data = readDB();\n   const productIndex = data.products.findIndex(p => p.id === parseInt(req.params.id));\n \n   if (productIndex === -1) {\n     return res.status(404).json({ message: \"Product not found\" });\n   }\n \n-  data.products[productIndex].likes += 1;\n+  let product = data.products[productIndex];\n+\n+  // Remove like if user has already liked\n+  if (product.likedBy.includes(userId)) {\n+    product.likes -= 1;\n+    product.likedBy = product.likedBy.filter(id => id !== userId); // Remove user from likedBy array\n+  }\n+\n   writeDB(data);\n-\n-  res.json({ message: \"Likes updated\", likes: data.products[productIndex].likes });\n+  res.json({ message: \"Disliked\", likes: product.likes, likedBy: product.likedBy });\n });\n \n-module.exports= router;\n+// *Start the server*\n+const PORT = 5000;\n+app.listen(PORT, () => {\n+  console.log(Server running on http://localhost:${PORT});\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742507393073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n const DB_FILE = \"db.json\";\n \n // Read db.json\n-const readDB = () => JSON.parse(fs.readFileSync(DB_FILE));\n+const readDB = () => JSON.parse(fs.readFileSync());\n \n // Write to db.json\n const writeDB = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));\n \n"
+                },
+                {
+                    "date": 1742507400010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n const DB_FILE = \"db.json\";\n \n // Read db.json\n-const readDB = () => JSON.parse(fs.readFileSync());\n+const readDB = () => JSON.parse(fs.readFileSync(dbPath));\n \n // Write to db.json\n const writeDB = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));\n \n"
+                },
+                {
+                    "date": 1742507405079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n const DB_FILE = \"db.json\";\n \n // Read db.json\n-const readDB = () => JSON.parse(fs.readFileSync(dbPath));\n+const readDB = () => JSON.parse(fs.readFileSync(dbFile));\n \n // Write to db.json\n const writeDB = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));\n \n"
+                },
+                {
+                    "date": 1742507412348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n const DB_FILE = \"db.json\";\n \n // Read db.json\n-const readDB = () => JSON.parse(fs.readFileSync(dbFile));\n+const readDB = () => JSON.parse(fs.readFileSync(dbPath));\n \n // Write to db.json\n const writeDB = (data) => fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));\n \n"
                 }
             ],
             "date": 1742492756096,

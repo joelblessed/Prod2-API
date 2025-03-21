@@ -6,7 +6,8 @@
       "quantity": 1,
       "price": 2343,
       "discount": "2000",
-      "likes": 1,
+      "likes": 0,
+      "likedBy": [],
       "numberInStock": 6,
       "owner": "joelblessed",
       "phoneNumber": 8232,
@@ -49,6 +50,7 @@
       "price": 9999,
       "discount": "999",
       "likes": 0,
+      "likedBy": [],
       "numberInStock": 6,
       "owner": "joelblessed",
       "phoneNumber": 5457,
@@ -90,7 +92,13 @@
       "quantity": 1,
       "price": 9999,
       "discount": 0,
-      "likes": 0,
+      "likes": 1,
+      "likedBy": [
+        {
+          "userId": "2",
+          "username": "joelblessed"
+        }
+      ],
       "numberInStock": 6,
       "title": "joel",
       "owner": "joelblessed",
@@ -132,6 +140,7 @@
       "quantity": 1,
       "price": 532,
       "likes": 0,
+      "likedBy": [],
       "discount": 0,
       "numberInStock": 6,
       "owner": "joelblessed",
@@ -174,6 +183,7 @@
       "price": 2343,
       "discount": 0,
       "likes": 0,
+      "likedBy": [],
       "numberInStock": 6,
       "owner": "joelblessed",
       "phoneNumber": 8232,
@@ -214,7 +224,8 @@
       "quantity": 1,
       "price": 9999,
       "discount": 0,
-      "likes": 0,
+      "likes": 1,
+      "likedBy": [],
       "numberInStock": 6,
       "owner": "joelblessed",
       "phoneNumber": 5457,
@@ -256,6 +267,7 @@
       "price": 9999,
       "discount": 0,
       "likes": 0,
+      "likedBy": [],
       "numberInStock": 6,
       "title": "joel",
       "owner": "joelblessed",
@@ -297,6 +309,7 @@
       "quantity": 1,
       "price": 532,
       "likes": 0,
+      "likedBy": [],
       "discount": 0,
       "numberInStock": 6,
       "owner": "joelblessed",
@@ -338,7 +351,13 @@
       "quantity": 1,
       "price": 2343,
       "discount": 0,
-      "likes": 0,
+      "likes": 1,
+      "likedBy": [
+        {
+          "userId": "2",
+          "username": "joelblessed"
+        }
+      ],
       "numberInStock": 6,
       "owner": "joelblessed",
       "phoneNumber": 8232,
@@ -380,6 +399,7 @@
       "price": 9999,
       "discount": 0,
       "likes": 0,
+      "likedBy": [],
       "numberInStock": 6,
       "owner": "joelblessed",
       "phoneNumber": 5457,
@@ -421,6 +441,7 @@
       "price": 9999,
       "discount": 0,
       "likes": 0,
+      "likedBy": [],
       "numberInStock": 6,
       "title": "joel",
       "owner": "joelblessed",
@@ -474,7 +495,8 @@
       "address": "3456789",
       "city": "23445678",
       "weight": 1,
-      "likes": 0,
+      "likes": 1,
+      "likedBy": [],
       "location": [
         {
           "id": 1,
@@ -484,7 +506,9 @@
         }
       ],
       "images": [
-        "/images/to.jpg"
+        "/images/to.jpg",
+        "/images/to.jpg",
+        "/images/top.png"
       ],
       "soled": false
     }
