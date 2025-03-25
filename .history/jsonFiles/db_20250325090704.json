@@ -1,0 +1,1030 @@
+{
+  "products": [
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": "2000",
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "ownerId": 9,
+      "color": "red",
+      "name": "force UP",
+      "description": "grass killer",
+      "status": "new",
+      "weight": 1,
+      "address": "3456789",
+      "city": "23445678",
+      "category": "farm",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 4,
+          "name": "force UP",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ],
+      "isSelected": true,
+      "postedOn": "2025-03-20T07:52:44.667Z"
+    },
+    {
+      "id": 1,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": "999",
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "Speaker",
+      "description": "220v",
+      "status": "Used",
+      "weight": 1,
+      "address": "3456789",
+      "city": "23445678",
+      "category": "accesseries",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 3,
+          "name": "jbl",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "isSelected": false,
+      "postedOn": "2025-03-20T10:17:43.476Z"
+    },
+    {
+      "id": 2,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": "5000",
+      "likes": 1,
+      "likedBy": [
+        {
+          "userId": "2",
+          "username": "joelblessed"
+        }
+      ],
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 8,
+      "color": "red",
+      "name": "fan",
+      "description": "220v",
+      "status": "Used",
+      "category": "Electrical Appliances",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 5,
+          "name": "ox",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "isSelected": false,
+      "postedOn": "2025-03-23T12:24:27.313Z"
+    },
+    {
+      "id": 3,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "likedBy": [],
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "ownerId": 9,
+      "color": "red",
+      "name": "force UP",
+      "weight": 1,
+      "address": "3456789",
+      "city": "23445678",
+      "description": "12 gb Ram",
+      "status": "Used",
+      "brand": [
+        {
+          "id": 6,
+          "name": "Dell",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "category": "computer",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "isSelected": false
+    },
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": 0,
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "ownerId": 2,
+      "color": "red",
+      "name": "force UP",
+      "description": "grass killer",
+      "status": "new",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "category": "farm",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 7,
+          "name": "force UP",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ],
+      "isSelected": true
+    },
+    {
+      "id": 4,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 1,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "Speaker",
+      "description": "220v",
+      "status": "Used",
+      "address": "3456789",
+      "city": "23445678",
+      "category": "accesseries",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 8,
+          "name": "jbl",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 5,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "fan",
+      "description": "220v",
+      "status": "Used",
+      "category": "Electrical Appliances",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 9,
+          "name": "ox",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 6,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "likedBy": [],
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "ownerId": 2,
+      "color": "red",
+      "name": "Latitude",
+      "address": "3456789",
+      "city": "23445678",
+      "description": "12 gb Ram",
+      "status": "Used",
+      "weight": 1,
+      "brand": [
+        {
+          "id": 10,
+          "name": "Dell",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "category": "computer",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "isSelected": false
+    },
+    {
+      "id": 7,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": 0,
+      "likes": 1,
+      "likedBy": [
+        {
+          "userId": "2",
+          "username": "joelblessed"
+        }
+      ],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "ownerId": 2,
+      "color": "red",
+      "name": "manure",
+      "description": "grass killer",
+      "status": "new",
+      "address": "3456789",
+      "city": "23445678",
+      "category": "farm",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 11,
+          "name": "force UP",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ],
+      "isSelected": true
+    },
+    {
+      "id": 8,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "Speaker",
+      "description": "220v",
+      "status": "Used",
+      "address": "3456789",
+      "city": "23445678",
+      "category": "accesseries",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 12,
+          "name": "jbl",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 9,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "fridge",
+      "description": "220v",
+      "status": "Used",
+      "category": "Electrical Appliances",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "location": "kombe",
+      "adress": "market",
+      "brand": [
+        {
+          "id": 13,
+          "name": "ox",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 1740568542384,
+      "postedOn": "02/26/2025, 12:14:50 PM",
+      "name": "clarks",
+      "brand": [
+        {
+          "id": 1740568490784,
+          "name": "wertyu",
+          "image": ""
+        }
+      ],
+      "category": "Clothing",
+      "price": 3545678,
+      "quantity": 1,
+      "numberInStock": "23",
+      "discount": 546789,
+      "owner": "hold",
+      "phoneNumber": "234567890",
+      "ownerId": 8,
+      "color": "red",
+      "description": "2435467890",
+      "status": "Used",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "likes": 1,
+      "likedBy": [],
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "soled": false
+    },
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": "2000",
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "ownerId": 9,
+      "color": "red",
+      "name": "fetelizer",
+      "description": "grass killer",
+      "status": "new",
+      "weight": 1,
+      "address": "3456789",
+      "city": "23445678",
+      "category": "farm",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 4,
+          "name": "force UP",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ],
+      "isSelected": true,
+      "postedOn": "2025-03-20T07:52:44.667Z"
+    },
+    {
+      "id": 1,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": "999",
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "radio",
+      "description": "220v",
+      "status": "Used",
+      "weight": 1,
+      "address": "3456789",
+      "city": "23445678",
+      "category": "accesseries",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 3,
+          "name": "jbl",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "isSelected": false,
+      "postedOn": "2025-03-20T10:17:43.476Z"
+    },
+    {
+      "id": 2,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": "5000",
+      "likes": 1,
+      "likedBy": [
+        {
+          "userId": "2",
+          "username": "joelblessed"
+        }
+      ],
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 8,
+      "color": "red",
+      "name": "microwave",
+      "description": "220v",
+      "status": "Used",
+      "category": "Electrical Appliances",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 5,
+          "name": "lg",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "isSelected": false,
+      "postedOn": "2025-03-23T12:24:27.313Z"
+    },
+    {
+      "id": 3,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "likedBy": [],
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "ownerId": 9,
+      "color": "red",
+      "name": "Dell Pro",
+      "weight": 1,
+      "address": "3456789",
+      "city": "23445678",
+      "description": "12 gb Ram",
+      "status": "Used",
+      "brand": [
+        {
+          "id": 6,
+          "name": "Dell",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "category": "computer",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "isSelected": false
+    },
+    {
+      "id": 34354,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": 0,
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "ownerId": 2,
+      "color": "red",
+      "name": "the book",
+      "description": "grass killer",
+      "status": "new",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "category": "School",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 7,
+          "name": "force UP",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ],
+      "isSelected": true
+    },
+    {
+      "id": 4,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 1,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "",
+      "description": "220v",
+      "status": "Used",
+      "address": "3456789",
+      "city": "23445678",
+      "category": "accesseries",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 8,
+          "name": "jbl",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 5,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "fan",
+      "description": "220v",
+      "status": "Used",
+      "category": "other",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 9,
+          "name": "ox",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 6,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 532,
+      "likes": 0,
+      "likedBy": [],
+      "discount": 0,
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 9679,
+      "ownerId": 2,
+      "color": "red",
+      "name": "Latitude",
+      "address": "3456789",
+      "city": "23445678",
+      "description": "12 gb Ram",
+      "status": "Used",
+      "weight": 1,
+      "brand": [
+        {
+          "id": 10,
+          "name": "Dell",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "category": "computer",
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "isSelected": false
+    },
+    {
+      "id": 7,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 2343,
+      "discount": 0,
+      "likes": 1,
+      "likedBy": [
+        {
+          "userId": "2",
+          "username": "joelblessed"
+        }
+      ],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 8232,
+      "ownerId": 2,
+      "color": "red",
+      "name": "force UP",
+      "description": "grass killer",
+      "status": "new",
+      "address": "3456789",
+      "city": "23445678",
+      "category": "farm",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 11,
+          "name": "force UP",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/oh.png"
+      ],
+      "isSelected": true
+    },
+    {
+      "id": 8,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "Speaker",
+      "description": "220v",
+      "status": "Used",
+      "address": "3456789",
+      "city": "23445678",
+      "category": "accesseries",
+      "weight": 1,
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "adress": "market",
+      "brand": [
+        {
+          "id": 12,
+          "name": "jbl",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/oh.png",
+        "/images/1738676289852.jpg"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 9,
+      "forCount": 1,
+      "quantity": 1,
+      "price": 9999,
+      "discount": 0,
+      "likes": 0,
+      "likedBy": [],
+      "numberInStock": 6,
+      "title": "joel",
+      "owner": "joelblessed",
+      "phoneNumber": 5457,
+      "ownerId": 2,
+      "color": "red",
+      "name": "fan",
+      "description": "220v",
+      "status": "Used",
+      "category": "other",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "location": "kombe",
+      "adress": "market",
+      "brand": [
+        {
+          "id": 13,
+          "name": "ox",
+          "image": "/images/oh.png"
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "isSelected": false
+    },
+    {
+      "id": 1740568542384,
+      "postedOn": "02/26/2025, 12:14:50 PM",
+      "name": "3456789",
+      "brand": [
+        {
+          "id": 1740568490784,
+          "name": "wertyu",
+          "image": ""
+        }
+      ],
+      "category": "Clothing",
+      "price": 3545678,
+      "quantity": 1,
+      "numberInStock": "23",
+      "discount": 546789,
+      "owner": "hold",
+      "phoneNumber": "234567890",
+      "ownerId": 8,
+      "color": "red",
+      "description": "2435467890",
+      "status": "Used",
+      "address": "3456789",
+      "city": "23445678",
+      "weight": 1,
+      "likes": 1,
+      "likedBy": [],
+      "location": [
+        {
+          "id": 1,
+          "name": "Location 1",
+          "latitude": 0,
+          "longitude": 0
+        }
+      ],
+      "images": [
+        "/images/to.jpg",
+        "/images/to.jpg",
+        "/images/top.png"
+      ],
+      "soled": false
+    }
+  ]
+}

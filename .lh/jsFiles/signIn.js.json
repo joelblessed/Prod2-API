@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1740559322955,
@@ -52,6 +52,30 @@
                 {
                     "date": 1741881603110,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,13 +91,13 @@\n });\n \n \n router.put('/updateProfile/:id', authenticateToken, (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(Path, 'utf-8'));\n+  const db = JSON.parse(fs.readFileSync(accountPath, 'utf-8'));\n   const userIndex = db.users.findIndex(u => u.id === parseInt(req.params.id));\n   if (userIndex !== -1) {\n     db.users[userIndex] = { ...db.users[userIndex], ...req.body };\n-    fs.writeFileSync(Path, JSON.stringify(db, null, 2));\n+    fs.writeFileSync(accountPath, JSON.stringify(db, null, 2));\n     res.json(db.users[userIndex]);\n   } else {\n     res.status(404).json({ message: 'User not found' });\n   }\n"
+                },
+                {
+                    "date": 1742729485280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,9 @@\n \n const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n \n \n+\n router.post(\"/signin\", async (req, res) => {\n   const { identifier, password} = req.body;\n \n   fs.readFile(accountPath, \"utf8\", async (err, data) => {\n"
+                },
+                {
+                    "date": 1742729490958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,14 @@\n \n \n const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n \n+// Get all products\n+router.get('/ps', (req, res) => {\n+  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n+  res.json(db.products);\n+});\n \n-\n router.post(\"/signin\", async (req, res) => {\n   const { identifier, password} = req.body;\n \n   fs.readFile(accountPath, \"utf8\", async (err, data) => {\n"
+                },
+                {
+                    "date": 1742729506281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,10 +44,10 @@\n \n const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n \n // Get all products\n-router.get('/ps', (req, res) => {\n-  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n+router.get('/profiles', (req, res) => {\n+  const db = JSON.parse(fs.readFileSync(accountPath, 'utf-8'));\n   res.json(db.products);\n });\n \n router.post(\"/signin\", async (req, res) => {\n"
+                },
+                {
+                    "date": 1742729522836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,13 @@\n \n // Get all products\n router.get('/profiles', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(accountPath, 'utf-8'));\n-  res.json(db.products);\n+  res.json(db.products// Get all products\n+    router.get('/products', (req, res) => {\n+      const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n+      res.json(db.products);\n+    }););\n });\n \n router.post(\"/signin\", async (req, res) => {\n   const { identifier, password} = req.body;\n"
+                },
+                {
+                    "date": 1742729530173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,13 +46,9 @@\n \n // Get all products\n router.get('/profiles', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(accountPath, 'utf-8'));\n-  res.json(db.products// Get all products\n-    router.get('/products', (req, res) => {\n-      const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));\n-      res.json(db.products);\n-    }););\n+  res.json(db.);\n });\n \n router.post(\"/signin\", async (req, res) => {\n   const { identifier, password} = req.body;\n"
+                },
+                {
+                    "date": 1742730176685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,11 +44,11 @@\n \n const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n \n // Get all products\n-router.get('/profiles', (req, res) => {\n+router.get('/Aprofiles', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(accountPath, 'utf-8'));\n-  res.json(db.);\n+  res.json(db.users);\n });\n \n router.post(\"/signin\", async (req, res) => {\n   const { identifier, password} = req.body;\n"
                 }
             ],
             "date": 1740559322955,
