@@ -4,61 +4,30 @@
       "userId": 2,
       "cart": [
         {
-          "id": 1,
-          "forCount": 1,
-          "quantity": 1,
-          "price": 9999,
-          "discount": 0,
-          "likes": 0,
-          "numberInStock": 6,
-          "owner": "joelblessed",
-          "phoneNumber": 5457,
-          "ownerId": 2,
-          "color": "red",
-          "name": "Speaker",
-          "description": "220v",
-          "status": "Used",
-          "weight": 1,
-          "category": "accesseries",
-          "location": [
-            {
-              "id": 1,
-              "name": "Location 1",
-              "latitude": 0,
-              "longitude": 0
-            }
-          ],
-          "adress": "market",
-          "brand": [
-            {
-              "id": 3,
-              "name": "jbl",
-              "image": "/images/oh.png"
-            }
-          ],
-          "images": [
-            "/images/oh.png",
-            "/images/1738676289852.jpg"
-          ],
-          "isSelected": false
-        },
-        {
           "id": 2,
           "forCount": 1,
           "quantity": 1,
           "price": 9999,
-          "discount": 0,
-          "likes": 0,
+          "discount": "5000",
+          "likes": 1,
+          "likedBy": [
+            {
+              "userId": "2",
+              "username": "joelblessed"
+            }
+          ],
           "numberInStock": 6,
           "title": "joel",
-          "owner": "joelblessed",
+          "owner": "nestor",
           "phoneNumber": 5457,
-          "ownerId": 2,
+          "ownerId": 8,
           "color": "red",
           "name": "fan",
           "description": "220v",
           "status": "Used",
-          "category": "other",
+          "category": "Electrical Appliances",
+          "address": "3456789",
+          "city": "23445678",
           "weight": 1,
           "location": [
             {
@@ -80,7 +49,8 @@
             "/images/to.jpg",
             "/images/top.png"
           ],
-          "isSelected": false
+          "isSelected": false,
+          "postedOn": "2025-03-23T12:24:27.313Z"
         }
       ]
     }

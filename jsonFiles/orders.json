@@ -4,6 +4,7 @@
       "id": 1742317772698,
       "user": {
         "username": "joelblessed",
+        "userId": 2,
         "paymentStatus": "",
         "paymentId": ""
       },
@@ -92,10 +93,10 @@
       ],
       "shipping": {
         "address": "iuiytr",
-        "deliveryDate": "3/24/2025",
+        "deliveryDate": "2025-03-25T15:46:33.429Z",
         "isPickup": true
       },
-      "status": "Pending"
+      "status": "Delivered"
     }
   ]
 }
