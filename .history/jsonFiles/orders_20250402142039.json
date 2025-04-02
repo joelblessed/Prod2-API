@@ -1,0 +1,71 @@
+{
+  "orders": [
+    {
+      "id": 1743602835150,
+      "user": {
+        "username": "joelblessed",
+        "paymentStatus": "",
+        "paymentId": ""
+      },
+      "date": "2025-04-02T14:07:15.150Z",
+      "totalAmount": 10001,
+      "cart": [
+        {
+          "id": 2,
+          "forCount": 1,
+          "quantity": 1,
+          "price": 9999,
+          "discount": "5000",
+          "likes": 1,
+          "likedBy": [
+            {
+              "userId": "2",
+              "username": "joelblessed"
+            }
+          ],
+          "numberInStock": 6,
+          "title": "joel",
+          "owner": "nestor",
+          "phoneNumber": 5457,
+          "ownerId": 8,
+          "color": "red",
+          "name": "fan",
+          "description": "220v",
+          "status": "Used",
+          "category": "Electrical Appliances",
+          "address": "3456789",
+          "city": "23445678",
+          "weight": 1,
+          "location": [
+            {
+              "id": 1,
+              "name": "Location 1",
+              "latitude": 0,
+              "longitude": 0
+            }
+          ],
+          "adress": "market",
+          "brand": [
+            {
+              "id": 5,
+              "name": "ox",
+              "image": "/images/oh.png"
+            }
+          ],
+          "images": [
+            "/images/to.jpg",
+            "/images/top.png"
+          ],
+          "isSelected": false,
+          "postedOn": "2025-03-23T12:24:27.313Z"
+        }
+      ],
+      "shipping": {
+        "address": "kombe",
+        "deliveryDate": "4/7/2025",
+        "isPickup": false
+      },
+      "status": "Pending"
+    }
+  ]
+}

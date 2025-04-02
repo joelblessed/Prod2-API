@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 87,
             "patches": [
                 {
                     "date": 1740591703181,
@@ -152,6 +152,210 @@
                 {
                     "date": 1742303741379,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      \"profileImage\": \"/public/profileImagesoh.png\",\n+      \"profileImage\": \"/mages/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n       \"id\": 3,\n"
+                },
+                {
+                    "date": 1743571226331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      \"profileImage\": \"/mages/oh.png\",\n+      \n+      \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n       \"id\": 3,\n"
+                },
+                {
+                    "date": 1743571231831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      \n+      re\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571242659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      re\n+      refer\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571256856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      refer\n+      referralC\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571262991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      referralC\n+      \"referralCode\":\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571273681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      \"referralCode\":\n+      \"referralCode\":\"A\"\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571286971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      \"referralCode\":\"A\"\n+      \"referralCode\":\"ABC123\",\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571297908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n+      referr\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571304417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n-      referr\n+      referredBy\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571317020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n-      referredBy\n+      \"referredBy\":\"nu\"\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571322691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n-      \"referredBy\":\"nu\"\n+      \"referredBy\":\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571341677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n-      \"referredBy\":\n+      \"referredBy\":null,\n+      \n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571348807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n       \"referredBy\":null,\n-      \n+      discount\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571355227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n       \"referredBy\":null,\n-      discount\n+      discount:0\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571360876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n       \"referredBy\":null,\n-      discount:0\n+      discount\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571366678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\":\"ABC123\",\n       \"referredBy\":null,\n-      discount\n+      \"discount\":0,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743571396156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n       \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n+      \n       \"role\": \"user\"\n     },\n     {\n       \"id\": 4,\n"
+                },
+                {
+                    "date": 1743571411927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,11 @@\n       \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n-      \n+      \"referralCode\":\"123\",\n+      \"referredBy\":null,\n+      \"discount\":0,\n       \"role\": \"user\"\n     },\n     {\n       \"id\": 4,\n"
+                },
+                {
+                    "date": 1743571480997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,25 +28,12 @@\n       \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n-      \"referralCode\":\"123\",\n+      \"referralCode\":\"DEF123\",\n       \"referredBy\":null,\n       \"discount\":0,\n       \"role\": \"user\"\n     },\n-    {\n-      \"id\": 4,\n-      \"email\": \"joelblessedgod@gmail.com\",\n-      \"password\": \"$2a$10$1.waJSBhj8rf/KbuIk53H.EAydlqawl.KsyMbAsBrL7Px.JYQwHe6\",\n-      \"userName\": \"joeltest2\",\n-      \"fullName\": \"joel blessed\",\n-      \"phone\": \"677331862\",\n-      \"country\": \"Cameroon\",\n-      \"city\": \"Duaola\",\n-      \"wallet\": 0,\n-      \"address\": \"kombe\",\n-      \"gender\": \"male\",\n-      \"role\": \"user\"\n-    }\n+  \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743571493150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       \"role\": \"admin\"\n     },\n     {\n       \"id\": 3,\n-      \"email\": \"joelblessedgo@gmail.com\",\n+      \"email\": \"joelblessedgoD@gmail.com\",\n       \"password\": \"$2a$10$QNJNga1o8pOoA9ByJBDb1eHkOwIFumdyP9jHYYBwygIQmwaSm0eWa\",\n       \"userName\": \"joeltest\",\n       \"fullName\": \"joel blessed\",\n       \"phone\": \"677331862\",\n@@ -32,8 +32,8 @@\n       \"referralCode\":\"DEF123\",\n       \"referredBy\":null,\n       \"discount\":0,\n       \"role\": \"user\"\n-    },\n+    }\n   \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743580899600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,17 +9,17 @@\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n-      \"referralCode\":\"ABC123\",\n-      \"referredBy\":null,\n-      \"discount\":0,\n+      \"referralCode\": \"ABC123\",\n+      \"referredBy\": null,\n+      \"discount\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n       \"id\": 3,\n-      \"email\": \"joelblessedgoD@gmail.com\",\n+      \"email\": \"joelblessedgod@gmail.com\",\n       \"password\": \"$2a$10$QNJNga1o8pOoA9ByJBDb1eHkOwIFumdyP9jHYYBwygIQmwaSm0eWa\",\n       \"userName\": \"joeltest\",\n       \"fullName\": \"joel blessed\",\n       \"phone\": \"677331862\",\n@@ -28,12 +28,14 @@\n       \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n-      \"referralCode\":\"DEF123\",\n-      \"referredBy\":null,\n-      \"discount\":0,\n+      \"referralCode\": \"DEF123\",\n+      \"referredBy\": null,\n+      \"discount\": 0,\n       \"role\": \"user\"\n+    },\n+    \n+      ]\n     }\n-  \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743580907828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,10 @@\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": null,\n       \"discount\": 0,\n       \"role\": \"user\"\n-    },\n+    }\n     \n-      ]\n+      \n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743581988040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,8 @@\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": null,\n       \"discount\": 0,\n       \"role\": \"user\"\n-    }\n+    },\n     \n-      \n-    }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743582216666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,7 @@\n       \"referredBy\": null,\n       \"discount\": 0,\n       \"role\": \"user\"\n     },\n-    \n+   \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743588670364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,6 +34,7 @@\n       \"discount\": 0,\n       \"role\": \"user\"\n     },\n    \n+    }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743588676754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": null,\n       \"discount\": 0,\n       \"role\": \"user\"\n-    },\n+    }\n    \n-    }\n+    \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743591504668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n       \"discount\": 0,\n+      w\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n@@ -32,9 +33,33 @@\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": null,\n       \"discount\": 0,\n       \"role\": \"user\"\n+    },\n+    {\n+      \"id\": 3,\n+      \"email\": \"w@gmail.com\",\n+      \"password\": \"$2a$10$0pnWKzph9lEhpNryD/zc9.G38x9C.s0i2ZRWbVQR7zBk6LjYEQ7zu\",\n+      \"userName\": \"UDYTFUYGIHOI\",\n+      \"fullName\": \"TYUIOJPOJ\",\n+      \"phone\": \"234356789\",\n+      \"country\": \"Cameroon\",\n+      \"city\": \"erdtyfugih\",\n+      \"wallet\": 0,\n+      \"address\": \"wserdtyfugihoj\",\n+      \"gender\": \"male\",\n+      \"referralCode\": \"A3B6F7EC\",\n+      \"referredBy\": \"ABC123\",\n+      \"discount\": 10,\n+      \"role\": \"user\",\n+      \"signUpOn\": \"04/02/2025, 10:11:31 AM\",\n+      \"location\": [\n+        {\n+          \"id\": 1743588691357,\n+          \"location\": \"\",\n+          \"latitude\": \"\",\n+          \"longitude\": \"\"\n+        }\n+      ]\n     }\n-   \n-    \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743591511270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n       \"discount\": 0,\n-      w\n+      wallet\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743591521632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n       \"discount\": 0,\n-      wallet\n+      \"wallet\":10\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743591527792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n-      \"discount\": 0,\n-      \"wallet\":10\n+      \"discount\": ,\n+      \"wallet\":100\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743594753946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n-      \"discount\": ,\n-      \"wallet\":100\n+     \n+      \"wallet\":100,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n"
+                },
+                {
+                    "date": 1743594765822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,8 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n-     \n       \"wallet\":100,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n@@ -31,9 +30,8 @@\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": null,\n-      \"discount\": 0,\n       \"role\": \"user\"\n     },\n     {\n       \"id\": 3,\n"
+                },
+                {
+                    "date": 1743594775777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,8 @@\n       \"address\": \"wserdtyfugihoj\",\n       \"gender\": \"male\",\n       \"referralCode\": \"A3B6F7EC\",\n       \"referredBy\": \"ABC123\",\n-      \"discount\": 10,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 10:11:31 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743594818031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,32 +31,8 @@\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": null,\n       \"role\": \"user\"\n-    },\n-    {\n-      \"id\": 3,\n-      \"email\": \"w@gmail.com\",\n-      \"password\": \"$2a$10$0pnWKzph9lEhpNryD/zc9.G38x9C.s0i2ZRWbVQR7zBk6LjYEQ7zu\",\n-      \"userName\": \"UDYTFUYGIHOI\",\n-      \"fullName\": \"TYUIOJPOJ\",\n-      \"phone\": \"234356789\",\n-      \"country\": \"Cameroon\",\n-      \"city\": \"erdtyfugih\",\n-      \"wallet\": 0,\n-      \"address\": \"wserdtyfugihoj\",\n-      \"gender\": \"male\",\n-      \"referralCode\": \"A3B6F7EC\",\n-      \"referredBy\": \"ABC123\",\n-      \"role\": \"user\",\n-      \"signUpOn\": \"04/02/2025, 10:11:31 AM\",\n-      \"location\": [\n-        {\n-          \"id\": 1743588691357,\n-          \"location\": \"\",\n-          \"latitude\": \"\",\n-          \"longitude\": \"\"\n-        }\n-      ]\n     }\n+    }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743594988023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n-      \"wallet\":100,\n+      \"wallet\": 100,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n@@ -32,7 +32,6 @@\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": null,\n       \"role\": \"user\"\n     }\n-    }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743597295099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n-      \"wallet\": 100,\n+      \"wallet\": 10,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n@@ -31,7 +31,32 @@\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": null,\n       \"role\": \"user\"\n+    },\n+    {\n+      \"id\": 3,\n+      \"email\": \"slhpsihs@gmail.com\",\n+      \"password\": \"$2a$10$m4WOA85DKkTWUdXZK/0b4u57Uq9Jad.FDDceNcCXDU3nP85QS96ye\",\n+      \"userName\": \"ilauhuf\",\n+      \"fullName\": \"phauipfd\",\n+      \"phone\": \"siphfish\",\n+      \"country\": \"Cameroon\",\n+      \"city\": \"ilfhsiuhfps\",\n+      \"address\": \"hsfhsuishs\",\n+      \"gender\": \"male\",\n+      \"referralCode\": \"0D34FEEB\",\n+      \"referredBy\": \"ABC123\",\n+      \"wallet\": 25,\n+      \"role\": \"user\",\n+      \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n+      \"location\": [\n+        {\n+          \"id\": 1743595121283,\n+          \"location\": \"\",\n+          \"latitude\": \"\",\n+          \"longitude\": \"\"\n+        }\n+      ]\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743597599953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": null,\n-      \"wallet\": 10,\n+      \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n     {\n@@ -29,9 +29,9 @@\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n-      \"referredBy\": null,\n+      \"referredBy\": ,\n       \"role\": \"user\"\n     },\n     {\n       \"id\": 3,\n"
+                },
+                {
+                    "date": 1743597613797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n-      \"referredBy\": ,\n+      \"referredBy\":0D34FEEB ,\n       \"role\": \"user\"\n     },\n     {\n       \"id\": 3,\n"
+                },
+                {
+                    "date": 1743597618970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n-      \"referredBy\":0D34FEEB ,\n+      \"referredBy\":0D34FEEB\" ,\n       \"role\": \"user\"\n     },\n     {\n       \"id\": 3,\n"
+                },
+                {
+                    "date": 1743597639430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n-      \"referredBy\":0D34FEEB\" ,\n+      \"referredBy\":\"0D34FEEB\" ,\n       \"role\": \"user\"\n     },\n     {\n       \"id\": 3,\n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\": 25,\n+      \"wallet\": ,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743597954107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n-      \"referredBy\": null,\n+      \"referredBy\": ,\n       \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\": ,\n+      \"wallet\": 9,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743597962214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n-      \"referredBy\": ,\n+      \"referredBy\": '0D34FEEB',\n       \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n"
+                },
+                {
+                    "date": 1743597968529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       \"country\": \"usa\",\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n-      \"referredBy\": '0D34FEEB',\n+      \"referredBy\": \"0D34FEEB\",\n       \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\"\n     },\n"
+                },
+                {
+                    "date": 1743599539117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n-      \"referredBy\":\"0D34FEEB\" ,\n+      \"referredBy\": \"0D34FEEB\",\n       \"role\": \"user\"\n     },\n     {\n       \"id\": 3,\n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\": 9,\n+      \"wallet\": 4,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743600748002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\": 4,\n+      \"wallet\": 0,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743602242291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\": 0,\n+      \"wallet\": .05,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743602248048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\": .05,\n+      \"wallet\": ,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743602259819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\": ,\n+      \"wallet\":0 ,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743602771169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\":0 ,\n+      \"wallet\": 5,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743603651174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n       \"address\": \"hsfhsuishs\",\n       \"gender\": \"male\",\n       \"referralCode\": \"0D34FEEB\",\n       \"referredBy\": \"ABC123\",\n-      \"wallet\": 5,\n+      \"wallet\":1,\n       \"role\": \"user\",\n       \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n       \"location\": [\n         {\n"
+                },
+                {
+                    "date": 1743610698221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": \"0D34FEEB\",\n       \"wallet\": 0,\n       \"profileImage\": \"/images/oh.png\",\n-      \"role\": \"admin\"\n+      \"role\": \"admin\",\n+      \"hasMadeFirstPurchase\": true\n     },\n     {\n       \"id\": 3,\n       \"email\": \"joelblessedgod@gmail.com\",\n@@ -31,32 +32,7 @@\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": \"0D34FEEB\",\n       \"role\": \"user\"\n-    },\n-    {\n-      \"id\": 3,\n-      \"email\": \"slhpsihs@gmail.com\",\n-      \"password\": \"$2a$10$m4WOA85DKkTWUdXZK/0b4u57Uq9Jad.FDDceNcCXDU3nP85QS96ye\",\n-      \"userName\": \"ilauhuf\",\n-      \"fullName\": \"phauipfd\",\n-      \"phone\": \"siphfish\",\n-      \"country\": \"Cameroon\",\n-      \"city\": \"ilfhsiuhfps\",\n-      \"address\": \"hsfhsuishs\",\n-      \"gender\": \"male\",\n-      \"referralCode\": \"0D34FEEB\",\n-      \"referredBy\": \"ABC123\",\n-      \"wallet\":1,\n-      \"role\": \"user\",\n-      \"signUpOn\": \"04/02/2025, 11:58:41 AM\",\n-      \"location\": [\n-        {\n-          \"id\": 1743595121283,\n-          \"location\": \"\",\n-          \"latitude\": \"\",\n-          \"longitude\": \"\"\n-        }\n-      ]\n     }\n   ]\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1740591703181,

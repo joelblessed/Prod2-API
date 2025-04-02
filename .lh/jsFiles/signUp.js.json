@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 37,
             "patches": [
                 {
                     "date": 1740560329714,
@@ -48,6 +48,114 @@
                 {
                     "date": 1742201952163,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       address,\n       gender,\n       role,\n       signUpOn,\n-      \n+      location\n     } = req.body;\n   \n     fs.readFile(accountPath, \"utf8\", async (err, data) => {\n       if (err) return res.status(500).json({ error: \"Error reading database\" });\n"
+                },
+                {
+                    "date": 1743571568796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n         city,\n         wallet,\n         address,\n         gender,\n+        \n         role,\n       };\n       db.users.push(newUser);\n   \n"
+                },
+                {
+                    "date": 1743571575662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n         city,\n         wallet,\n         address,\n         gender,\n-        \n+        re\n         role,\n       };\n       db.users.push(newUser);\n   \n"
+                },
+                {
+                    "date": 1743571581968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n         city,\n         wallet,\n         address,\n         gender,\n-        re\n+        referral\n         role,\n       };\n       db.users.push(newUser);\n   \n"
+                },
+                {
+                    "date": 1743571587363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n         city,\n         wallet,\n         address,\n         gender,\n-        referral\n+        referralCode\n         role,\n       };\n       db.users.push(newUser);\n   \n"
+                },
+                {
+                    "date": 1743571593966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,10 @@\n         city,\n         wallet,\n         address,\n         gender,\n-        referralCode\n+        referralCode,\n+        \n         role,\n       };\n       db.users.push(newUser);\n   \n"
+                },
+                {
+                    "date": 1743571600808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         wallet,\n         address,\n         gender,\n         referralCode,\n-        \n+        referredBy\n         role,\n       };\n       db.users.push(newUser);\n   \n"
+                },
+                {
+                    "date": 1743571625561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,10 @@\n         wallet,\n         address,\n         gender,\n         referralCode,\n-        referredBy\n+        referredBy,\n+        discount\n         role,\n       };\n       db.users.push(newUser);\n   \n"
+                },
+                {
+                    "date": 1743571659336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,11 @@\n       wallet,\n       address,\n       gender,\n       role,\n+      referralCode,\n+        referredBy,\n+        discount,\n       signUpOn,\n       location\n     } = req.body;\n   \n@@ -53,9 +56,9 @@\n         address,\n         gender,\n         referralCode,\n         referredBy,\n-        discount\n+        discount,\n         role,\n       };\n       db.users.push(newUser);\n   \n"
+                },
+                {
+                    "date": 1743571691563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,71 +2,69 @@\n const fs = require(\"fs\");\n const path = require(\"path\");\n const bcrypt = require(\"bcryptjs\");\n const dotenv = require(\"dotenv\");\n-const router= express.Router();\n+const router = express.Router();\n const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n dotenv.config();\n \n+// *Sign Up (Register User)*\n+router.post(\"/signup\", async (req, res) => {\n+  const {\n+    email,\n+    password,\n+    userName,\n+    fullName,\n+    phone,\n+    city,\n+    country,\n+    wallet,\n+    address,\n+    gender,\n+    role,\n+    referralCode,\n+    referredBy,\n+    discount,\n+    signUpOn,\n+    location,\n+  } = req.body;\n \n+  fs.readFile(accountPath, \"utf8\", async (err, data) => {\n+    if (err) return res.status(500).json({ error: \"Error reading database\" });\n \n+    let db = JSON.parse(data);\n \n-// *Sign Up (Register User)*\n-router.post(\"/signup\", async (req, res) => {\n-    const {\n+    // Check if user exists\n+    if (db.users.some((user) => user.email === email)) {\n+      return res.status(400).json({ message: \"User already exists\" });\n+    }\n+\n+    // Hash password and add user\n+    const hashedPassword = await bcrypt.hash(password, 10);\n+    const newUser = {\n+      id: db.users.length + 1,\n       email,\n-      password,\n+      password: hashedPassword,\n       userName,\n       fullName,\n       phone,\n+      country,\n       city,\n-      country,\n       wallet,\n       address,\n       gender,\n+      referralCode,\n+      referredBy,\n+      discount,\n       role,\n-      referralCode,\n-        referredBy,\n-        discount,\n-      signUpOn,\n-      location\n-    } = req.body;\n-  \n-    fs.readFile(accountPath, \"utf8\", async (err, data) => {\n\\ No newline at end of file\n-      if (err) return res.status(500).json({ error: \"Error reading database\" });\n-  \n-      let db = JSON.parse(data);\n-  \n-      // Check if user exists\n-      if (db.users.some((user) => user.email === email)) {\n-        return res.status(400).json({ message: \"User already exists\" });\n-      }\n-  \n-      // Hash password and add user\n-      const hashedPassword = await bcrypt.hash(password, 10);\n-      const newUser = {\n-        id: db.users.length + 1,\n-        email,\n-        password: hashedPassword,\n-        userName,\n-        fullName,\n-        phone,\n-        country,\n-        city,\n-        wallet,\n-        address,\n-        gender,\n-        referralCode,\n-        referredBy,\n-        discount,\n-        role,\n-      };\n-      db.users.push(newUser);\n-  \n-      fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n-        if (err) return res.status(500).json({ error: \"Error saving database\" });\n-        res.json({ message: \"User registered successfully\" });\n-      });\n+      locatio\n+    };\n+    db.users.push(newUser);\n+\n+    fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n+      if (err) return res.status(500).json({ error: \"Error saving database\" });\n+      res.json({ message: \"User registered successfully\" });\n     });\n   });\n-  \n-  module.exports = router\n+});\n+\n+module.exports = router;\n"
+                },
+                {
+                    "date": 1743571706138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,10 @@\n       referralCode,\n       referredBy,\n       discount,\n       role,\n-      locatio\n+      sig\n+      location,\n     };\n     db.users.push(newUser);\n \n     fs.writeFile(accountPath, JSON.stringify(db, null, 2), (err) => {\n"
+                },
+                {
+                    "date": 1743571983785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n       referralCode,\n       referredBy,\n       discount,\n       role,\n-      sig\n+      signUpOn:,\n       location,\n     };\n     db.users.push(newUser);\n \n"
+                },
+                {
+                    "date": 1743572159450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     // Check if user exists\n     if (db.users.some((user) => user.email === email)) {\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n-\n+?\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n@@ -55,9 +55,9 @@\n       referralCode,\n       referredBy,\n       discount,\n       role,\n-      signUpOn:,\n+      signUpOn,\n       location,\n     };\n     db.users.push(newUser);\n \n"
+                },
+                {
+                    "date": 1743572168112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,10 @@\n     // Check if user exists\n     if (db.users.some((user) => user.email === email)) {\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n-?\n+  \n+    // genr\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572174534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     if (db.users.some((user) => user.email === email)) {\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n-    // genr\n+    // generate \n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572182327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     if (db.users.some((user) => user.email === email)) {\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n-    // generate \n+    // generate uniq\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572191230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     if (db.users.some((user) => user.email === email)) {\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n-    // generate uniq\n+    // generate unique referral code\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572199687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n+    const\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572210399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const\n+    const gene\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572218177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const gene\n+    const generate\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572227741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const generate\n+    const generateReferral\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572235337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const generateReferral\n+    const generateReferralCode =\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572241104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const generateReferralCode =\n+    const generateReferralCode = ()\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572248228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const generateReferralCode = ()\n+    const generateReferralCode = () =>\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572254737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const generateReferralCode = () =>\n+    const generateReferralCode = () =>cryo\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572276832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const generateReferralCode = () =>cryo\n+    const generateReferralCode = () =>crypto.rado\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572283422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       return res.status(400).json({ message: \"User already exists\" });\n     }\n   \n     // generate unique referral code\n-    const generateReferralCode = () =>crypto.ra\n+    const generateReferralCode = () =>crypto.ran\n     // Hash password and add user\n     const hashedPassword = await bcrypt.hash(password, 10);\n     const newUser = {\n       id: db.users.length + 1,\n"
+                },
+                {
+                    "date": 1743572455397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n       wallet,\n       address,\n       gender,\n       referralCode: generateReferralCode(),\n-      referredBy:ref,\n+      referredBy:referralCode,\n       discount,\n       role,\n       signUpOn,\n       location,\n"
                 }
             ],
             "date": 1740560329714,

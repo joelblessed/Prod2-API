@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "email": "joelblessed@gmail.com",
+      "password": "$2a$10$2OAc3/sDXDsBIO0N1HenXeGuspIhn5pt7ZUsLaRQQzAnypSHPbU1e",
+      "userName": "joelblessed",
+      "fullName": "joel blessed",
+      "phone": "67713018988",
+      "country": "usa",
+      "address": "kombe",
+      "gender": "female",
+      "referralCode":"ABC123",
+      "referredBy":null,
+      discount:
+      "profileImage": "/images/oh.png",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "email": "joelblessedgo@gmail.com",
+      "password": "$2a$10$QNJNga1o8pOoA9ByJBDb1eHkOwIFumdyP9jHYYBwygIQmwaSm0eWa",
+      "userName": "joeltest",
+      "fullName": "joel blessed",
+      "phone": "677331862",
+      "country": "Kameroon",
+      "city": "",
+      "wallet": 0,
+      "profileImage": "/images/oh.png",
+      "address": "kombe",
+      "gender": "male",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "email": "joelblessedgod@gmail.com",
+      "password": "$2a$10$1.waJSBhj8rf/KbuIk53H.EAydlqawl.KsyMbAsBrL7Px.JYQwHe6",
+      "userName": "joeltest2",
+      "fullName": "joel blessed",
+      "phone": "677331862",
+      "country": "Cameroon",
+      "city": "Duaola",
+      "wallet": 0,
+      "address": "kombe",
+      "gender": "male",
+      "role": "user"
+    }
+  ]
+}

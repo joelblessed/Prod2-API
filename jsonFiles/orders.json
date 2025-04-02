@@ -1,72 +1,40 @@
 {
   "orders": [
     {
-      "id": 1742317772698,
+      "id": 1743603679397,
       "user": {
         "username": "joelblessed",
-        "userId": 2,
         "paymentStatus": "",
         "paymentId": ""
       },
-      "date": "2025-03-18T17:09:32.698Z",
-      "totalAmount": 19998,
+      "date": "2025-04-02T14:21:19.397Z",
+      "totalAmount": 10001,
       "cart": [
-        {
-          "id": 1,
-          "forCount": 1,
-          "quantity": 1,
-          "price": 9999,
-          "discount": 0,
-          "likes": 0,
-          "numberInStock": 6,
-          "owner": "nestor",
-          "phoneNumber": 5457,
-          "ownerId": 2,
-          "color": "red",
-          "name": "Speaker",
-          "description": "220v",
-          "status": "Used",
-          "weight": 1,
-          "category": "accesseries",
-          "location": [
-            {
-              "id": 1,
-              "name": "Location 1",
-              "latitude": 0,
-              "longitude": 0
-            }
-          ],
-          "adress": "market",
-          "brand": [
-            {
-              "id": 3,
-              "name": "jbl",
-              "image": "/images/oh.png"
-            }
-          ],
-          "images": [
-            "/images/oh.png",
-            "/images/1738676289852.jpg"
-          ],
-          "isSelected": false
-        },
         {
           "id": 2,
           "forCount": 1,
           "quantity": 1,
           "price": 9999,
-          "discount": 0,
-          "likes": 0,
+          "discount": "5000",
+          "likes": 1,
+          "likedBy": [
+            {
+              "userId": "2",
+              "username": "joelblessed"
+            }
+          ],
           "numberInStock": 6,
           "title": "joel",
           "owner": "nestor",
           "phoneNumber": 5457,
-          "ownerId": 2,
+          "ownerId": 8,
           "color": "red",
           "name": "fan",
           "description": "220v",
           "status": "Used",
-          "category": "other",
+          "category": "Electrical Appliances",
+          "address": "3456789",
+          "city": "23445678",
           "weight": 1,
           "location": [
             {
@@ -88,15 +56,125 @@
             "/images/to.jpg",
             "/images/top.png"
           ],
-          "isSelected": false
+          "isSelected": false,
+          "postedOn": "2025-03-23T12:24:27.313Z"
         }
       ],
       "shipping": {
-        "address": "iuiytr",
-        "deliveryDate": "2025-03-25T15:46:33.429Z",
-        "isPickup": true
+        "address": "kombe",
+        "deliveryDate": "4/7/2025",
+        "isPickup": false
       },
-      "status": "Delivered"
+      "status": "Pending"
+    },
+    {
+      "id": 1743603729820,
+      "user": {
+        "username": "joelblessed",
+        "paymentStatus": "",
+        "paymentId": ""
+      },
+      "date": "2025-04-02T14:22:09.820Z",
+      "totalAmount": 10535,
+      "cart": [
+        {
+          "id": 6,
+          "forCount": 1,
+          "quantity": 1,
+          "price": 532,
+          "likes": 0,
+          "likedBy": [],
+          "discount": 0,
+          "numberInStock": 6,
+          "owner": "joelblessed",
+          "phoneNumber": 9679,
+          "ownerId": 2,
+          "color": "red",
+          "name": "Hp pro",
+          "address": "3456789",
+          "city": "23445678",
+          "description": "12 gb Ram",
+          "status": "Used",
+          "weight": 1,
+          "brand": [
+            {
+              "id": 10,
+              "name": "hp",
+              "image": "/images/oh.png"
+            }
+          ],
+          "images": [
+            "/images/oh.png",
+            "/images/1738676289852.jpg"
+          ],
+          "category": "computer",
+          "location": [
+            {
+              "id": 1,
+              "name": "Location 1",
+              "latitude": 0,
+              "longitude": 0
+            }
+          ],
+          "adress": "market",
+          "isSelected": false
+        },
+        {
+          "id": 2,
+          "forCount": 1,
+          "quantity": 1,
+          "price": 9999,
+          "discount": "5000",
+          "likes": 1,
+          "likedBy": [
+            {
+              "userId": "2",
+              "username": "joelblessed"
+            }
+          ],
+          "numberInStock": 6,
+          "title": "joel",
+          "owner": "nestor",
+          "phoneNumber": 5457,
+          "ownerId": 8,
+          "color": "red",
+          "name": "fan",
+          "description": "220v",
+          "status": "Used",
+          "category": "Electrical Appliances",
+          "address": "3456789",
+          "city": "23445678",
+          "weight": 1,
+          "location": [
+            {
+              "id": 1,
+              "name": "Location 1",
+              "latitude": 0,
+              "longitude": 0
+            }
+          ],
+          "adress": "market",
+          "brand": [
+            {
+              "id": 5,
+              "name": "ox",
+              "image": "/images/oh.png"
+            }
+          ],
+          "images": [
+            "/images/to.jpg",
+            "/images/top.png"
+          ],
+          "isSelected": false,
+          "postedOn": "2025-03-23T12:24:27.313Z"
+        }
+      ],
+      "shipping": {
+        "address": "kombe",
+        "deliveryDate": "4/7/2025",
+        "isPickup": false
+      },
+      "status": "Pending"
     }
   ]
 }
