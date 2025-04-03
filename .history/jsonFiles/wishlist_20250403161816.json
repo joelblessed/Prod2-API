@@ -1,0 +1,12 @@
+{
+  "wishlists": [
+    {
+      "userId": "12345",
+      "products": ["1", "5", "8"]
+    },
+    {
+      "userId": "guest",
+      "products": ["3", "7"]
+    }
+  ]
+}

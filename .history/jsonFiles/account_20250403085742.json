@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "email": "joelblessed@gmail.com",
+      "password": "$2a$10$2OAc3/sDXDsBIO0N1HenXeGuspIhn5pt7ZUsLaRQQzAnypSHPbU1e",
+      "userName": "joelblessed",
+      "fullName": "joel blessed",
+      "phone": "67713018988",
+      "country": "usa",
+      "address": "kombe",
+      "gender": "female",
+      "referralCode": "ABC123",
+      "referredBy": "0D34FEEB",
+      "wallet": 90,
+      "profileImage": "/images/oh.png",
+      "role": "admin",
+      "wishlist":[],
+      "hasMadeFirstPurchase": true
+    },
+    {
+      "id": 3,
+      "email": "joelblessedgod@gmail.com",
+      "password": "$2a$10$QNJNga1o8pOoA9ByJBDb1eHkOwIFumdyP9jHYYBwygIQmwaSm0eWa",
+      "userName": "joeltest",
+      "fullName": "joel blessed",
+      "phone": "677331862",
+      "country": "Kameroon",
+      "city": "",
+      "wallet": 120,
+      "profileImage": "/images/oh.png",
+      "address": "kombe",
+      "gender": "male",
+      "referralCode": "DEF123",
+      "referredBy": "0D34FEEB",
+      "role": "user",
+      "wishlist":[]
+    }
+  ]
+}

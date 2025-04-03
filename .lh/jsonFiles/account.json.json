@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 94,
+            "activePatchIndex": 111,
             "patches": [
                 {
                     "date": 1740591703181,
@@ -384,6 +384,74 @@
                 {
                     "date": 1743615442902,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": \"0D34FEEB\",\n-      \"role\": \"user\"\n-      \"wishlist\":[],\n+      \"role\": \"user\",\n+      \"wishlist\":[]\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743670652611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n       \"fullName\": \"joel blessed\",\n       \"phone\": \"677331862\",\n       \"country\": \"Kameroon\",\n       \"city\": \"\",\n-      \"wallet\": 0,\n+      \"wallet\": 120,\n       \"profileImage\": \"/images/oh.png\",\n       \"address\": \"kombe\",\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n"
+                },
+                {
+                    "date": 1743670662150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": \"0D34FEEB\",\n-      \"wallet\": 0,\n+      \"wallet\": 90,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\",\n       \"wishlist\":[],\n       \"hasMadeFirstPurchase\": true\n"
+                },
+                {
+                    "date": 1743670673140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": \"0D34FEEB\",\n-      \"wallet\": 90,\n+      \"wallet\": 96 c0,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\",\n       \"wishlist\":[],\n       \"hasMadeFirstPurchase\": true\n"
+                },
+                {
+                    "date": 1743676394881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       \"address\": \"kombe\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": \"0D34FEEB\",\n-      \"wallet\": 96 c0,\n+      \"wallet\": 960,\n       \"profileImage\": \"/images/oh.png\",\n       \"role\": \"admin\",\n       \"wishlist\":[],\n       \"hasMadeFirstPurchase\": true\n@@ -36,5 +36,6 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ]\n-}\n\\ No newline at end of file\n+}\n+\n"
+                },
+                {
+                    "date": 1743676413552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,6 +36,7 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ]\n+  \n }\n \n"
+                },
+                {
+                    "date": 1743676419154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n       \"referredBy\": \"0D34FEEB\",\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n-  ]\n+  ],\n   \n+\n }\n \n"
+                },
+                {
+                    "date": 1743676430189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,8 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ],\n-  \n+  ge\n \n }\n \n"
+                },
+                {
+                    "date": 1743676435777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,8 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ],\n-  ge\n+  geusts\n \n }\n \n"
+                },
+                {
+                    "date": 1743676442295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,8 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ],\n-  geusts\n+  guest\n \n }\n \n"
+                },
+                {
+                    "date": 1743676447446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,8 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ],\n-  guest\n+  guestWish\n \n }\n \n"
+                },
+                {
+                    "date": 1743676454997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,8 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ],\n-  guestWish\n+  guestWishlist\n \n }\n \n"
+                },
+                {
+                    "date": 1743676467678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,8 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ],\n-  guestWishlist\n+  \"guestWishlists\":\n \n }\n \n"
+                },
+                {
+                    "date": 1743676472863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,10 @@\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n   ],\n-  \"guestWishlists\":\n+  \"guestWishlists\":{\n+    \n+  }\n \n }\n \n"
+                },
+                {
+                    "date": 1743676497170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       \"wishlist\":[]\n     }\n   ],\n   \"guestWishlists\":{\n-    \n+    \"de\"\n   }\n \n }\n \n"
+                },
+                {
+                    "date": 1743676504879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       \"wishlist\":[]\n     }\n   ],\n   \"guestWishlists\":{\n-    \"de\"\n+    \"device_\"\n   }\n \n }\n \n"
+                },
+                {
+                    "date": 1743676510807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       \"wishlist\":[]\n     }\n   ],\n   \"guestWishlists\":{\n-    \"device_\"\n+    \"device_abc\"\n   }\n \n }\n \n"
+                },
+                {
+                    "date": 1743676518473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       \"wishlist\":[]\n     }\n   ],\n   \"guestWishlists\":{\n-    \"device_abc\"\n+    \"device_abc123\":[]\n   }\n \n }\n \n"
                 }
             ],
             "date": 1740591703181,
