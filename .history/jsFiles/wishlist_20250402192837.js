@@ -70,7 +70,7 @@ router.post("/wishlist/remove", (req, res) => {
 });
 
 // Get wishlist
-router.get("/wishlist", (req, res) => {
+.get("/wishlist", (req, res) => {
   const token = req.headers.authorization?.split(" ")[1];
 
   if (!token) {
