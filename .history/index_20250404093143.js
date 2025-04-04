@@ -45,7 +45,7 @@ const passwardResetRoutes = require("./jsFiles/passwardReset");
 const ordersMangementRoutes = require("./jsFiles/ordersMangement");
 const paymentRoutes = require("./jsFiles/payment");
 const JWT_SECRET = process.env.JWT_SECRET 
-
+c
 
 const app = express();
 

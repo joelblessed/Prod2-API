@@ -11,7 +11,7 @@ const accountPath = path.join(__dirname, "../jsonFiles/account.json");
 dotenv.config();
 
 
-const SECRET_KEY =  process.env.JWT_SECRET
+const SECRET_KEY = 
 
 
 // Fake Email Sender (Use real SMTP for production)

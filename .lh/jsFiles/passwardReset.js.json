@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1740560282494,
@@ -12,6 +12,10 @@
                 {
                     "date": 1740560289684,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n const app = express();\n const router= express.Router();\n-const accountPath = path.join(__dirname, \"/account.json\");\n+const accountPath = path.join(__dirname, \"../jsonFilesaccount.json\");\n dotenv.config();\n \n \n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n"
+                },
+                {
+                    "date": 1743758403041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,13 @@\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n const app = express();\n const router= express.Router();\n-const accountPath = path.join(__dirname, \"../jsonFilesaccount.json\");\n+const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n dotenv.config();\n \n \n-const SECRET_KEY = \"your-secret-key\"; // Change this in production\n+const SECRET_KEY = \n \n \n // Fake Email Sender (Use real SMTP for production)\n const transporter = nodemailer.createTransport({\n"
                 }
             ],
             "date": 1740560282494,

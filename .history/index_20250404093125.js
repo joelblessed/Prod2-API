@@ -44,7 +44,8 @@ const productsRoutes = require("./jsFiles/products");
 const passwardResetRoutes = require("./jsFiles/passwardReset");
 const ordersMangementRoutes = require("./jsFiles/ordersMangement");
 const paymentRoutes = require("./jsFiles/payment");
-const JWT_SECRET = process.env.JWT_SECRET 
+const JWT_SECRET = process.env.JWT_SECRET || "mysecretkey";
+const SECRET_KEY = "your-secret-key"; // Change this in production
 
 
 const app = express();

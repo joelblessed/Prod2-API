@@ -11,6 +11,7 @@ const nodemailer = require("nodemailer");
 const { v4: uuidv4 } = require('uuid');  // UUID generation for unique identifiers
 const bodyParser = require('body-parser');  // Parse incoming request bodies
 const JWT_SECRET = process.env.JWT_SECRET ;
+
 const router = express.Router();
 
 const app = express();

@@ -10,7 +10,10 @@
     },
     {
       "userId": "2",
-      "products": []
+      "products": [
+     
+        4
+      ]
     }
   ]
 }

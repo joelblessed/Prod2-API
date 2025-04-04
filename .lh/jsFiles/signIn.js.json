@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1740559322955,
@@ -80,6 +80,10 @@
                 {
                     "date": 1743600165114,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n const { v4: uuidv4 } = require('uuid');  // UUID generation for unique identifiers\n const bodyParser = require('body-parser');  // Parse incoming request bodies\n-const JWT_SECRET = process.env.JWT_SECRET || \"mysecretkey\";\n+const JWT_SECRET = process.env.JWT_SECRET \n const SECRET_KEY = \"your-secret-key\"; // Change this in production\n const router = express.Router();\n \n const app = express();\n@@ -44,9 +44,9 @@\n \n const accountPath = path.join(__dirname, \"../jsonFiles/account.json\");\n \n // Get all products\n-router.get('/Aprofiles', (req, res) => {\n+router.get('/AllProfiles', (req, res) => {\n   const db = JSON.parse(fs.readFileSync(accountPath, 'utf-8'));\n   res.json(db.users);\n });\n \n"
+                },
+                {
+                    "date": 1743758473902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n const { v4: uuidv4 } = require('uuid');  // UUID generation for unique identifiers\n const bodyParser = require('body-parser');  // Parse incoming request bodies\n-const JWT_SECRET = process.env.JWT_SECRET \n-const SECRET_KEY = \"your-secret-key\"; // Change this in production\n+const JWT_SECRET = process.env.JWT_SECRET ;\n+\n const router = express.Router();\n \n const app = express();\n \n"
                 }
             ],
             "date": 1740559322955,

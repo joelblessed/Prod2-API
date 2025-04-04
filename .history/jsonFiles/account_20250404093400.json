@@ -8,14 +8,14 @@
       "fullName": "joel blessed",
       "phone": "67713018988",
       "country": "usa",
-      "address": "kumba",
+      "address": "kombe",
       "gender": "female",
       "referralCode": "ABC123",
       "referredBy": "0D34FEEB",
       "wallet": 960,
-      "profileImage": "/profilImages/1742300656095-oh.png",
+      "profileImage": "//1742300656095-oh",
       "role": "admin",
-      "wishlist": [],
+      "wishlist":[],
       "hasMadeFirstPurchase": true
     },
     {
@@ -34,7 +34,12 @@
       "referralCode": "DEF123",
       "referredBy": "0D34FEEB",
       "role": "user",
-      "wishlist": []
+      "wishlist":[]
     }
-  ]
+  ],
+  "guestWishlists":{
+    "device_abc123":[2]
+  }
+
 }
+
