@@ -6,7 +6,7 @@
       "quantity": 1,
       "price": 2343,
       "discount": "2000",
-      "likes": 5,
+      "likes": 0,
       "likedBy": [],
       "numberInStock": 6,
       "owner": "nestor",

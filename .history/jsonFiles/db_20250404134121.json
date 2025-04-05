@@ -6,7 +6,7 @@
       "quantity": 1,
       "price": 2343,
       "discount": "2000",
-      "likes": 5,
+      "likes": 0,
       "likedBy": [],
       "numberInStock": 6,
       "owner": "nestor",
@@ -460,7 +460,7 @@
       "adress": "market",
       "brand": [
         {
-          "id": 12,
+          "id": ,
           "name": "ox",
           "image": "/images/oh.png"
         }
@@ -514,7 +514,7 @@
       "soled": false
     },
     {
-      "id": 13,
+      "id": 34354,
       "forCount": 1,
       "quantity": 1,
       "price": 2343,
@@ -557,7 +557,7 @@
       "postedOn": "2025-03-20T07:52:44.667Z"
     },
     {
-      "id": 14,
+      "id": 1,
       "forCount": 1,
       "quantity": 1,
       "price": 9999,
@@ -600,7 +600,7 @@
       "postedOn": "2025-03-20T10:17:43.476Z"
     },
     {
-      "id": 15,
+      "id": 2,
       "forCount": 1,
       "quantity": 1,
       "price": 9999,
@@ -649,7 +649,7 @@
       "postedOn": "2025-03-23T12:24:27.313Z"
     },
     {
-      "id": 16,
+      "id": 3,
       "forCount": 1,
       "quantity": 1,
       "price": 532,
@@ -691,7 +691,7 @@
       "isSelected": false
     },
     {
-      "id": 17,
+      "id": 34354,
       "forCount": 1,
       "quantity": 1,
       "price": 2343,
@@ -733,7 +733,7 @@
       "isSelected": true
     },
     {
-      "id": 18,
+      "id": 4,
       "forCount": 1,
       "quantity": 1,
       "price": 9999,
@@ -775,7 +775,7 @@
       "isSelected": false
     },
     {
-      "id": 19,
+      "id": 5,
       "forCount": 1,
       "quantity": 1,
       "price": 9999,
@@ -817,7 +817,7 @@
       "isSelected": false
     },
     {
-      "id": 20,
+      "id": 6,
       "forCount": 1,
       "quantity": 1,
       "price": 532,
@@ -859,7 +859,7 @@
       "isSelected": false
     },
     {
-      "id": 21,
+      "id": 7,
       "forCount": 1,
       "quantity": 1,
       "price": 2343,
@@ -906,7 +906,7 @@
       "isSelected": true
     },
     {
-      "id": 22,
+      "id": 8,
       "forCount": 1,
       "quantity": 1,
       "price": 9999,
@@ -948,7 +948,7 @@
       "isSelected": false
     },
     {
-      "id": 23,
+      "id": 9,
       "forCount": 1,
       "quantity": 1,
       "price": 9999,
@@ -984,7 +984,7 @@
       "isSelected": false
     },
     {
-      "id":24,
+      "id": 1740568542384,
       "postedOn": "02/26/2025, 12:14:50 PM",
       "name": "jordans",
       "brand": [

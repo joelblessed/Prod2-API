@@ -1,16 +1,17 @@
 {
   "wishlists": [
+   
     {
       "userId": "2",
       "products": [
-        3,
-        2
+        3
       ]
     },
     {
       "userId": "guest",
       "products": [
-        1
+        1,
+        2
       ]
     }
   ]

@@ -16,11 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-// Get all products
-router.get('/allProducts', (req, res) => {
-  const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));
-  res.json(db.products);
-});
+// // Get all products
+// router.get('/products', (req, res) => {
+//   const db = JSON.parse(fs.readFileSync(dbFilePath, 'utf-8'));
+//   res.json(db.products);
+// });
 
 
 router.get('/products', (req, res) => {
@@ -30,7 +30,7 @@ router.get('/products', (req, res) => {
   const startIndex = (page - 1) * limit;
   const endIndex = page * limit;
 
-  const products = require('../jsonFiles/db.json').products;
+  const products = require('./jsonFiles/db.json').products;
   const paginatedProducts = products.slice(startIndex, endIndex);
 
   res.json({ products: paginatedProducts });
@@ -153,34 +153,6 @@ router.patch("/products/:id/dislike", (req, res) => {
 
  fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2));
   res.json({ message: "Disliked", likes: product.likes, likedBy: product.likedBy });
-});
-
-// Load product data from db.json
-const db = JSON.parse(fs.readFileSync(dbFilePath, "utf-8"));
-const allProducts = db.products || [];
-
-router.get("/", (req, res) => {
-  const query = req.query.query?.toLowerCase().trim();
-
-  if (!query) return res.json([]);
-
-  const filtered = allProducts.filter((product) => {
-    const nameMatch = product.name?.toLowerCase().includes(query);
-    const categoryMatch = product.category?.toLowerCase().includes(query);
-    const ownerMatch = product.owner?.toLowerCase().includes(query);
-    const brandMatch = product.brand?.some((b) =>
-      b.name.toLowerCase().includes(query)
-    );
-
-    return nameMatch || categoryMatch || ownerMatch || brandMatch;
-  });
-
-  // Ensure no duplicate results (based on product ID)
-  const uniqueProducts = Array.from(
-    new Map(filtered.map((product) => [product.id, product])).values()
-  );
-
-  res.json(uniqueProducts);
 });
 
 

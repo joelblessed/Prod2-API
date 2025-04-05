@@ -156,7 +156,7 @@ router.patch("/products/:id/dislike", (req, res) => {
 });
 
 // Load product data from db.json
-const db = JSON.parse(fs.readFileSync(dbFilePath, "utf-8"));
+const db = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
 const allProducts = db.products || [];
 
 router.get("/", (req, res) => {
