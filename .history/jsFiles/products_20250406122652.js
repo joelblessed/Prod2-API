@@ -159,7 +159,7 @@ router.patch("/products/:id/dislike", (req, res) => {
 const db = JSON.parse(fs.readFileSync(dbFilePath, "utf-8"));
 const allProducts = db.products || [];
 
-router.get("/search", (req, res) => {
+router.get("/sear", (req, res) => {
   const query = req.query.query?.toLowerCase().trim();
 
   if (!query) return res.json([]);
