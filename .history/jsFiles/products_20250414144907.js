@@ -159,6 +159,7 @@ router.patch("/products/:id/dislike", (req, res) => {
 const db = JSON.parse(fs.readFileSync(dbFilePath, "utf-8"));
 const allProducts = db.products || [];
 
+
 router.get('/search', (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
@@ -169,7 +170,6 @@ router.get('/search', (req, res) => {
   const query = req.query.query?.toLowerCase().trim();
   if (!query) return res.json([]);
 
-  // Filter by query
   const filtered = allProducts.filter((product) => {
     const nameMatch = product.name?.toLowerCase().includes(query);
     const categoryMatch = product.category?.toLowerCase().includes(query);
@@ -177,22 +177,16 @@ router.get('/search', (req, res) => {
     const brandMatch = product.brand?.some((b) =>
       b.name.toLowerCase().includes(query)
     );
+
     return nameMatch || categoryMatch || ownerMatch || brandMatch;
   });
 
-  // Remove duplicates by ID
-  const uniqueProducts = Array.from(
-    new Map(filtered.map((product) => [product.id, product])).values()
-  );
+  const paginatedProducts = filtered.slice(startIndex, endIndex);
 
-  // Paginate
-  const paginatedProducts = uniqueProducts.slice(startIndex, endIndex);
-
-  // Final response
   res.json({ 
     page,
     limit,
-    totalResults: uniqueProducts.length,
+    totalResults: filtered.length,
     results: paginatedProducts 
   });
 });
@@ -212,14 +206,17 @@ router.get('/search', (req, res) => {
 
 //     return nameMatch || categoryMatch || ownerMatch || brandMatch;
 //   });
-    
-//   // Ensure no duplicate results (based on product ID)
-//   const uniqueProducts = Array.from(
-//     new Map(filtered.map((product) => [product.id, product])).values()
-//   );
 
-//   res.json(uniqueProducts);
-// });
+
+
+
+  // Ensure no duplicate results (based on product ID)
+  const uniqueProducts = Array.from(
+    new Map(filtered.map((product) => [product.id, product])).values()
+  );
+
+  res.json(uniqueProducts);
+});
 
 
 module.exports =router
