@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1740559322955,
@@ -84,6 +84,22 @@
                 {
                     "date": 1743758473902,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n const dotenv = require(\"dotenv\");\n const nodemailer = require(\"nodemailer\");\n const { v4: uuidv4 } = require('uuid');  // UUID generation for unique identifiers\n const bodyParser = require('body-parser');  // Parse incoming request bodies\n-const JWT_SECRET = process.env.JWT_SECRET \n-const SECRET_KEY = \"your-secret-key\"; // Change this in production\n+const JWT_SECRET = process.env.JWT_SECRET ;\n+\n const router = express.Router();\n \n const app = express();\n \n"
+                },
+                {
+                    "date": 1744889827924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n const nodemailer = require(\"nodemailer\");\n const { v4: uuidv4 } = require('uuid');  // UUID generation for unique identifiers\n const bodyParser = require('body-parser');  // Parse incoming request bodies\n const JWT_SECRET = process.env.JWT_SECRET ;\n-\n const router = express.Router();\n \n const app = express();\n \n@@ -107,5 +106,7 @@\n     res.status(404).json({ message: 'User not found' });\n   }\n });\n \n+\n+\n module.exports= router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744889835554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,7 +106,19 @@\n     res.status(404).json({ message: 'User not found' });\n   }\n });\n \n+router.post('/logs', (req, res) => {\n+  const { userId, action } = req.body;\n+  const db = JSON.parse(fs.readFileSync('db.json'));\n+  const newLog = {\n+    id: db.logs.length + 1,\n+    userId,\n+    action,\n+    timestamp: new Date().toISOString()\n+  };\n+  db.logs.push(newLog);\n+  fs.writeFileSync('db.json', JSON.stringify(db, null, 2));\n+  res.status(201).json(newLog);\n+});\n \n-\n module.exports= router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744889849080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,9 +116,9 @@\n     action,\n     timestamp: new Date().toISOString()\n   };\n   db.logs.push(newLog);\n-  fs.writeFileSync('db.j', JSON.stringify(db, null, 2));\n+  fs.writeFileSync('db.j, JSON.stringify(db, null, 2));\n   res.status(201).json(newLog);\n });\n \n module.exports= router\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744889855477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,9 +116,9 @@\n     action,\n     timestamp: new Date().toISOString()\n   };\n   db.logs.push(newLog);\n-  fs.writeFileSync(a, JSON.stringify(db, null, 2));\n+  fs.writeFileSync(acc, JSON.stringify(db, null, 2));\n   res.status(201).json(newLog);\n });\n \n module.exports= router\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1740559322955,

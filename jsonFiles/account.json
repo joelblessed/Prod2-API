@@ -36,5 +36,25 @@
       "role": "user",
       "wishlist": []
     }
+  ],
+  "logs": [
+    {
+      "id": 2,
+      "userId": "2",
+      "action": "logOut",
+      "timestamp": "2025-04-17T12:11:37.186Z",
+      "viewedProducts": [
+        {
+          "id": 1,
+          "productId": 2,
+          "timestamp": "2025-04-17T13:58:10.760Z"
+        },
+        {
+          "id": 2,
+          "productId": 4,
+          "timestamp": "2025-04-17T13:59:08.494Z"
+        }
+      ]
+    }
   ]
 }

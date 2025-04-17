@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 119,
+            "activePatchIndex": 151,
             "patches": [
                 {
                     "date": 1740591703181,
@@ -484,6 +484,134 @@
                 {
                     "date": 1743759313731,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,11 +35,8 @@\n       \"referredBy\": \"0D34FEEB\",\n       \"role\": \"user\",\n       \"wishlist\":[]\n     }\n-  ],\n-  \"guestWishlists\":{\n-    \"device_abc123\":[2]\n-  }\n+  ]\n \n }\n \n"
+                },
+                {
+                    "date": 1744889921306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,16 @@\n       \"userName\": \"joelblessed\",\n       \"fullName\": \"joel blessed\",\n       \"phone\": \"67713018988\",\n       \"country\": \"usa\",\n-      \"address\": \"kombe\",\n+      \"address\": \"kumba\",\n       \"gender\": \"female\",\n       \"referralCode\": \"ABC123\",\n       \"referredBy\": \"0D34FEEB\",\n       \"wallet\": 960,\n       \"profileImage\": \"/profilImages/1742300656095-oh.png\",\n       \"role\": \"admin\",\n-      \"wishlist\":[],\n+      \"wishlist\": [],\n       \"hasMadeFirstPurchase\": true\n     },\n     {\n       \"id\": 3,\n@@ -33,10 +33,16 @@\n       \"gender\": \"male\",\n       \"referralCode\": \"DEF123\",\n       \"referredBy\": \"0D34FEEB\",\n       \"role\": \"user\",\n-      \"wishlist\":[]\n+      \"wishlist\": []\n     }\n   ]\n-\n-}\n-\n+  \"logs\": [\n+    {\n+      \"id\": 1,\n+      \"userId\": 1,\n+      \"action\": \"login\",\n+      \"timestamp\": \"2025-04-17T10:00:00Z\"\n+    }\n+  ]\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744889929965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n       \"referredBy\": \"0D34FEEB\",\n       \"role\": \"user\",\n       \"wishlist\": []\n     }\n-  ]\n+  ],\n   \"logs\": [\n     {\n       \"id\": 1,\n       \"userId\": 1,\n"
+                },
+                {
+                    "date": 1744891437515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n     {\n       \"id\": 1,\n       \"userId\": 1,\n       \"action\": \"login\",\n+      \n       \"timestamp\": \"2025-04-17T10:00:00Z\"\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744891446752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     {\n       \"id\": 1,\n       \"userId\": 1,\n       \"action\": \"login\",\n-      \n+      \"\"\n       \"timestamp\": \"2025-04-17T10:00:00Z\"\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744891453599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     {\n       \"id\": 1,\n       \"userId\": 1,\n       \"action\": \"login\",\n-      \"\"\n+      \"v\"\n       \"timestamp\": \"2025-04-17T10:00:00Z\"\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744891462449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     {\n       \"id\": 1,\n       \"userId\": 1,\n       \"action\": \"login\",\n-      \"v\"\n+      \"viewedProducts\"\n       \"timestamp\": \"2025-04-17T10:00:00Z\"\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744891470881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,18 @@\n     {\n       \"id\": 1,\n       \"userId\": 1,\n       \"action\": \"login\",\n-      \"viewedProducts\"\n+      \"viewedProducts\": [\n+        {\n+          \"productId\": 101,\n+          \"timestamp\": \"2025-04-17T10:00:00Z\"\n+        },\n+        {\n+          \"productId\": 102,\n+          \"timestamp\": \"2025-04-17T10:05:00Z\"\n+        }\n+      ],\n       \"timestamp\": \"2025-04-17T10:00:00Z\"\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744891695944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,8 @@\n           \"productId\": 102,\n           \"timestamp\": \"2025-04-17T10:05:00Z\"\n         }\n       ],\n-      \"timestamp\": \"2025-04-17T10:00:00Z\"\n+      \n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744891702180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n     {\n       \"id\": 1,\n       \"userId\": 1,\n       \"action\": \"login\",\n+      \"timestamp\": \"2025-04-17T10:00:00Z\",\n       \"viewedProducts\": [\n         {\n           \"productId\": 101,\n           \"timestamp\": \"2025-04-17T10:00:00Z\"\n"
+                },
+                {
+                    "date": 1744891709733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n         {\n           \"productId\": 102,\n           \"timestamp\": \"2025-04-17T10:05:00Z\"\n         }\n-      ],\n+      ]\n       \n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744891755469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,12 +38,13 @@\n     }\n   ],\n   \"logs\": [\n     {\n-      \"id\": 1,\n+      \"id\": 15,\n       \"userId\": 1,\n       \"action\": \"login\",\n       \"timestamp\": \"2025-04-17T10:00:00Z\",\n+\n       \"viewedProducts\": [\n         {\n           \"productId\": 101,\n           \"timestamp\": \"2025-04-17T10:00:00Z\"\n"
+                },
+                {
+                    "date": 1744891761356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,10 +38,10 @@\n     }\n   ],\n   \"logs\": [\n     {\n-      \"id\": 15,\n-      \"userId\": 1,\n+      \"id\": 1,\n+      \"userId\": 31,\n       \"action\": \"login\",\n       \"timestamp\": \"2025-04-17T10:00:00Z\",\n \n       \"viewedProducts\": [\n"
+                },
+                {
+                    "date": 1744892229295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,19 +42,29 @@\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n       \"timestamp\": \"2025-04-17T10:00:00Z\",\n-\n-      \"viewedProducts\": [\n-        {\n-          \"productId\": 101,\n-          \"timestamp\": \"2025-04-17T10:00:00Z\"\n-        },\n-        {\n-          \"productId\": 102,\n-          \"timestamp\": \"2025-04-17T10:05:00Z\"\n-        }\n-      ]\n       \n+    },\n+    {\n+      \"id\": 2,\n+      \"userId\": \"2\",\n+      \"action\": \"logOut\",\n+      \"timestamp\": \"2025-04-17T12:11:37.186Z\"\n+    },\n+    {\n+      \"id\": 3,\n+      \"action\": \"logIn\",\n+      \"timestamp\": \"2025-04-17T12:12:00.837Z\"\n+    },\n+    {\n+      \"id\": 4,\n+      \"action\": \"logOut\",\n+      \"timestamp\": \"2025-04-17T12:12:10.053Z\"\n+    },\n+    {\n+      \"id\": 5,\n+      \"action\": \"logIn\",\n+      \"timestamp\": \"2025-04-17T12:13:00.571Z\"\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744892246465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,18 @@\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n       \"timestamp\": \"2025-04-17T10:00:00Z\",\n-      \n+      \"viewedProducts\": [\n+        {\n+          \"productId\": 101,\n+          \"timestamp\": \"2025-04-17T10:00:00Z\"\n+        },\n+        {\n+          \"productId\": 102,\n+          \"timestamp\": \"2025-04-17T10:05:00Z\"\n+        }\n+      ]\n     },\n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n"
+                },
+                {
+                    "date": 1744892263026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,18 +42,9 @@\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n       \"timestamp\": \"2025-04-17T10:00:00Z\",\n-      \"viewedProducts\": [\n-        {\n-          \"productId\": 101,\n-          \"timestamp\": \"2025-04-17T10:00:00Z\"\n-        },\n-        {\n-          \"productId\": 102,\n-          \"timestamp\": \"2025-04-17T10:05:00Z\"\n-        }\n-      ]\n+     \n     },\n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n"
+                },
+                {
+                    "date": 1744892279161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,13 +37,14 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n+    \n     {\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n-      \"timestamp\": \"2025-04-17T10:00:00Z\",\n+      \"timestamp\": \"2025-04-17T10:00:00Z\"\n      \n     },\n     {\n       \"id\": 2,\n"
+                },
+                {
+                    "date": 1744892292796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,18 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-    \n+     \"viewedProducts\": [\n+        {\n+          \"productId\": 101,\n+          \"timestamp\": \"2025-04-17T10:00:00Z\"\n+        },\n+        {\n+          \"productId\": 102,\n+          \"timestamp\": \"2025-04-17T10:05:00Z\"\n+        }\n+      ]\n     {\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n"
+                },
+                {
+                    "date": 1744892302794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,18 +37,9 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-     \"viewedProducts\": [\n-        {\n-          \"productId\": 101,\n-          \"timestamp\": \"2025-04-17T10:00:00Z\"\n-        },\n-        {\n-          \"productId\": 102,\n-          \"timestamp\": \"2025-04-17T10:05:00Z\"\n-        }\n-      ]\n+    {},\n     {\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n"
+                },
+                {
+                    "date": 1744892309316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-    {},\n+    { },\n     {\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n"
+                },
+                {
+                    "date": 1744892717631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,13 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-    { },\n+    { \n+      \"viewedProducts\": [\n+       \n+      ]\n+    },\n     {\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n"
+                },
+                {
+                    "date": 1744894017414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,39 +37,22 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-    { \n-      \"viewedProducts\": [\n-       \n-      ]\n+    {\n+      \"viewedProducts\": []\n     },\n     {\n       \"id\": 1,\n       \"userId\": 31,\n       \"action\": \"login\",\n       \"timestamp\": \"2025-04-17T10:00:00Z\"\n-     \n     },\n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n       \"timestamp\": \"2025-04-17T12:11:37.186Z\"\n     },\n-    {\n-      \"id\": 3,\n-      \"action\": \"logIn\",\n-      \"timestamp\": \"2025-04-17T12:12:00.837Z\"\n-    },\n-    {\n-      \"id\": 4,\n-      \"action\": \"logOut\",\n-      \"timestamp\": \"2025-04-17T12:12:10.053Z\"\n-    },\n-    {\n-      \"id\": 5,\n-      \"action\": \"logIn\",\n-      \"timestamp\": \"2025-04-17T12:13:00.571Z\"\n-    }\n+   \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744894027193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,19 +40,14 @@\n   \"logs\": [\n     {\n       \"viewedProducts\": []\n     },\n+   \n     {\n-      \"id\": 1,\n-      \"userId\": 31,\n-      \"action\": \"login\",\n-      \"timestamp\": \"2025-04-17T10:00:00Z\"\n-    },\n-    {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n       \"timestamp\": \"2025-04-17T12:11:37.186Z\"\n-    },\n+    }\n    \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744894032561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,8 @@\n   \"logs\": [\n     {\n       \"viewedProducts\": []\n     },\n-   \n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n"
+                },
+                {
+                    "date": 1744894207882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,15 +38,14 @@\n     }\n   ],\n   \"logs\": [\n     {\n-      \"viewedProducts\": []\n+      \"viewedProducts\": [{}]\n     },\n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n       \"timestamp\": \"2025-04-17T12:11:37.186Z\"\n     }\n-   \n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744895217215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,11 @@\n     }\n   ],\n   \"logs\": [\n     {\n-      \"viewedProducts\": [{}]\n+      \"viewedProducts\": [\n+     \n+      ]\n     },\n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n"
+                },
+                {
+                    "date": 1744895712790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,12 +38,10 @@\n     }\n   ],\n   \"logs\": [\n     {\n-      \"viewedProducts\": [\n-     \n-      ]\n-    },\n+      \"viewedProducts\": []\n+    \n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n"
+                },
+                {
+                    "date": 1744895723061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,10 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-    {\n-      \"viewedProducts\": []\n+  \n+      \n     \n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n"
+                },
+                {
+                    "date": 1744895728194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,7 +45,8 @@\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n       \"timestamp\": \"2025-04-17T12:11:37.186Z\"\n+      \"viewedProducts\": []\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744895967517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,16 +37,14 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-  \n-      \n     \n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n-      \"timestamp\": \"2025-04-17T12:11:37.186Z\"\n+      \"timestamp\": \"2025-04-17T12:11:37.186Z\",\n       \"viewedProducts\": []\n     }\n   ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744895978900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-    \n+    {},\n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n"
+                },
+                {
+                    "date": 1744896008669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-    {},\n+    \n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n"
+                },
+                {
+                    "date": 1744896015569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       \"wishlist\": []\n     }\n   ],\n   \"logs\": [\n-    \n+\n     {\n       \"id\": 2,\n       \"userId\": \"2\",\n       \"action\": \"logOut\",\n"
                 }
             ],
             "date": 1740591703181,
