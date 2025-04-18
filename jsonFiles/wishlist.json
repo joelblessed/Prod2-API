@@ -5,15 +5,29 @@
       "products": [
         2,
         5,
-        11
+        11,
+        23
       ]
     },
     {
-      "userId": "guest",
+      "userId": 2,
       "products": [
         1,
         5
       ]
+    },
+    {
+      "userId": "null",
+      "products": []
+    },
+    {
+      "userId": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ0OTg4ODYwLCJleHAiOjE3NDQ5OTI0NjB9.U7w1zpoeqrEo2ODb0WvyazenB18n8H2gym0OBuJWD8g",
+        "role": "user",
+        "id": 3,
+        "username": "joeltest"
+      },
+      "products": []
     }
   ]
 }

@@ -1,0 +1,46 @@
+{
+    "sourceFile": "jsonFiles/logs.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1744982990512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744983632694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,7 @@\n {\n     \"logs\": {\n-      \"user123\": [\n-        {\n-          \"id\": 1,\n-          \"action\": \"login\",\n-          \"timestamp\": \"2025-04-18T10:00:00Z\",\n-          \"viewedProducts\": [\n-            { \"id\": 1, \"productId\": \"prodA\", \"timestamp\": \"2025-04-18T10:05:00Z\" }\n-          ]\n+      \n         }\n       ]\n     }\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744983640272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n {\n     \"logs\": {\n       \n-        }\n+        \n       ]\n     }\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744983645851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,14 @@\n {\n     \"logs\": {\n-      \n-        \n+      \"user123\": [\n+        {\n+          \"id\": 1,\n+          \"action\": \"login\",\n+          \"timestamp\": \"2025-04-18T10:00:00Z\",\n+          \"viewedProducts\": [\n+            { \"id\": 1, \"productId\": \"prodA\", \"timestamp\": \"2025-04-18T10:05:00Z\" }\n+          ]\n+        }\n       ]\n     }\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744983878958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,25 @@\n {\n-    \"logs\": {\n-      \"user123\": [\n-        {\n-          \"id\": 1,\n-          \"action\": \"login\",\n-          \"timestamp\": \"2025-04-18T10:00:00Z\",\n-          \"viewedProducts\": [\n-            { \"id\": 1, \"productId\": \"prodA\", \"timestamp\": \"2025-04-18T10:05:00Z\" }\n-          ]\n-        }\n-      ]\n-    }\n-  }\n\\ No newline at end of file\n+  \"logs\": {\n+    \"user123\": [\n+      {\n+        \"id\": 1,\n+        \"action\": \"login\",\n+        \"timestamp\": \"2025-04-18T10:00:00Z\",\n+        \"viewedProducts\": [\n+          {\n+            \"id\": 1,\n+            \"productId\": \"prodA\",\n+            \"timestamp\": \"2025-04-18T10:05:00Z\"\n+          }\n+        ]\n+      }\n+    ],\n+    \"user13\": [\n+      {\n+        \"id\": 1,\n+        \"action\": \"login\",\n+        \"timestamp\": \"2025-04-18T13:43:15.799Z\"\n+      }\n+    ]\n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744983886537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,14 @@\n {\n-  \"logs\": {\n-    \"user123\": [\n-      {\n-        \"id\": 1,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T10:00:00Z\",\n-        \"viewedProducts\": [\n-          {\n-            \"id\": 1,\n-            \"productId\": \"prodA\",\n-            \"timestamp\": \"2025-04-18T10:05:00Z\"\n-          }\n-        ]\n-      }\n-    ],\n-    \"user13\": [\n-      {\n-        \"id\": 1,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T13:43:15.799Z\"\n-      }\n-    ]\n-  }\n-}\n\\ No newline at end of file\n+    \"logs\": {\n+      \"user123\": [\n+        {\n+          \"id\": 1,\n+          \"action\": \"login\",\n+          \"timestamp\": \"2025-04-18T10:00:00Z\",\n+          \"viewedProducts\": [\n+            { \"id\": 1, \"productId\": \"prodA\", \"timestamp\": \"2025-04-18T10:05:00Z\" }\n+          ]\n+        }\n+      ]\n+    }\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744983971456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,28 +23,8 @@\n       {\n         \"id\": 2,\n         \"action\": \"login\",\n         \"timestamp\": \"2025-04-18T13:44:56.651Z\"\n-      },\n-      {\n-        \"id\": 3,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T13:45:19.979Z\"\n-      },\n-      {\n-        \"id\": 4,\n-        \"action\": \"logout\",\n-        \"timestamp\": \"2025-04-18T13:45:24.260Z\"\n-      },\n-      {\n-        \"id\": 5,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T13:45:24.277Z\"\n-      },\n-      {\n-        \"id\": 6,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T13:46:10.813Z\"\n       }\n     ]\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744985379632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,47 +1,5 @@\n {\n   \"logs\": {\n-    \"2\": [\n-      {\n-        \"id\": 1,\n-        \"action\": \"logout\",\n-        \"timestamp\": \"2025-04-18T14:08:24.404Z\"\n-      }\n-    ],\n-    \"undefined\": [\n-      {\n-        \"id\": 1,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T14:08:20.446Z\"\n-      }\n-    ],\n-    \"user13\": [\n-      {\n-        \"id\": 1,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T14:09:13.494Z\"\n-      },\n-      {\n-        \"id\": 2,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T14:09:13.504Z\"\n-      },\n-      {\n-        \"id\": 3,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T14:09:21.383Z\"\n-      }\n-    ],\n-    \"null\": [\n-      {\n-        \"id\": 1,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T14:09:37.217Z\"\n-      },\n-      {\n-        \"id\": 2,\n-        \"action\": \"login\",\n-        \"timestamp\": \"2025-04-18T14:09:37.341Z\"\n-      }\n-    ]\n+    \n   }\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1744982990512,
+            "name": "Commit-0",
+            "content": "{\n    \"logs\": {\n      \"user123\": [\n        {\n          \"id\": 1,\n          \"action\": \"login\",\n          \"timestamp\": \"2025-04-18T10:00:00Z\",\n          \"viewedProducts\": [\n            { \"id\": 1, \"productId\": \"prodA\", \"timestamp\": \"2025-04-18T10:05:00Z\" }\n          ]\n        }\n      ]\n    }\n  }"
+        }
+    ]
+}

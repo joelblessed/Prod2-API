@@ -37,24 +37,200 @@
       "wishlist": []
     }
   ],
-  "logs": [
-    {
-      "id": 2,
-      "userId": "2",
-      "action": "logOut",
-      "timestamp": "2025-04-17T12:11:37.186Z",
-      "viewedProducts": [
-        {
-          "id": 1,
-          "productId": 2,
-          "timestamp": "2025-04-17T13:58:10.760Z"
-        },
-        {
-          "id": 2,
-          "productId": 4,
-          "timestamp": "2025-04-17T13:59:08.494Z"
-        }
-      ]
-    }
-  ]
+  "logs": {
+    "2": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-18T12:18:44.535Z"
+      },
+      {
+        "id": 2,
+        "action": "login",
+        "timestamp": "2025-04-18T12:25:27.998Z"
+      },
+      {
+        "id": 3,
+        "action": "login",
+        "timestamp": "2025-04-18T13:00:48.308Z",
+        "viewedProducts": [
+          {
+            "id": 1,
+            "productId": 4,
+            "timestamp": "2025-04-18T13:04:53.323Z"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "action": "login",
+        "timestamp": "2025-04-18T13:05:54.457Z"
+      },
+      {
+        "id": 5,
+        "action": "login",
+        "timestamp": "2025-04-18T13:06:05.997Z"
+      },
+      {
+        "id": 6,
+        "action": "login",
+        "timestamp": "2025-04-18T13:07:13.571Z"
+      },
+      {
+        "id": 7,
+        "action": "login",
+        "timestamp": "2025-04-18T13:08:27.140Z"
+      },
+      {
+        "id": 8,
+        "action": "login",
+        "timestamp": "2025-04-18T13:09:38.433Z"
+      }
+    ],
+    "userId:2": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-18T12:59:45.030Z"
+      }
+    ],
+    "userId2": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-18T12:59:59.285Z"
+      }
+    ],
+    "user123": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-18T13:11:31.798Z"
+      },
+      {
+        "id": 2,
+        "action": "login",
+        "timestamp": "2025-04-18T13:11:57.981Z"
+      },
+      {
+        "id": 3,
+        "action": "login",
+        "timestamp": "2025-04-18T13:20:54.905Z"
+      },
+      {
+        "id": 4,
+        "action": "login",
+        "timestamp": "2025-04-18T13:22:42.496Z"
+      },
+      {
+        "id": 5,
+        "action": "login",
+        "timestamp": "2025-04-18T13:24:58.376Z"
+      }
+    ],
+    "user12": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-18T13:11:36.364Z"
+      },
+      {
+        "id": 2,
+        "action": "login",
+        "timestamp": "2025-04-18T13:11:43.617Z"
+      },
+      {
+        "id": 3,
+        "action": "login",
+        "timestamp": "2025-04-18T13:11:58.001Z"
+      },
+      {
+        "id": 4,
+        "action": "login",
+        "timestamp": "2025-04-18T13:12:25.880Z"
+      },
+      {
+        "id": 5,
+        "action": "login",
+        "timestamp": "2025-04-18T13:12:47.826Z"
+      },
+      {
+        "id": 6,
+        "action": "login",
+        "timestamp": "2025-04-18T13:12:47.835Z"
+      },
+      {
+        "id": 7,
+        "action": "login",
+        "timestamp": "2025-04-18T13:12:47.864Z"
+      },
+      {
+        "id": 8,
+        "action": "login",
+        "timestamp": "2025-04-18T13:12:52.689Z"
+      },
+      {
+        "id": 9,
+        "action": "login",
+        "timestamp": "2025-04-18T13:14:58.257Z"
+      },
+      {
+        "id": 10,
+        "action": "login",
+        "timestamp": "2025-04-18T13:15:03.964Z"
+      },
+      {
+        "id": 11,
+        "action": "login",
+        "timestamp": "2025-04-18T13:16:01.246Z"
+      },
+      {
+        "id": 12,
+        "action": "login",
+        "timestamp": "2025-04-18T13:16:10.778Z"
+      },
+      {
+        "id": 13,
+        "action": "login",
+        "timestamp": "2025-04-18T13:18:02.013Z"
+      },
+      {
+        "id": 14,
+        "action": "login",
+        "timestamp": "2025-04-18T13:19:31.699Z"
+      }
+    ],
+    "user13": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-18T13:25:37.520Z"
+      },
+      {
+        "id": 2,
+        "action": "login",
+        "timestamp": "2025-04-18T13:25:44.934Z"
+      },
+      {
+        "id": 3,
+        "action": "login",
+        "timestamp": "2025-04-18T13:26:25.481Z"
+      },
+      {
+        "id": 4,
+        "action": "login",
+        "timestamp": "2025-04-18T13:27:44.575Z"
+      },
+      {
+        "id": 5,
+        "action": "login",
+        "timestamp": "2025-04-18T13:27:55.436Z"
+      },
+      {
+        "id": 6,
+        "action": "login",
+        "timestamp": "2025-04-18T13:28:16.712Z"
+      }
+    ]
+  }
 }

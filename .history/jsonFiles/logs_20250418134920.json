@@ -1,0 +1,25 @@
+{
+  "logs": {
+    "user123": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-18T10:00:00Z",
+        "viewedProducts": [
+          {
+            "id": 1,
+            "productId": "prodA",
+            "timestamp": "2025-04-18T10:05:00Z"
+          }
+        ]
+      }
+    ],
+    "user13": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-18T13:46:54.621Z"
+      }
+    ]
+  }
+}

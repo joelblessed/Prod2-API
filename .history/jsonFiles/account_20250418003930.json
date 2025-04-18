@@ -1,0 +1,75 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "email": "joelblessed@gmail.com",
+      "password": "$2a$10$2OAc3/sDXDsBIO0N1HenXeGuspIhn5pt7ZUsLaRQQzAnypSHPbU1e",
+      "userName": "joelblessed",
+      "fullName": "joel blessed",
+      "phone": "67713018988",
+      "country": "usa",
+      "address": "kumba",
+      "gender": "female",
+      "referralCode": "ABC123",
+      "referredBy": "0D34FEEB",
+      "wallet": 960,
+      "profileImage": "/profilImages/1742300656095-oh.png",
+      "role": "admin",
+      "wishlist": [],
+      "hasMadeFirstPurchase": true
+    },
+    {
+      "id": 3,
+      "email": "joelblessedgod@gmail.com",
+      "password": "$2a$10$QNJNga1o8pOoA9ByJBDb1eHkOwIFumdyP9jHYYBwygIQmwaSm0eWa",
+      "userName": "joeltest",
+      "fullName": "joel blessed",
+      "phone": "677331862",
+      "country": "Kameroon",
+      "city": "",
+      "wallet": 120,
+      "profileImage": "/images/oh.png",
+      "address": "kombe",
+      "gender": "male",
+      "referralCode": "DEF123",
+      "referredBy": "0D34FEEB",
+      "role": "user",
+      "wishlist": []
+    }
+  ],
+  "logs": [
+    {
+      "viewedProducts": [
+        {
+          "id": 1,
+          "productId": 2,
+          "timestamp": "2025-04-17T13:58:10.760Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": "3",
+      "action": "login",
+      "timestamp": "2025-04-18T00:32:38.457Z"
+    },
+    {
+      "id": 3,
+      "userId": "3",
+      "action": "logIn",
+      "timestamp": "2025-04-18T00:33:11.410Z"
+    },
+    {
+      "id": 4,
+      "userId": "2",
+      "action": "login",
+      "timestamp": "2025-04-18T00:33:25.361Z"
+    },
+    {
+      "id": 5,
+      "userId": "2",
+      "action": "logIn",
+      "timestamp": "2025-04-18T00:34:57.823Z"
+    }
+  ]
+}
