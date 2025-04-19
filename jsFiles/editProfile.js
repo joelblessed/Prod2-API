@@ -65,17 +65,17 @@ router.put("/profile/update", (req, res) => {
   res.json({ message: "Profile updated successfully", user: users[userIndex] });
 });
 
-// 🟠 *Upload profile image*
-router.put("/profile/update-image/:userId", upload.single("profileImage"), (req, res) => {
-  const { userId } = req.params;
-  let users = readUsers();
-  const userIndex = users.findIndex((user) => user.id === parseInt(userId));
+// // 🟠 *Upload profile image*
+// router.put("/profile/update-image/:userId", upload.single("profileImage"), (req, res) => {
+//   const { userId } = req.params;
+//   let users = readUsers();
+//   const userIndex = users.findIndex((user) => user.id === parseInt(userId));
 
-  if (userIndex === -1) return res.status(404).json({ message: "User not found" });
+//   if (userIndex === -1) return res.status(404).json({ message: "User not found" });
 
-  users[userIndex].profileImage = `/profileImages/${req.file.filename}`;
-  writeUsers(users);
+//   users[userIndex].profileImage = `/profileImages/${req.file.filename}`;
+//   writeUsers(users);
 
-  res.json({ message: "Profile image updated", user: users[userIndex] });
-});
+//   res.json({ message: "Profile image updated", user: users[userIndex] });
+// });
 module.exports = router;

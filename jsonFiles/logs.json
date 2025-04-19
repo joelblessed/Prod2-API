@@ -1,6 +1,70 @@
 {
   "logs": {
-   
-    
+    "2": [
+      {
+        "id": 1,
+        "action": "logout",
+        "timestamp": "2025-04-19T17:18:06.421Z"
+      },
+      {
+        "id": 2,
+        "action": "logout",
+        "timestamp": "2025-04-19T17:48:55.646Z"
+      },
+      {
+        "id": 3,
+        "action": "logout",
+        "timestamp": "2025-04-19T17:50:14.315Z"
+      }
+    ],
+    "3": [
+      {
+        "id": 1,
+        "action": "logout",
+        "timestamp": "2025-04-19T17:28:42.751Z"
+      },
+      {
+        "id": 2,
+        "action": "logout",
+        "timestamp": "2025-04-19T17:51:36.174Z"
+      }
+    ],
+    "undefined": [
+      {
+        "id": 1,
+        "action": "login",
+        "timestamp": "2025-04-19T17:18:29.444Z"
+      },
+      {
+        "id": 2,
+        "action": "logout",
+        "timestamp": "2025-04-19T17:23:05.441Z"
+      },
+      {
+        "id": 3,
+        "action": "login",
+        "timestamp": "2025-04-19T17:23:19.662Z"
+      },
+      {
+        "id": 4,
+        "action": "login",
+        "timestamp": "2025-04-19T17:28:53.167Z"
+      },
+      {
+        "id": 5,
+        "action": "login",
+        "timestamp": "2025-04-19T17:49:04.398Z"
+      },
+      {
+        "id": 6,
+        "action": "login",
+        "timestamp": "2025-04-19T17:50:34.550Z"
+      },
+      {
+        "id": 7,
+        "action": "login",
+        "timestamp": "2025-04-19T17:51:41.779Z"
+      }
+    ]
   }
 }
